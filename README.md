@@ -24,7 +24,7 @@ This is my customised OpenWrt image for apu2 boards. It extends the generic x86_
 I use the image builder rather than building from source. To create the builds, I use a Debian VM running in VirtualBox on MacOS. If you'd like to recreate my build environment, you can follow these instructions:
 
 ### Setting up a VM
-1. Download & verify the Debian netinst CD Image for amd64 from https://www.debian.org/CD/netinst/
+1. Download & verify the Debian netinst CD Image for amd64 from https://www.debian.org/CD/netinst/. Later, this image can also be used to create a bootable USB which can be used to apply the OpenWrt image to the APU2's mSATA drive
 2. Launch VirtualBox and create a new VM
 3. Name the VM (e.g. Debian 9.9.0). Set the type as "Linux" and Version as "Debian (64-bit)"
 4. Choose a memory size (RAM) for your VM. Note that the minimum memory requirement for Debian is 512MB
@@ -102,4 +102,9 @@ Finally, enlarge the image:
 4. Name the VM (e.g. OpenWRT). Set the type as "Linux" and Version as "Other Linux (64-bit)"
 5. Accept the defaults, and then choose "Use an existing virtual hard disk file" selecting the VDI you created in the previous steps
 6. Launch!
+
+### Flash it!
+
+1. Flash the Debian netinst amd64 iso to a USB drive using Etcher (https://www.balena.io/etcher/)
+2.
 
