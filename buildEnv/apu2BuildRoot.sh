@@ -51,10 +51,19 @@ cd "$DIR" || exit
 mkdir -p files/etc/config
 cp ../files/* files/etc/config/
 
+### grab the banIP ipks and place in the packages dir
+cp ../packages/* packages/
+
+### probably not a great way of doing things
+# wget -r -l1 -np -nd "https://downloads.openwrt.org/snapshots/packages/x86_64/packages/" -P ./ -A "banip*.ipk" -O packages/banip.ipk
+
+# wget -r -l1 -np -nd "https://downloads.openwrt.org/snapshots/packages/x86_64/luci/" -P ./ -A "luci-app-banip*.ipk" -O packages/luci-app-banip.ipk
+
+
 
 ### add repo to repositories.conf
 ! grep -q 'stangri_repo' repositories.conf && sed -i '2 i\src/gz stangri_repo https://raw.githubusercontent.com/stangri/openwrt-repo/master' repositories.conf
 
 ### make!
 make clean
-make image PACKAGES="luci -dnsmasq dnsmasq-full kmod-gpio-button-hotplug  kmod-crypto-hw-ccp kmod-leds-apu2 kmod-leds-gpio kmod-sp5100_tco kmod-usb-ohci kmod-usb2 kmod-usb3 kmod-gpio-nct5104d kmod-pcspkr kmod-usb-core kmod-sound-core libustream-mbedtls adblock luci-app-adblock luci-app-sqm luci-app-vpn-policy-routing luci-app-wireguard luci-proto-wireguard stubby unbound vpn-policy-routing luci-ssl curl wget luci-app-wol 6in4 6to4 6rd luci-theme-bootstrap luci-theme-material usbutils usb-modeswitch kmod-usb-net-huawei-cdc-ncm kmod-usb-net-cdc-ncm kmod-usb-net-cdc-ether comgt-ncm kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan luci-proto-ncm luci-proto-3g" EXTRA_IMAGE_NAME="apu2_2nic_geekinaboxx" FILES=files/
+make image PACKAGES="luci -dnsmasq dnsmasq-full kmod-gpio-button-hotplug  kmod-crypto-hw-ccp kmod-leds-apu2 kmod-leds-gpio kmod-sp5100_tco kmod-usb-ohci kmod-usb2 kmod-usb3 kmod-gpio-nct5104d kmod-pcspkr kmod-usb-core kmod-sound-core libustream-mbedtls adblock luci-app-adblock luci-app-sqm luci-app-vpn-policy-routing luci-app-wireguard luci-proto-wireguard stubby unbound vpn-policy-routing luci-ssl curl wget luci-app-wol 6in4 6to4 6rd luci-theme-bootstrap luci-theme-material usbutils usb-modeswitch kmod-usb-net-huawei-cdc-ncm kmod-usb-net-cdc-ncm kmod-usb-net-cdc-ether comgt-ncm kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan luci-proto-ncm luci-proto-3g banip luci-app-banip" EXTRA_IMAGE_NAME="apu2_2nic_geekinaboxx" FILES=files/

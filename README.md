@@ -14,6 +14,9 @@ This is my customised OpenWrt image for apu2 boards. It extends the generic x86_
 * SQM scripts
 * IPv6: tunnel support for 6in4, 6to4, 6rd
 * specific kernel modules for specific APU2 features
+* Limited support for 3G/4G USB modems via the ncm and 3g protocols
+* Wake-on-LAN LuCI module
+* banIP
  
 # Recreating my build environment
 
