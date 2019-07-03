@@ -54,10 +54,9 @@ cp ../files/* files/etc/config/
 ### grab the banIP ipks and place in the packages dir
 cp ../packages/* packages/
 
-### probably not a great way of doing things
-# wget -r -l1 -np -nd "https://downloads.openwrt.org/snapshots/packages/x86_64/packages/" -P ./ -A "banip*.ipk" -O packages/banip.ipk
-
-# wget -r -l1 -np -nd "https://downloads.openwrt.org/snapshots/packages/x86_64/luci/" -P ./ -A "luci-app-banip*.ipk" -O packages/luci-app-banip.ipk
+### probably not a great way of doing things; the files may not be present if Buildbot is working
+# wget -r -l1 -np -nd "https://downloads.openwrt.org/snapshots/packages/x86_64/packages/" -P ./packages/ -A "banip*.ipk"
+# wget -r -l1 -np -nd "https://downloads.openwrt.org/snapshots/packages/x86_64/luci/" -P ./packages/ -A "luci-app-banip*.ipk"
 
 
 
