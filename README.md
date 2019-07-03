@@ -106,5 +106,5 @@ Finally, enlarge the image:
 ### Flash it!
 
 1. Flash the Debian netinst amd64 iso to a USB drive using Etcher (https://www.balena.io/etcher/)
-2.
+2. 
 

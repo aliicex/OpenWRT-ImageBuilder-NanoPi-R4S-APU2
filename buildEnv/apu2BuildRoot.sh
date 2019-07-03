@@ -51,17 +51,14 @@ cd "$DIR" || exit
 mkdir -p files/etc/config
 cp ../files/* files/etc/config/
 
-### grab the banIP ipks and place in the packages dir
-### need to handle the case where files may not be present if Buildbot is working
+### grab the banIP packages, handling the case where the files may not be present if Buildbot is working
 wget -r -l1 -np -nd "https://downloads.openwrt.org/snapshots/packages/x86_64/packages/" -P ./packages/ -A "banip*.ipk"
-
 wget -r -l1 -np -nd "https://downloads.openwrt.org/snapshots/packages/x86_64/luci/" -P ./packages/ -A "luci-app-banip*.ipk"
-
-COUNT=$(ls -1q packages/* | wc -l)
+COUNT=$(ls -1q packages/*banip* | wc -l)
 
 if [ "$COUNT" -ne 2 ]
 then
-rm packages/*
+rm packages/*banip*
 cp ../packages/* packages/
 fi
 
