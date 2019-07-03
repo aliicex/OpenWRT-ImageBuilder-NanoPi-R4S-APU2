@@ -83,8 +83,8 @@ You'll be given the choice to build from Snapshot, 18.06.4 or 19.07
 ### Testing the images
 The built images will be located in the `bin` directory. These can be tested in VirtualBox:
 
-1. Copy the image to the host machine
-2. Run `VBoxManage convertfromraw --format VDI openwrt-18.06.4-apu2-3nic-geekinaboxx-x86-64-combined-squashfs.img openwrt-18.06.4-apu2-3nic-geekinaboxx-x86-64-combined-squashfs.vdi`
+1. Copy the image to the host machine and unzip it `gzip -d openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.img.gz`
+2. Run `VBoxManage convertfromraw --format VDI openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.img openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.vdi`
 
 If you see an error like:
 
@@ -92,11 +92,11 @@ If you see an error like:
 
 then run:
 
-`dd if=openwrt-x86-64-combined-squashfs.img of=openwrt.img bs=128000 conv=sync` first
+`dd if=openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.img of=openwrt.img bs=128000 conv=sync` first
 
 Finally, enlarge the image:
 
-```VboxManage modifymedium openwrt-x86-64-combined-squashfs.vdi --resize 128```
+```VBoxManage modifymedium openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.vdi --resize 128```
 
 3. Launch VirtualBox and create a new VM
 4. Name the VM (e.g. OpenWRT). Set the type as "Linux" and Version as "Other Linux (64-bit)"
