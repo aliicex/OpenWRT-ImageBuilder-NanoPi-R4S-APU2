@@ -73,7 +73,9 @@ Clone this repo, and `cd` into `buildEnv`. Make `apu2BuildRoot.sh` executable by
 chmod 755 apu2BuildRoot.sh
 ```
 
-modify the script if you wish, otherwise go ahead and run it!
+modify the script if you wish: if you want wireless support, you'll need to install hostapd along with kmod-ath9k & ath9k-htc-firmware for the wle200nx; or ath10k-firmware-qca988x and kmod-ath10k for the wle600vx or wle900vx.
+
+Now, go ahead and run it!
 
 ```
 ./apu2BuildRoot.sh
@@ -108,4 +110,5 @@ Finally, enlarge the image:
 
 1. Flash the Debian netinst amd64 iso to a USB drive using Etcher (https://www.balena.io/etcher/)
 2. 
+3. Get the image `https://raw.githubusercontent.com/geekinaboxx/apu2_openwrt/master/bin/openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.img.gz`
 
