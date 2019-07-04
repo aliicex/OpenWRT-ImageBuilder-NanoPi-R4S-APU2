@@ -1,7 +1,7 @@
-73ade85956bb967d05ba1d391936f56d19227493bccebbf58bc35bb583b47c9e *openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-ext4.img.gz
-1fa0e52b207f69fc6154cf8378c8aa1585f835982b2a2c6ded836dd72e4482f6 *openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.img.gz
-6fd031106a923effc2fb0115eee487fe27a0721d2cecec2b8fbc3cd21103f03d *openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-generic-rootfs.tar.gz
+9c8e307a454a60757fa468164719860d068f3f460677035d760f4a993199b942 *openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-ext4.img.gz
+2fe8dfc04e52864b5c9c1aa88d862237c8153a5743954bd719c27aee91088f0e *openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.img.gz
+175ecc26c62590753c18f9d862f9cafe81b21d10c70d5e2eb3c8665d37cfb436 *openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-generic-rootfs.tar.gz
 46509f610f3c277e49df45721e0c418b1c37e2f1809e78c87cd09686454678d9 *openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-generic.manifest
-1746033e26da602b2bfcbfda922660c522cf6eac19fcf8b1577c862f61da7896 *openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-rootfs-ext4.img.gz
-22a68d24ab621b83f105cd95de3d93848ded532e045f4b40c8491390dc63dcef *openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-rootfs-squashfs.img.gz
+0b34f7a69ba818177943a65d06dd11fd4cc256f9d704a5c4d6ef7b5243586bc5 *openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-rootfs-ext4.img.gz
+6e7b160b893d8254fc36c88e397a61ee6fb10ed072aa4010e71968ecda557698 *openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-rootfs-squashfs.img.gz
 db64f8fef5b0e76326e2c2b705e1bd4ef455b4c5e935f65dd0bdd9d9dab0ebd6 *openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-vmlinuz
