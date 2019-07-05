@@ -108,7 +108,47 @@ Finally, enlarge the image:
 
 ### Flash it!
 
-1. Flash the Debian netinst amd64 iso to a USB drive using Etcher (https://www.balena.io/etcher/)
-2. 
-3. Get the image `https://raw.githubusercontent.com/geekinaboxx/apu2_openwrt/master/bin/openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.img.gz`
+1. Flash the Debian netinst amd64 iso to a USB drive using Etcher (https://www.balena.io/etcher/) 
+
+2. Connect to the APU2 board using a serial to USB connector. On MacOS:
+
+    * install the CP210x USB to UART Bridge VCP Drivers from https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers
+    * Create a new Terminal profile (Terminal > Preferences). Configure the profile to run `screen /dev/tty.SLAB_USBtoUART 115200`on startup
+    * Launch a new Terminal window with the profile you created
+
+3. Plug the USB drive into the APU, connect the serial cable, and a LAN cable in the port closest to the serial port.  Power up!  You should be greeted with the installer boot menu.  Press `H` for Help, then `F5` for "special boot parameters". At the boot prompt, enter `rescue console=ttyS0,115200n8`.  You will see a video mode error, press space to continue.
+
+4. You are now in the rescue setup.  You should see `Rescue mode` at the time.  Choose your language, country, etc.  Skip loading any firmware, and choose `enp0s1` as your primary ethernet if prompted.  When it asks if you want to choose a root filesystem device, *scroll down* and choose "Do not use a root file system". Finally, you should be able to execute the rescue shell.
+
+5. Once in the rescue shell:
+
+    * Download and unzip the image
+    ```
+    ~ # wget https://raw.githubusercontent.com/geekinaboxx/apu2_openwrt/master/bin/openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.img.gz
+    ~ # gunzip openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.img.gz
+    ```
+    
+    * Apply the image:
+    ```
+    ~ # dd if=openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.img of=/dev/sda bs=4M; sync
+    68+1 records in
+    68+1 records out
+    ```
+    
+    * Confirm the image application:
+    ```
+    ~ # parted /dev/sda print
+    Number  Start   End     Size    Type     File system  Flags
+     1      262kB   17.0MB  16.8MB  primary  ext2         boot
+     2      17.3MB  286MB   268MB   primary  ext2
+    ```
+
+6. If you've used the ext4 image (rather than squashfs), you can (optionally) expand the partition to the rest of the disk size
+    ```  
+    ~ #  parted /dev/sda resizepart 2 16G
+    Information: You may need to update /etc/fstab.
+    
+    ~# resize2fs /dev/sda2 
+    ```
+7. All done! Remove the USB boot disk, cross your fingers, and `reboot`. 
 
