@@ -116,9 +116,9 @@ Finally, enlarge the image:
     * Create a new Terminal profile (Terminal > Preferences). Configure the profile to run `screen /dev/tty.SLAB_USBtoUART 115200`on startup
     * Launch a new Terminal window with the profile you created
 
-3. Plug the USB drive into the APU, connect the serial cable, and a LAN cable in the port closest to the serial port.  Power up!  You should be greeted with the installer boot menu.  Press `H` for Help, then `F5` for "special boot parameters". At the boot prompt, enter `rescue console=ttyS0,115200n8`.  You will see a video mode error, press space to continue.
+3. Plug the USB drive into the APU, connect the serial cable, and a LAN cable in the port closest to the serial port.  Power up!  You should be greeted with the installer boot menu.  Select 'Help', then `F5` for "special boot parameters". At the boot prompt, enter `rescue console=ttyS0,115200n8`.  You will see a video mode error, press space to continue.
 
-4. You are now in the rescue setup.  You should see `Rescue mode` at the time.  Choose your language, country, etc.  Skip loading any firmware, and choose `enp0s1` as your primary ethernet if prompted.  When it asks if you want to choose a root filesystem device, *scroll down* and choose "Do not use a root file system". Finally, you should be able to execute the rescue shell.
+4. You are now in the rescue setup.  You should see `Rescue mode` at the time.  Choose your language, country, etc.  Skip loading any firmware, and choose `enp1s0` as your primary ethernet if prompted.  When it asks if you want to choose a root filesystem device, *scroll down* and choose "Do not use a root file system". Finally, you should be able to execute the rescue shell.
 
 5. Once in the rescue shell:
 
@@ -131,8 +131,8 @@ Finally, enlarge the image:
     * Apply the image:
     ```
     ~ # dd if=openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.img of=/dev/sda bs=4M; sync
-    68+1 records in
-    68+1 records out
+    5+1 records in
+    5+1 records out
     ```
     
     * Confirm the image application:
@@ -140,7 +140,7 @@ Finally, enlarge the image:
     ~ # parted /dev/sda print
     Number  Start   End     Size    Type     File system  Flags
      1      262kB   17.0MB  16.8MB  primary  ext2         boot
-     2      17.3MB  286MB   268MB   primary  ext2
+     2      17.3MB  286MB   268MB   primary
     ```
 
 6. If you've used the ext4 image (rather than squashfs), you can (optionally) expand the partition to the rest of the disk size
