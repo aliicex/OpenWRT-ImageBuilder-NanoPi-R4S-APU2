@@ -2,6 +2,7 @@
 6rd - 9-4
 6to4 - 12-2
 adblock - 3.5.5-3
+amd64-microcode - 20180524-1
 banip - 0.1.4-1
 base-files - 194.2-r7808-ef686b7292
 busybox - 1.28.4-3
@@ -11,12 +12,15 @@ chat - 2.4.7-12
 comgt - 0.32-30
 comgt-ncm - 0.32-30
 curl - 7.60.0-4
+dmidecode - 3.1-1
 dnsmasq-full - 2.80-1.4
 dropbear - 2017.75-7.1
 e2fsprogs - 1.44.1-1
 etherwake - 1.09-4
 firewall - 2018-08-13-1c4d5bcd-1
+flashrom - 1.0-1
 fstools - 2019-03-28-ff1ded63-5
+fstrim - 2.32-2
 fwtool - 1
 getdns - 1.5.2-2
 ip-full - 4.16.0-8
@@ -25,6 +29,7 @@ ipset - 6.38-1
 iptables - 1.6.2-1
 iptables-mod-conntrack-extra - 1.6.2-1
 iptables-mod-ipopt - 1.6.2-1
+irqbalance - 1.2.0-2
 jshn - 2018-07-25-c83a84af-2
 jsonfilter - 2018-02-04-c7e938d6-1
 kernel - 4.14.131-1-7f44b66739e15d9ee98957787ab1e200
@@ -111,6 +116,7 @@ libcomerr - 1.44.1-1
 libcurl - 7.60.0-4
 libext2fs - 1.44.1-1
 libf2fs - 1.10.0-1
+libftdi1 - 1.4-1
 libgcc - 7.3.0-1
 libgmp - 6.1.2-1
 libip4tc - 1.6.2-1
@@ -120,11 +126,13 @@ libiwinfo - 2018-07-31-65b8333f-1
 libiwinfo-lua - 2018-07-31-65b8333f-1
 libjson-c - 0.12.1-2
 libjson-script - 2018-07-25-c83a84af-2
+libkmod - 20-1
 liblua - 5.1.5-1
 liblucihttp - 2019-06-05-91c01c3c-1
 liblucihttp-lua - 2019-06-05-91c01c3c-1
 libmbedtls - 2.16.1-1
 libmnl - 1.0.4-1
+libmount - 2.32-2
 libnetfilter-conntrack - 2017-07-25-e8704326-1
 libnettle - 3.4-1
 libnfnetlink - 1.0.1-1
@@ -142,6 +150,7 @@ libuci - 2019-05-17-f199b961-1
 libuclient - 2018-11-24-3ba74ebc-1
 libunbound - 1.9.2-1
 libusb-1.0 - 1.0.22-1
+libusb-compat - 0.1.5-1
 libustream-mbedtls - 2018-07-30-23a3f283-1
 libuuid - 2.32-2
 libxtables - 1.6.2-1
@@ -177,6 +186,7 @@ odhcpd-ipv6only - 1.15-3
 openwrt-keyring - 2018-05-18-103a32e9-1
 opkg - 2019-01-18-7708a01a-1
 partx-utils - 2.32-2
+pciutils - 3.5.6-1
 ppp - 2.4.7-12
 ppp-mod-pppoe - 2.4.7-12
 procd - 2018-03-28-dfb68f85-1

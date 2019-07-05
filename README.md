@@ -2,6 +2,7 @@
 This is my customised OpenWrt image for apu2 boards. It extends the generic x86_64 OpenWrt builds by:
 
 * Kernel modules for specific APU2 features
+* Additional APU2-specific packages: amd64-microcode, flashrom, irqbalance, fstrim
 * Two ports are active by default: eth0 set to PPPoE WAN; eth1 for LAN
 * Adding LuCI with HTTPS SSL support; along with the LuCI Material theme in addition to the default bootstrap
 * Replacing dnsmasq with dnsmasq-full
@@ -128,7 +129,7 @@ Finally, enlarge the image:
     ~ # gunzip openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.img.gz
     ```
     
-    * Apply the image:
+    * Apply the image. Run `lsblk` to choose the correct device to which to write:
     ```
     ~ # dd if=openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.img of=/dev/sda bs=4M; sync
     5+1 records in
