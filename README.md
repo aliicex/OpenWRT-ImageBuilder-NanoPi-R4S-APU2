@@ -1,7 +1,7 @@
 # apu2_openwrt
 This is my customised OpenWrt image for apu2 boards. It extends the generic x86_64 OpenWrt builds by:
 
-* Specific kernel modules for specific APU2 features
+* Kernel modules for specific APU2 features
 * Two ports are active by default: eth0 set to PPPoE WAN; eth1 for LAN
 * Adding LuCI with HTTPS SSL support; along with the LuCI Material theme in addition to the default bootstrap
 * Replacing dnsmasq with dnsmasq-full
@@ -12,10 +12,10 @@ This is my customised OpenWrt image for apu2 boards. It extends the generic x86_
 * banIP
 * vpn-policy-routing package
 * Wireguard support
-* USB storage support
+* USB v2 and v3.0 support
 * wget, curl
 * usbtools
-* Limited support for 3G/4G USB modems via the ncm and 3g protocols
+* Limited support for 3G/4G USB modems via the ncm and 3g protocols (including the huawei_cdc_ncm driver)
 * Wake-on-LAN LuCI module
 
 The images can be found in the bin/ directory of this repo. Note that _no warranty whatsoever is provided with these_.
