@@ -26,7 +26,7 @@ The images can be found in the bin/ directory of this repo. Note that _no warran
 I use the image builder rather than building from source. To create the builds, I use a Debian VM running in VirtualBox on MacOS. If you'd like to recreate my build environment, you can follow these instructions:
 
 ### Setting up a VM
-1. Download & verify the [Debian netinst CD Image for amd64] (https://www.debian.org/CD/netinst/). Later, this image can also be used to create a bootable USB which can be used to apply the OpenWrt image to the APU2's mSATA drive
+1. Download & verify the [Debian netinst CD Image for amd64](https://www.debian.org/CD/netinst/). Later, this image can also be used to create a bootable USB which can be used to apply the OpenWrt image to the APU2's mSATA drive
 2. Launch VirtualBox and create a new VM
 3. Name the VM (e.g. Debian 9.9.0). Set the type as "Linux" and Version as "Debian (64-bit)"
 4. Choose a memory size (RAM) for your VM. Note that the minimum memory requirement for Debian is 512MB
