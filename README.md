@@ -3,7 +3,7 @@ This is my customised OpenWrt image for apu2 boards. It extends the generic x86_
 
 * Kernel modules for specific APU2 features
 * Additional APU2-specific packages: amd64-microcode, flashrom, irqbalance, fstrim
-* Two ports are active by default: eth0 set to PPPoE WAN; eth1 for LAN
+* Two ports are active by default: eth0 set to PPPoE WAN and using [CleanBrowsing's](https://cleanbrowsing.org) DNS resolvers; eth1 for LAN. 
 * Adding LuCI with HTTPS SSL support; along with the LuCI Material theme in addition to the default bootstrap
 * Replacing dnsmasq with dnsmasq-full
 * IPv6: tunnel support for 6in4, 6to4, 6rd
@@ -26,7 +26,7 @@ The images can be found in the bin/ directory of this repo. Note that _no warran
 I use the image builder rather than building from source. To create the builds, I use a Debian VM running in VirtualBox on MacOS. If you'd like to recreate my build environment, you can follow these instructions:
 
 ### Setting up a VM
-1. Download & verify the Debian netinst CD Image for amd64 from https://www.debian.org/CD/netinst/. Later, this image can also be used to create a bootable USB which can be used to apply the OpenWrt image to the APU2's mSATA drive
+1. Download & verify the [Debian netinst CD Image for amd64] (https://www.debian.org/CD/netinst/). Later, this image can also be used to create a bootable USB which can be used to apply the OpenWrt image to the APU2's mSATA drive
 2. Launch VirtualBox and create a new VM
 3. Name the VM (e.g. Debian 9.9.0). Set the type as "Linux" and Version as "Debian (64-bit)"
 4. Choose a memory size (RAM) for your VM. Note that the minimum memory requirement for Debian is 512MB
@@ -92,15 +92,21 @@ The built images will be located in the `bin` directory. These can be tested in 
 
 If you see an error like:
 
-`VBoxManage: error: VD: The given disk size 23499980 is not aligned on a sector boundary (512 bytes)` 
+```
+VBoxManage: error: VD: The given disk size 23499980 is not aligned on a sector boundary (512 bytes)
+``` 
 
 then run:
 
-`dd if=openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.img of=openwrt.img bs=128000 conv=sync` first
+```
+dd if=openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.img of=openwrt.img bs=128000 conv=sync
+```
 
 Finally, enlarge the image:
 
-```VBoxManage modifymedium openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.vdi --resize 128```
+```
+VBoxManage modifymedium openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.vdi --resize 128
+```
 
 3. Launch VirtualBox and create a new VM
 4. Name the VM (e.g. OpenWRT). Set the type as "Linux" and Version as "Other Linux (64-bit)"
@@ -109,11 +115,11 @@ Finally, enlarge the image:
 
 ### Flash it!
 
-1. Flash the Debian netinst amd64 iso to a USB drive using Etcher (https://www.balena.io/etcher/) 
+1. Flash the Debian netinst amd64 iso to a USB drive using [Etcher](https://www.balena.io/etcher/) 
 
 2. Connect to the APU2 board using a serial to USB connector. On MacOS:
 
-    * install the CP210x USB to UART Bridge VCP Drivers from https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers
+    * install the [CP210x USB to UART Bridge VCP Drivers](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers)
     * Create a new Terminal profile (Terminal > Preferences). Configure the profile to run `screen /dev/tty.SLAB_USBtoUART 115200`on startup
     * Launch a new Terminal window with the profile you created
 
