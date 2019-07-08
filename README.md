@@ -163,5 +163,17 @@ VBoxManage modifymedium openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-sq
     
     ~# resize2fs /dev/sda2 
     ```
-7. All done! Remove the USB boot disk, cross your fingers, and `reboot`. 
+7. All done! Remove the USB boot disk, cross your fingers, and `reboot`.
+
+8. To kill a screen session:
+
+```
+screen -X -S [session # you want to kill] quit
+``` 
+
+where session # is from:
+
+```
+screen -ls
+```
 
