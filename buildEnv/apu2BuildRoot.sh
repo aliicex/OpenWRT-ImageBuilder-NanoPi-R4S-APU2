@@ -7,7 +7,7 @@
 
 ### Prerequisites for buildroot
 sudo apt-get update
-sudo apt install build-essential git libncurses5-dev gawk unzip wget curl ccache rsync zlib1g-dev
+sudo apt install build-essential git libncurses5-dev gawk unzip wget curl zlib1g-dev
 
 
 PS3='Please select your preferred OpenWRT release: '
