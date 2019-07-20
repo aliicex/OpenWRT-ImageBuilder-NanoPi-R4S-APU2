@@ -17,18 +17,21 @@ do
     case $opt in
         "Snapshot")
             echo "Using OpenWrt Snapshot"
+            VERSION='snapshot'
             RELEASE='https://downloads.openwrt.org/snapshots/targets/x86/64/openwrt-imagebuilder-x86-64.Linux-x86_64.tar.xz'
             DIR='openwrt-imagebuilder-x86-64.Linux-x86_64'
             break
             ;;
        "18.06.4")
             echo "Using OpenWrt 18.06.4"
+            VERSION='18.06.4'
             RELEASE='https://downloads.openwrt.org/releases/18.06.4/targets/x86/64/openwrt-imagebuilder-18.06.4-x86-64.Linux-x86_64.tar.xz'
             DIR='openwrt-imagebuilder-18.06.4-x86-64.Linux-x86_64'
             break
             ;;
         "19.07")
             echo "Using OpenWrt 19.07"
+            VERSION='19.07'
             RELEASE='https://downloads.openwrt.org/releases/19.07/targets/x86/64/openwrt-imagebuilder-19.07-x86-64.Linux-x86_64.tar.xz'
              DIR='openwrt-imagebuilder-19.07-x86-64.Linux-x86_64'
             break
@@ -52,14 +55,17 @@ mkdir -p files/etc/config
 cp ../files/* files/etc/config/
 
 ### grab the banIP packages, handling the case where the files may not be present if Buildbot is working
-wget -r -l1 -np -nd "https://downloads.openwrt.org/snapshots/packages/x86_64/packages/" -P ./packages/ -A "banip*.ipk"
-wget -r -l1 -np -nd "https://downloads.openwrt.org/snapshots/packages/x86_64/luci/" -P ./packages/ -A "luci-app-banip*.ipk"
-COUNT=$(ls -1q packages/*banip* | wc -l)
-
-if [ "$COUNT" -ne 2 ]
+if [ "$VERSION" = "18.06.4" ]
 then
-rm packages/*banip*
-cp ../packages/* packages/
+    wget -r -l1 -np -nd "https://downloads.openwrt.org/snapshots/packages/x86_64/packages/" -P ./packages/ -A "banip*.ipk"
+    wget -r -l1 -np -nd "https://downloads.openwrt.org/snapshots/packages/x86_64/luci/" -P ./packages/ -A "luci-app-banip*.ipk"
+    COUNT=$(ls -1q packages/*banip* | wc -l)
+
+    if [ "$COUNT" -ne 2 ]
+    then
+        rm packages/*banip*
+        cp ../packages/* packages/
+    fi
 fi
 
 ### add repo to repositories.conf
