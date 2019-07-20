@@ -18,6 +18,7 @@ This is my customised OpenWrt image for apu2 boards. It extends the generic x86_
 * usbtools
 * Limited support for 3G/4G USB modems via the ncm and 3g protocols (including the huawei_cdc_ncm driver)
 * Wake-on-LAN LuCI module
+* Avahi zero-configuration networking implementation
 
 The images can be found in the bin/ directory of this repo. Note that _no warranty whatsoever is provided with these_.
  
