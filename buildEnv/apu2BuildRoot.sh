@@ -11,29 +11,32 @@ sudo apt install build-essential git libncurses5-dev gawk unzip wget curl zlib1g
 
 
 PS3='Please select your preferred OpenWRT release: '
-options=("Snapshot" "18.06.4" "19.07" "Quit")
+options=("Snapshot" "18.06.8" "19.07.2" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
         "Snapshot")
             echo "Using OpenWrt Snapshot"
+            VERSION='snap'
             VERSION='snapshot'
             RELEASE='https://downloads.openwrt.org/snapshots/targets/x86/64/openwrt-imagebuilder-x86-64.Linux-x86_64.tar.xz'
             DIR='openwrt-imagebuilder-x86-64.Linux-x86_64'
             break
             ;;
        "18.06.4")
-            echo "Using OpenWrt 18.06.4"
-            VERSION='18.06.4'
-            RELEASE='https://downloads.openwrt.org/releases/18.06.4/targets/x86/64/openwrt-imagebuilder-18.06.4-x86-64.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-18.06.4-x86-64.Linux-x86_64'
+            echo "Using OpenWrt 18.06.6"
+            VERSION='18.06'
+            VERSION='18.06.8'
+            RELEASE='https://downloads.openwrt.org/releases/18.06.8/targets/x86/64/openwrt-imagebuilder-18.06.8-x86-64.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-18.06.8-x86-64.Linux-x86_64'
             break
             ;;
-        "19.07")
-            echo "Using OpenWrt 19.07"
-            VERSION='19.07'
-            RELEASE='https://downloads.openwrt.org/releases/19.07/targets/x86/64/openwrt-imagebuilder-19.07-x86-64.Linux-x86_64.tar.xz'
-             DIR='openwrt-imagebuilder-19.07-x86-64.Linux-x86_64'
+        "19.07.2")
+            echo "Using OpenWrt 19.07.2"
+            MAJOR='19.07'
+            VERSION='19.02.2'
+            RELEASE='https://downloads.openwrt.org/releases/19.07.2/targets/x86/64/openwrt-imagebuilder-19.07.2-x86-64.Linux-x86_64.tar.xz'
+             DIR='openwrt-imagebuilder-19.07.2-x86-64.Linux-x86_64'
             break
           ;;
         "Quit")
@@ -55,7 +58,7 @@ mkdir -p files/etc/config
 cp ../files/* files/etc/config/
 
 ### grab the banIP packages, handling the case where the files may not be present if Buildbot is working
-if [ "$VERSION" = "18.06.4" ]
+if [ "$MAJOR" = "18.06" ]
 then
     wget -r -l1 -np -nd "https://downloads.openwrt.org/snapshots/packages/x86_64/packages/" -P ./packages/ -A "banip*.ipk"
     wget -r -l1 -np -nd "https://downloads.openwrt.org/snapshots/packages/x86_64/luci/" -P ./packages/ -A "luci-app-banip*.ipk"
