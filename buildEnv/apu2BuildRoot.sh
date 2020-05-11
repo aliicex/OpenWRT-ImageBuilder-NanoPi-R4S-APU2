@@ -60,6 +60,9 @@ cp ../files/* files/etc/config/
 ### grab the banIP packages, handling the case where the files may not be present if Buildbot is working
 if [ "$MAJOR" = "18.06" ]
 then
+    ### add repo to repositories.conf
+    ! grep -q 'stangri_repo' repositories.conf && sed -i '2 i\src/gz stangri_repo https://raw.githubusercontent.com/stangri/openwrt-repo/master' repositories.conf
+
     wget -r -l1 -np -nd "https://downloads.openwrt.org/snapshots/packages/x86_64/packages/" -P ./packages/ -A "banip*.ipk"
     wget -r -l1 -np -nd "https://downloads.openwrt.org/snapshots/packages/x86_64/luci/" -P ./packages/ -A "luci-app-banip*.ipk"
     COUNT=$(ls -1q packages/*banip* | wc -l)
@@ -70,9 +73,6 @@ then
         cp ../packages/* packages/
     fi
 fi
-
-### add repo to repositories.conf
-! grep -q 'stangri_repo' repositories.conf && sed -i '2 i\src/gz stangri_repo https://raw.githubusercontent.com/stangri/openwrt-repo/master' repositories.conf
 
 ### make!
 make clean
