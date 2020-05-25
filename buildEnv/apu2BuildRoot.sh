@@ -23,8 +23,8 @@ do
             DIR='openwrt-imagebuilder-x86-64.Linux-x86_64'
             break
             ;;
-       "18.06.4")
-            echo "Using OpenWrt 18.06.6"
+       "18.06.8")
+            echo "Using OpenWrt 18.06.8"
             VERSION='18.06'
             VERSION='18.06.8'
             RELEASE='https://downloads.openwrt.org/releases/18.06.8/targets/x86/64/openwrt-imagebuilder-18.06.8-x86-64.Linux-x86_64.tar.xz'
