@@ -17,7 +17,6 @@ do
     case $opt in
         "Snapshot")
             echo "Using OpenWrt Snapshot"
-            VERSION='snap'
             VERSION='snapshot'
             RELEASE='https://downloads.openwrt.org/snapshots/targets/x86/64/openwrt-imagebuilder-x86-64.Linux-x86_64.tar.xz'
             DIR='openwrt-imagebuilder-x86-64.Linux-x86_64'
@@ -26,15 +25,13 @@ do
        "18.06.8")
             echo "Using OpenWrt 18.06.8"
             VERSION='18.06'
-            VERSION='18.06.8'
             RELEASE='https://downloads.openwrt.org/releases/18.06.8/targets/x86/64/openwrt-imagebuilder-18.06.8-x86-64.Linux-x86_64.tar.xz'
             DIR='openwrt-imagebuilder-18.06.8-x86-64.Linux-x86_64'
             break
             ;;
         "19.07.3")
             echo "Using OpenWrt 19.07.3"
-            MAJOR='19.07'
-            VERSION='19.02.3'
+            VERSION='19.07'
             RELEASE='https://downloads.openwrt.org/releases/19.07.3/targets/x86/64/openwrt-imagebuilder-19.07.3-x86-64.Linux-x86_64.tar.xz'
              DIR='openwrt-imagebuilder-19.07.3-x86-64.Linux-x86_64'
             break
@@ -58,8 +55,13 @@ mkdir -p files/etc/config
 cp ../files/* files/etc/config/
 
 ### grab the banIP packages, handling the case where the files may not be present if Buildbot is working
-if [ "$MAJOR" = "18.06" ]
+UNBOUND='unbound-daemon'
+
+if [ "$VERSION" = "18.06" ]
 then
+
+    UNBOUND='unbound'
+
     ### add repo to repositories.conf
     ! grep -q 'stangri_repo' repositories.conf && sed -i '2 i\src/gz stangri_repo https://raw.githubusercontent.com/stangri/openwrt-repo/master' repositories.conf
 
@@ -76,4 +78,4 @@ fi
 
 ### make!
 make clean
-make image PACKAGES="luci -dnsmasq dnsmasq-full kmod-gpio-button-hotplug  kmod-crypto-hw-ccp kmod-leds-apu2 kmod-leds-gpio kmod-sp5100_tco kmod-usb-ohci kmod-usb2 kmod-usb3 kmod-gpio-nct5104d kmod-pcspkr kmod-usb-core kmod-sound-core libustream-mbedtls fstrim irqbalance amd64-microcode flashrom adblock luci-app-adblock luci-app-sqm luci-app-vpn-policy-routing luci-app-wireguard luci-proto-wireguard stubby unbound-daemon vpn-policy-routing luci-ssl curl wget luci-app-wol 6in4 6to4 6rd luci-theme-bootstrap luci-theme-material usbutils usb-modeswitch kmod-usb-net-huawei-cdc-ncm kmod-usb-net-cdc-ncm kmod-usb-net-cdc-ether comgt-ncm kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan luci-proto-ncm luci-proto-3g banip luci-app-banip avahi-dbus-daemon avahi-utils" EXTRA_IMAGE_NAME="apu2_2nic_geekinaboxx" FILES=files/
+make image PACKAGES="luci -dnsmasq dnsmasq-full kmod-gpio-button-hotplug  kmod-crypto-hw-ccp kmod-leds-apu2 kmod-leds-gpio kmod-sp5100_tco kmod-usb-ohci kmod-usb2 kmod-usb3 kmod-gpio-nct5104d kmod-pcspkr kmod-usb-core kmod-sound-core libustream-mbedtls fstrim irqbalance amd64-microcode flashrom adblock luci-app-adblock luci-app-sqm luci-app-vpn-policy-routing luci-app-wireguard luci-proto-wireguard stubby $UNBOUND vpn-policy-routing luci-ssl curl wget luci-app-wol 6in4 6to4 6rd luci-theme-bootstrap luci-theme-material usbutils usb-modeswitch kmod-usb-net-huawei-cdc-ncm kmod-usb-net-cdc-ncm kmod-usb-net-cdc-ether comgt-ncm kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan luci-proto-ncm luci-proto-3g banip luci-app-banip avahi-dbus-daemon avahi-utils" EXTRA_IMAGE_NAME="apu2_2nic_nomonkeynomission" FILES=files/
