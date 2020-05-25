@@ -33,7 +33,7 @@ do
             echo "Using OpenWrt 19.07.3"
             VERSION='19.07'
             RELEASE='https://downloads.openwrt.org/releases/19.07.3/targets/x86/64/openwrt-imagebuilder-19.07.3-x86-64.Linux-x86_64.tar.xz'
-             DIR='openwrt-imagebuilder-19.07.3-x86-64.Linux-x86_64'
+            DIR='openwrt-imagebuilder-19.07.3-x86-64.Linux-x86_64'
             break
           ;;
         "Quit")
