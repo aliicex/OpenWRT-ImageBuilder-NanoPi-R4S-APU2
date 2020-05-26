@@ -144,13 +144,13 @@ VBoxManage modifymedium openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combi
 
     * Download and unzip the image
     ```
-    ~ # wget https://raw.githubusercontent.com/geekinaboxx/apu2_openwrt/master/bin/19.07.3/openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img.gz
-    ~ # gunzip openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.img.gz
+    ~ # wget https://raw.githubusercontent.com/NoMonkeyNoMission/apu2_openwrt/master/bin/19.07.3/openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img.gz
+    ~ # gunzip openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img.gz
     ```
     
     * Apply the image. Run `lsblk` to choose the correct device to which to write:
     ```
-    ~ # dd if=openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.img of=/dev/sda bs=4M; sync
+    ~ # dd if=openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img of=/dev/sda bs=4M; sync
     5+1 records in
     5+1 records out
     ```
