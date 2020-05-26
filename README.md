@@ -127,7 +127,7 @@ VBoxManage modifymedium openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-sq
 2. Connect to the APU2 board using a serial to USB connector. On MacOS:
 
     * install the [CP210x USB to UART Bridge VCP Drivers](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers)
-    * Create a new Terminal profile (Terminal > Preferences). Configure the profile to run `screen /dev/tty.SLAB_USBtoUART 115200`on startup
+    * Create a new Terminal profile (Terminal > Preferences). Configure the profile to run `screen /dev/cu.SLAB_USBtoUART 115200`on startup
     * Launch a new Terminal window with the profile you created
 
 3. Plug the USB drive into the APU, connect the serial cable, and a LAN cable in the port closest to the serial port.  Power up!  You should be greeted with the installer boot menu.  Select 'Help', then `F5` for "special boot parameters". At the boot prompt, enter `rescue console=ttyS0,115200n8`.  You will see a video mode error, press space to continue.
@@ -177,4 +177,30 @@ where session # is from:
 ```
 screen -ls
 ```
+
+### Firmware update of PC Engines APU2 systems
+
+You'll need the following software:
+
+* the latest [mainline firmware release](https://pcengines.github.io/) for your apu2 system 
+* the PC Engines [TinyCore Linux distribution](https://pcengines.ch/howto.htm#TinyCoreLinux)
+* [balenaEtcher](https://www.balena.io/etcher/) or some other software to flash the TinyCore image onto the USB drive
+
+Use balenaEtcher to copy the TinyCore image onto the drive. Once written, the SYSLINUX partition on the USB Drive that you've just written should be mountable; put the .rom firmware file onto it. Unmount the USB drive, disconnect it from your computer and connect it to the apu2.
+
+Connect to the apu2 using the Serial cable as described in the previous section. Press F10 to display a boot menu prompt, and select the USB drive; TinyCore will boot. TinyCore might try to mount some partition forever. Press Ctrl+C to cancel.
+
+run:
+```
+flashrom -w /media/SYSLINUX/apuX_vX.X.X.X.rom -p internal
+```
+
+If you get a motherboard mismatch warning when trying to flash, run this command:
+```
+flashrom -w /media/SYSLINUX/apuX_vX.X.X.X.rom -p internal:boardmismatch=force
+```
+
+The firmware will be replaced. Shut down TinyCore with `reboot` and power cycle the apu2. The version number of your new firmware should be displayed during BIOS startup.
+                               
+If you brick it, you'll need a [flash recovery board](https://pcengines.ch/spi1a.htm)
 
