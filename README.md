@@ -90,11 +90,11 @@ The built images will be located in the `bin` directory. These can be tested in 
 
 1. Copy the image to the host machine and unzip it 
 ```
-gzip -d openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.img.gz
+gzip -d openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img.gz
 ```
 2. Run 
 ```
-VBoxManage convertfromraw --format VDI openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.img openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.vdi
+VBoxManage convertfromraw --format VDI openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.vdi
 ```
 
 If you see an error like:
@@ -106,13 +106,19 @@ VBoxManage: error: VD: The given disk size 23499980 is not aligned on a sector b
 then run:
 
 ```
-dd if=openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.img of=openwrt.img bs=128000 conv=sync
+dd if=openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img of=openwrt.img bs=128000 conv=sync
+```
+
+followed by:
+
+```
+VBoxManage convertfromraw --format VDI openwrt.img openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.vdi
 ```
 
 Finally, enlarge the image:
 
 ```
-VBoxManage modifymedium openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.vdi --resize 128
+VBoxManage modifymedium openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.vdi --resize 128
 ```
 
 3. Launch VirtualBox and create a new VM
@@ -138,7 +144,7 @@ VBoxManage modifymedium openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-sq
 
     * Download and unzip the image
     ```
-    ~ # wget https://raw.githubusercontent.com/geekinaboxx/apu2_openwrt/master/bin/openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.img.gz
+    ~ # wget https://raw.githubusercontent.com/geekinaboxx/apu2_openwrt/master/bin/19.07.3/openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img.gz
     ~ # gunzip openwrt-18.06.4-apu2-2nic-geekinaboxx-x86-64-combined-squashfs.img.gz
     ```
     
