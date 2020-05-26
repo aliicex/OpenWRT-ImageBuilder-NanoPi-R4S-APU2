@@ -126,9 +126,37 @@ VBoxManage modifymedium openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combi
 5. Accept the defaults, and then choose "Use an existing virtual hard disk file" selecting the VDI you created in the previous steps
 6. Launch!
 
-### Flash it!
+### Flash it (the easy way)!
+1. Flash a copy of the PC Engines [TinyCore Linux distribution](https://pcengines.ch/howto.htm#TinyCoreLinux) to a USB drive using [balenaEtcher](https://www.balena.io/etcher/) or some other software.
 
-1. Flash the Debian netinst amd64 iso to a USB drive using [Etcher](https://www.balena.io/etcher/) 
+2. Once written, the SYSLINUX partition on the USB Drive that you've just written should be mountable; put the Gzipped image (e.g. openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img.gz
+) onto it. Unmount the USB drive, disconnect it from your computer and connect it to the APU2.
+
+3. Connect to the APU2 board using a serial to USB connector. On MacOS:
+
+    * install the [CP210x USB to UART Bridge VCP Drivers](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers)
+    * Create a new Terminal profile (Terminal > Preferences). Configure the profile to run `screen /dev/cu.SLAB_USBtoUART 115200`on startup
+    * Launch a new Terminal window with the profile you created
+
+4. Boot the APU2 board. Press F10 to display a boot menu prompt, and select the USB drive; TinyCore will boot. TinyCore might try to mount some partition forever. Press Ctrl+C to cancel.
+
+5. * Copy and unzip the image
+    ```
+    ~ # cp /media/SYSLINUX/openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img.gz .
+    ~ # gunzip openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img.gz
+    ```
+    
+    * Apply the image. Run `lsblk` to choose the correct device to which to write:
+    ```
+    ~ # dd if=openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img of=/dev/sda bs=4M; sync
+    5+1 records in
+    5+1 records out
+    ```
+   
+6. All done! Remove the USB boot disk, cross your fingers, and `reboot`.
+
+### Flash it (the longer way)!
+1. Flash the Debian netinst amd64 iso to a USB drive using [balenaEtcher](https://www.balena.io/etcher/)
 
 2. Connect to the APU2 board using a serial to USB connector. On MacOS:
 
@@ -172,7 +200,8 @@ VBoxManage modifymedium openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combi
     ```
 7. All done! Remove the USB boot disk, cross your fingers, and `reboot`.
 
-8. To kill a screen session:
+## Useful stuff
+1. To kill a screen session:
 
 ```
 screen -X -S [session # you want to kill] quit
@@ -184,17 +213,17 @@ where session # is from:
 screen -ls
 ```
 
-### Firmware update of PC Engines APU2 systems
+### Firmware update for PC Engines APU2 systems
 
 You'll need the following software:
 
-* the latest [mainline firmware release](https://pcengines.github.io/) for your apu2 system 
+* the latest [mainline firmware release](https://pcengines.github.io/) for your APU2 system 
 * the PC Engines [TinyCore Linux distribution](https://pcengines.ch/howto.htm#TinyCoreLinux)
 * [balenaEtcher](https://www.balena.io/etcher/) or some other software to flash the TinyCore image onto the USB drive
 
 Use balenaEtcher to copy the TinyCore image onto the drive. Once written, the SYSLINUX partition on the USB Drive that you've just written should be mountable; put the .rom firmware file onto it. Unmount the USB drive, disconnect it from your computer and connect it to the apu2.
 
-Connect to the apu2 using the Serial cable as described in the previous section. Press F10 to display a boot menu prompt, and select the USB drive; TinyCore will boot. TinyCore might try to mount some partition forever. Press Ctrl+C to cancel.
+Connect to the APU2 using the Serial cable as described in the previous section. Press F10 to display a boot menu prompt, and select the USB drive; TinyCore will boot. TinyCore might try to mount some partition forever. Press Ctrl+C to cancel.
 
 run:
 ```
@@ -206,7 +235,6 @@ If you get a motherboard mismatch warning when trying to flash, run this command
 flashrom -w /media/SYSLINUX/apuX_vX.X.X.X.rom -p internal:boardmismatch=force
 ```
 
-The firmware will be replaced. Shut down TinyCore with `reboot` and power cycle the apu2. The version number of your new firmware should be displayed during BIOS startup.
+The firmware will be replaced. Shut down TinyCore with `reboot` and power cycle the APU2. The version number of your new firmware should be displayed during BIOS startup.
                                
 If you brick it, you'll need a [flash recovery board](https://pcengines.ch/spi1a.htm)
-
