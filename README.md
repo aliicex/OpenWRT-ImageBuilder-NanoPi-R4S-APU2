@@ -129,8 +129,7 @@ VBoxManage modifymedium openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combi
 ### Flash it (the easy way)!
 1. Flash a copy of the PC Engines [TinyCore Linux distribution](https://pcengines.ch/howto.htm#TinyCoreLinux) to a USB drive using [balenaEtcher](https://www.balena.io/etcher/) or some other software.
 
-2. Once written, the SYSLINUX partition on the USB Drive that you've just written should be mountable; put the Gzipped image (e.g. openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img.gz
-) onto it. Unmount the USB drive, disconnect it from your computer and connect it to the APU2.
+2. Once written, the SYSLINUX partition on the USB Drive that you've just written should be mountable; put the Gzipped image (e.g. openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img.gz) onto it. Unmount the USB drive, disconnect it from your computer and connect it to the APU2.
 
 3. Connect to the APU2 board using a serial to USB connector. On MacOS:
 
