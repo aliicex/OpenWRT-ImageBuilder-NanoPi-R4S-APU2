@@ -23,7 +23,7 @@ config interface 'wan'
 	option dns '185.228.168.9 185.228.169.9'
 
 config interface 'wan6'
-	option ifname 'eth0'
+	option ifname '@wan'
 	option proto 'dhcpv6'
 	option reqaddress 'try'
 	option reqprefix 'auto'
