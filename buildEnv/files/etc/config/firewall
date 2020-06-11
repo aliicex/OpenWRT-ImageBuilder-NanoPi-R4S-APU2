@@ -93,7 +93,6 @@ config rule
 	option proto 'udp'
 	option target 'ACCEPT'
 
-
 config zone
 	option name 'lan'
 	option input 'ACCEPT'
@@ -116,3 +115,7 @@ config include
 config forwarding
 	option dest 'wan'
 	option src 'lan'
+
+config include 'nat6'
+    option path '/etc/firewall.nat6'
+    option reload '1'
