@@ -9,7 +9,6 @@ This is my customised OpenWrt image for apu2 boards. It extends the generic x86_
 * IPv6: tunnel support for 6in4, 6to4, 6rd; NAT6 and IPv6 masquerading support (necessary evil for VPN providers which offer a single IPv6 address with a /128 prefix)
 * SQM scripts
 * Stubby, Unbound
-* Adblock package
 * banIP
 * vpn-policy-routing package
 * Wireguard support
@@ -29,7 +28,7 @@ I use the image builder rather than building from source. To create the builds, 
 ### Setting up a VM
 1. Download & verify the [Debian netinst CD Image for amd64](https://www.debian.org/CD/netinst/). Later, this image can also be used to create a bootable USB which can be used to apply the OpenWrt image to the APU2's mSATA drive
 2. Launch VirtualBox and create a new VM
-3. Name the VM (e.g. Debian 9.9.0). Set the type as "Linux" and Version as "Debian (64-bit)"
+3. Name the VM (e.g. Debian 10.4.0). Set the type as "Linux" and Version as "Debian (64-bit)"
 4. Choose a memory size (RAM) for your VM. Note that the minimum memory requirement for Debian is 512MB
 5. Choose ‘Create a virtual hard disk now’ option and click 'create'
 6. Choose VDI, 'Dynamically allocated' options.
@@ -90,11 +89,11 @@ The built images will be located in the `bin` directory. These can be tested in 
 
 1. Copy the image to the host machine and unzip it 
 ```
-gzip -d openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img.gz
+gzip -d openwrt-19.07.8-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img.gz
 ```
 2. Run 
 ```
-VBoxManage convertfromraw --format VDI openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.vdi
+VBoxManage convertfromraw --format VDI openwrt-19.07.8-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img openwrt-19.07.8-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.vdi
 ```
 
 If you see an error like:
@@ -106,19 +105,19 @@ VBoxManage: error: VD: The given disk size 23499980 is not aligned on a sector b
 then run:
 
 ```
-dd if=openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img of=openwrt.img bs=128000 conv=sync
+dd if=openwrt-19.07.8-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img of=openwrt.img bs=128000 conv=sync
 ```
 
 followed by:
 
 ```
-VBoxManage convertfromraw --format VDI openwrt.img openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.vdi
+VBoxManage convertfromraw --format VDI openwrt.img openwrt-19.07.8-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.vdi
 ```
 
 Finally, enlarge the image:
 
 ```
-VBoxManage modifymedium openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.vdi --resize 128
+VBoxManage modifymedium openwrt-19.07.8-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.vdi --resize 128
 ```
 
 3. Launch VirtualBox and create a new VM
@@ -129,7 +128,7 @@ VBoxManage modifymedium openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combi
 ### Flash it (the easy way)!
 1. Flash a copy of the PC Engines [TinyCore Linux distribution](https://pcengines.ch/howto.htm#TinyCoreLinux) to a USB drive using [balenaEtcher](https://www.balena.io/etcher/) or some other software.
 
-2. Once written, the SYSLINUX partition on the USB Drive that you've just written should be mountable; put the Gzipped image (e.g. openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img.gz) onto it. Unmount the USB drive, disconnect it from your computer and connect it to the APU2.
+2. Once written, the SYSLINUX partition on the USB Drive that you've just written should be mountable; put the Gzipped image (e.g. openwrt-19.07.8-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img.gz) onto it. Unmount the USB drive, disconnect it from your computer and connect it to the APU2.
 
 3. Connect to the APU2 board using a serial to USB connector. On MacOS:
 
@@ -141,13 +140,13 @@ VBoxManage modifymedium openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combi
 
 5. * Copy and unzip the image
     ```
-    ~ # cp /media/SYSLINUX/openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img.gz .
-    ~ # gunzip openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img.gz
+    ~ # cp /media/SYSLINUX/openwrt-19.07.8-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img.gz .
+    ~ # gunzip openwrt-19.07.8-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img.gz
     ```
     
     * Apply the image. Run `lsblk` to choose the correct device to which to write:
     ```
-    ~ # dd if=openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img of=/dev/sda bs=4M; sync
+    ~ # dd if=openwrt-19.07.8-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img of=/dev/sda bs=4M; sync
     5+1 records in
     5+1 records out
     ```
@@ -171,13 +170,13 @@ VBoxManage modifymedium openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combi
 
     * Download and unzip the image
     ```
-    ~ # wget https://raw.githubusercontent.com/NoMonkeyNoMission/apu2_openwrt/master/bin/19.07.3/openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img.gz
-    ~ # gunzip openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img.gz
+    ~ # wget https://raw.githubusercontent.com/NoMonkeyNoMission/apu2_openwrt/master/bin/19.07.8/openwrt-19.07.8-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img.gz
+    ~ # gunzip openwrt-19.07.8-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img.gz
     ```
     
     * Apply the image. Run `lsblk` to choose the correct device to which to write:
     ```
-    ~ # dd if=openwrt-19.07.3-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img of=/dev/sda bs=4M; sync
+    ~ # dd if=openwrt-19.07.8-apu2-2nic-nomonkeynomission-x86-64-combined-squashfs.img of=/dev/sda bs=4M; sync
     5+1 records in
     5+1 records out
     ```
