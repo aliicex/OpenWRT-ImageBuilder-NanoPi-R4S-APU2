@@ -22,18 +22,18 @@ do
             DIR='openwrt-imagebuilder-x86-64.Linux-x86_64'
             break
             ;;
-       "18.06.8")
-            echo "Using OpenWrt 18.06.8"
+       "18.06.9")
+            echo "Using OpenWrt 18.06.9"
             VERSION='18.06'
-            RELEASE='https://downloads.openwrt.org/releases/18.06.8/targets/x86/64/openwrt-imagebuilder-18.06.8-x86-64.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-18.06.8-x86-64.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/18.06.9/targets/x86/64/openwrt-imagebuilder-18.06.9-x86-64.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-18.06.9-x86-64.Linux-x86_64'
             break
             ;;
-        "19.07.3")
-            echo "Using OpenWrt 19.07.3"
+        "19.07.6")
+            echo "Using OpenWrt 19.07.6"
             VERSION='19.07'
-            RELEASE='https://downloads.openwrt.org/releases/19.07.3/targets/x86/64/openwrt-imagebuilder-19.07.3-x86-64.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-19.07.3-x86-64.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/19.07.6/targets/x86/64/openwrt-imagebuilder-19.07.6-x86-64.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-19.07.6-x86-64.Linux-x86_64'
             break
           ;;
         "Quit")
@@ -78,4 +78,4 @@ fi
 
 ### make!
 make clean
-make image PACKAGES="luci -dnsmasq dnsmasq-full kmod-gpio-button-hotplug kmod-crypto-hw-ccp kmod-leds-apu2 kmod-leds-gpio kmod-sp5100_tco kmod-usb-ohci kmod-usb2 kmod-usb3 kmod-gpio-nct5104d kmod-pcspkr kmod-usb-core kmod-sound-core kmod-ipt-nat6 libustream-mbedtls fstrim irqbalance amd64-microcode flashrom adblock luci-app-adblock luci-app-sqm luci-app-vpn-policy-routing luci-app-wireguard luci-proto-wireguard qrencode stubby $UNBOUND vpn-policy-routing luci-ssl curl wget tcpdump luci-app-wol 6in4 6to4 6rd luci-theme-bootstrap luci-theme-material usbutils usb-modeswitch kmod-usb-net-huawei-cdc-ncm kmod-usb-net-cdc-ncm kmod-usb-net-cdc-ether comgt-ncm kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan luci-proto-ncm luci-proto-3g banip luci-app-banip avahi-dbus-daemon avahi-utils" EXTRA_IMAGE_NAME="apu2_2nic_nomonkeynomission" FILES=files/
+make image PACKAGES="luci -dnsmasq dnsmasq-full kmod-gpio-button-hotplug kmod-crypto-hw-ccp kmod-leds-apu2 kmod-leds-gpio kmod-sp5100_tco kmod-usb-ohci kmod-usb2 kmod-usb3 kmod-gpio-nct5104d kmod-pcspkr kmod-usb-core kmod-sound-core kmod-ipt-nat6 libustream-mbedtls fstrim irqbalance amd64-microcode flashrom adblock ipset resolveip ip-full kmod-ipt-ipset iptables luci-app-adblock luci-app-sqm luci-app-vpn-policy-routing luci-app-wireguard luci-proto-wireguard qrencode stubby $UNBOUND vpn-policy-routing luci-ssl curl wget tcpdump luci-app-wol 6in4 6to4 6rd luci-theme-bootstrap luci-theme-material usbutils usb-modeswitch kmod-usb-net-huawei-cdc-ncm kmod-usb-net-cdc-ncm kmod-usb-net-cdc-ether comgt-ncm kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan luci-proto-ncm luci-proto-3g banip luci-app-banip avahi-dbus-daemon avahi-utils" EXTRA_IMAGE_NAME="apu2_2nic_nomonkeynomission" FILES=files/
