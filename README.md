@@ -9,6 +9,7 @@ This is my customised OpenWrt image for apu2 boards. It extends the generic x86_
 * IPv6: tunnel support for 6in4, 6to4, 6rd; NAT6 and IPv6 masquerading support (necessary evil for VPN providers which offer a single IPv6 address with a /128 prefix)
 * SQM scripts
 * Stubby, Unbound
+* Watchcat
 * banIP
 * vpn-policy-routing package
 * Wireguard support
