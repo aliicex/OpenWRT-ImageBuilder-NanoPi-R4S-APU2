@@ -11,7 +11,7 @@ sudo apt install build-essential git libncurses5-dev gawk unzip wget curl zlib1g
 
 
 PS3='Please select your preferred OpenWRT release: '
-options=("Snapshot" "18.06.8" "19.07.6" "Quit")
+options=("Snapshot" "18.06.8" "19.07.7" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -29,11 +29,11 @@ do
             DIR='openwrt-imagebuilder-18.06.9-x86-64.Linux-x86_64'
             break
             ;;
-        "19.07.6")
-            echo "Using OpenWrt 19.07.6"
+        "19.07.7")
+            echo "Using OpenWrt 19.07.7"
             VERSION='19.07'
-            RELEASE='https://downloads.openwrt.org/releases/19.07.6/targets/x86/64/openwrt-imagebuilder-19.07.6-x86-64.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-19.07.6-x86-64.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/19.07.7/targets/x86/64/openwrt-imagebuilder-19.07.7-x86-64.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-19.07.7-x86-64.Linux-x86_64'
             break
           ;;
         "Quit")
