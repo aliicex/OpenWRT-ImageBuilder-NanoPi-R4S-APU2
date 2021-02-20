@@ -11,7 +11,7 @@ sudo apt install build-essential git libncurses5-dev gawk unzip wget curl zlib1g
 
 
 PS3='Please select your preferred OpenWRT release: '
-options=("Snapshot" "18.06.8" "19.07.7" "Quit")
+options=("Snapshot" "18.06.9" "19.07.7" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
