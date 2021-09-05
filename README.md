@@ -90,11 +90,11 @@ The built images will be located in the `bin` directory. These can be tested in 
 
 1. Copy the image to the host machine and unzip it 
 ```
-gzip -d openwrt-19.07.6-apu2-2nic-byteandnibble-x86-64-combined-squashfs.img.gz
+gzip -d openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.img.gz
 ```
 2. Run 
 ```
-VBoxManage convertfromraw --format VDI openwrt-19.07.6-apu2-2nic-byteandnibble-x86-64-combined-squashfs.img openwrt-19.07.6-apu2-2nic-byteandnibble-x86-64-combined-squashfs.vdi
+VBoxManage convertfromraw --format VDI openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.img openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.vdi
 ```
 
 If you see an error like:
@@ -106,19 +106,19 @@ VBoxManage: error: VD: The given disk size 23499980 is not aligned on a sector b
 then run:
 
 ```
-dd if=openwrt-19.07.6-apu2-2nic-byteandnibble-x86-64-combined-squashfs.img of=openwrt.img bs=128000 conv=sync
+dd if=openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.img of=openwrt.img bs=128000 conv=sync
 ```
 
 followed by:
 
 ```
-VBoxManage convertfromraw --format VDI openwrt.img openwrt-19.07.6-apu2-2nic-byteandnibble-x86-64-combined-squashfs.vdi
+VBoxManage convertfromraw --format VDI openwrt.img openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.vdi
 ```
 
 Finally, enlarge the image:
 
 ```
-VBoxManage modifymedium openwrt-19.07.6-apu2-2nic-byteandnibble-x86-64-combined-squashfs.vdi --resize 128
+VBoxManage modifymedium openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.vdi --resize 128
 ```
 
 3. Launch VirtualBox and create a new VM
@@ -141,13 +141,13 @@ VBoxManage modifymedium openwrt-19.07.6-apu2-2nic-byteandnibble-x86-64-combined-
 
 5. * Copy and unzip the image
     ```
-    ~ # cp /media/SYSLINUX/openwrt-19.07.6-apu2-2nic-byteandnibble-x86-64-combined-squashfs.img.gz .
-    ~ # gunzip openwrt-19.07.6-apu2-2nic-byteandnibble-x86-64-combined-squashfs.img.gz
+    ~ # cp /media/SYSLINUX/openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.img.gz .
+    ~ # gunzip openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.img.gz
     ```
     
     * Apply the image. Run `lsblk` to choose the correct device to which to write:
     ```
-    ~ # dd if=openwrt-19.07.6-apu2-2nic-byteandnibble-x86-64-combined-squashfs.img of=/dev/sda bs=4M; sync
+    ~ # dd if=openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.img of=/dev/sda bs=4M; sync
     5+1 records in
     5+1 records out
     ```
@@ -171,13 +171,13 @@ VBoxManage modifymedium openwrt-19.07.6-apu2-2nic-byteandnibble-x86-64-combined-
 
     * Download and unzip the image
     ```
-    ~ # wget https://raw.githubusercontent.com/byteandnibble/apu2_openwrt/master/bin/19.07.6/openwrt-19.07.6-apu2-2nic-byteandnibble-x86-64-combined-squashfs.img.gz
-    ~ # gunzip openwrt-19.07.6-apu2-2nic-byteandnibble-x86-64-combined-squashfs.img.gz
+    ~ # wget https://raw.githubusercontent.com/byteandnibble/apu2_openwrt/master/bin/21.02.0/openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.img.gz
+    ~ # gunzip openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.img.gz
     ```
     
     * Apply the image. Run `lsblk` to choose the correct device to which to write:
     ```
-    ~ # dd if=openwrt-19.07.6-apu2-2nic-byteandnibble-x86-64-combined-squashfs.img of=/dev/sda bs=4M; sync
+    ~ # dd if=openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.img of=/dev/sda bs=4M; sync
     5+1 records in
     5+1 records out
     ```
