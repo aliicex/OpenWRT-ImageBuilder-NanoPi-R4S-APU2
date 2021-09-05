@@ -3,7 +3,7 @@ This is my customised OpenWrt image for apu2 boards. It extends the generic x86_
 
 * Kernel modules for specific APU2 features
 * Additional APU2-specific packages: amd64-microcode, flashrom, irqbalance, fstrim
-* Two ports are active by default: eth0 set to PPPoE WAN and using [CleanBrowsing's](https://cleanbrowsing.org) DNS resolvers; eth1 for LAN. 
+* Two ports are active by default: eth0 set to PPPoE WAN and using [ControlD's](https://controld.com) DNS resolvers; eth1 for LAN. 
 * Adding LuCI with HTTPS SSL support; along with the LuCI Material theme in addition to the default bootstrap
 * Replacing dnsmasq with dnsmasq-full
 * IPv6: tunnel support for 6in4, 6to4, 6rd; NAT6 and IPv6 masquerading support (necessary evil for VPN providers which offer a single IPv6 address with a /128 prefix)
