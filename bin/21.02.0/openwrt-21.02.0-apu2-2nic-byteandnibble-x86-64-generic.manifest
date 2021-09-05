@@ -214,6 +214,7 @@ luci-proto-ipv6 - git-21.148.49484-14511e5
 luci-proto-ncm - git-21.163.64918-6c6559a
 luci-proto-ppp - git-21.163.64918-6c6559a
 luci-proto-wireguard - git-21.243.21928-71fe35c
+luci-ssl - git-20.244.36115-e10f954
 luci-theme-bootstrap - git-21.164.71418-bd36169
 luci-theme-material - git-21.160.67995-139edfc
 mkf2fs - 1.14.0-1
@@ -229,6 +230,7 @@ pciutils - 3.7.0-2
 ppp - 2.4.8.git-2020-10-03-3
 ppp-mod-pppoe - 2.4.8.git-2020-10-03-3
 procd - 2021-02-23-37eed131-1
+px5g-wolfssl - 3
 qrencode - 4.1.1-1
 r8169-firmware - 20201118-3
 resolveip - 2
