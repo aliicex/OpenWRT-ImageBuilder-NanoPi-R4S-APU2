@@ -4,13 +4,13 @@
 amd64-microcode - 20191218-1
 avahi-dbus-daemon - 0.8-7
 avahi-utils - 0.8-7
-banip - 0.7.10-1
+banip - 0.7.10-2
 base-files - 1432-r16279-5cc0535800
 bnx2-firmware - 20201118-3
 busybox - 1.33.1-6
 ca-bundle - 20210119-1
 ca-certificates - 20210119-1
-cgi-io - 2020-10-27-ab4c3471-19
+cgi-io - 2021-09-08-98cef9dd-20
 chat - 2.4.8.git-2020-10-03-3
 comgt - 0.32-33
 comgt-ncm - 0.32-33
@@ -181,7 +181,7 @@ libubus20210630 - 2021-06-30-4fc532c8-2
 libuci20130104 - 2020-10-06-52bbc99f-5
 libuclient20201210 - 2021-05-14-6a6011df-1
 libudev-zero - 0.4.5-2
-libunbound - 1.13.1-2
+libunbound - 1.13.2-2
 libusb-1.0-0 - 1.0.24-4
 libustream-wolfssl20201210 - 2020-12-10-68d09243-1
 libuuid1 - 2.36.1-2
@@ -216,7 +216,7 @@ luci-proto-ppp - git-21.163.64918-6c6559a
 luci-proto-wireguard - git-21.243.21928-71fe35c
 luci-ssl - git-20.244.36115-e10f954
 luci-theme-bootstrap - git-21.164.71418-bd36169
-luci-theme-material - git-21.160.67995-139edfc
+luci-theme-openwrt-2020 - git-21.243.24730-678ee03
 mkf2fs - 1.14.0-1
 mtd - 26
 netifd - 2021-07-26-440eb064-1
@@ -251,7 +251,7 @@ uci - 2020-10-06-52bbc99f-5
 uclient-fetch - 2021-05-14-6a6011df-1
 uhttpd - 2021-03-21-15346de8-1
 uhttpd-mod-ubus - 2021-03-21-15346de8-1
-unbound-daemon - 1.13.1-2
+unbound-daemon - 1.13.2-2
 urandom-seed - 3
 urngd - 2020-01-21-c7f7b6b6-1
 usb-modeswitch - 2017-12-19-f40f84c2-2
