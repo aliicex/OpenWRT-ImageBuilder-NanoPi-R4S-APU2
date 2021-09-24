@@ -85,7 +85,7 @@ Now, go ahead and run it!
 ./apu2BuildRoot.sh
 ```
 
-You'll be given the choice to build from Snapshot, 18.06.* or 19.07.*
+You'll be given the choice to build from Snapshot, or a stable, supported release.
 
 ### Testing the images
 The built images will be located in the `bin` directory. These can be tested in VirtualBox:
