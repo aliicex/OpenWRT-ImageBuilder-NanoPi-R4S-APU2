@@ -22,7 +22,7 @@ do
             DIR='openwrt-imagebuilder-x86-64.Linux-x86_64'
             break
             ;;
-        "21.02.0")
+        "21.02.2")
             echo "Using OpenWrt 21.02.2"
             VERSION='21.02.2'
             RELEASE='https://downloads.openwrt.org/releases/21.02.2/targets/x86/64/openwrt-imagebuilder-21.02.2-x86-64.Linux-x86_64.tar.xz'
