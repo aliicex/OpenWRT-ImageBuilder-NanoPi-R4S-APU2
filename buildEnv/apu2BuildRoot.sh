@@ -11,7 +11,7 @@ sudo apt install build-essential git libncurses5-dev gawk unzip wget curl zlib1g
 
 
 PS3='Please select your preferred OpenWRT release: '
-options=("Snapshot" "21.02.2" "Quit")
+options=("Snapshot" "21.02.3" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -22,11 +22,11 @@ do
             DIR='openwrt-imagebuilder-x86-64.Linux-x86_64'
             break
             ;;
-        "21.02.2")
-            echo "Using OpenWrt 21.02.2"
-            VERSION='21.02.2'
-            RELEASE='https://downloads.openwrt.org/releases/21.02.2/targets/x86/64/openwrt-imagebuilder-21.02.2-x86-64.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-21.02.2-x86-64.Linux-x86_64'
+        "21.02.3")
+            echo "Using OpenWrt 21.02.3"
+            VERSION='21.02.3'
+            RELEASE='https://downloads.openwrt.org/releases/21.02.3/targets/x86/64/openwrt-imagebuilder-21.02.3-x86-64.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-21.02.3-x86-64.Linux-x86_64'
             break
           ;;
         "Quit")
