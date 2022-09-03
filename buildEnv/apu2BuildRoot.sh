@@ -54,7 +54,7 @@ sed -i '/stangri_repo/d' repositories.conf
 ### banIP is marked as broken after 21.02.x (https://forum.openwrt.org/t/banip-support-thread/16985/751)
 BANIP='banip luci-app-banip'
 
-if [ "$VERSION" = "Snapshot" ]
+if [ "$VERSION" = "snapshot" ]
 then
     unset BANIP
 fi
