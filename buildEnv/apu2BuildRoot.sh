@@ -48,6 +48,7 @@ mkdir -p files/etc/config
 cp ../files/* files/etc/config/
 
 ### add repo to repositories.conf
+sed '/check_signature/d' repositories.conf
 sed -i '/stangri_repo/d' repositories.conf
 ! grep -q 'stangri_repo' repositories.conf && sed -i '2 i\src/gz stangri_repo repo.openwrt.melmac.net' repositories.conf
     
