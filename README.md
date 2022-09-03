@@ -12,8 +12,9 @@ This is my customised OpenWrt image for apu2 boards. It extends the generic x86_
 * DNS Over HTTPS Proxy
 * Watchcat
 * banIP
-* vpn-policy-routing package
+* [Stangri's](https://docs.openwrt.melmac.net/pbr/) Policy-Based Routing package
 * Wireguard support
+* Zerotier software-defined network
 * USB v2 and v3.0 support
 * wget, curl
 * usbtools
