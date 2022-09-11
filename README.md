@@ -175,7 +175,7 @@ VBoxManage modifymedium openwrt-21.02.3-byteandnibble-x86-64-generic-squashfs-co
 
     * Download and unzip the image
     ```
-    ~ # wget https://raw.githubusercontent.com/byteandnibble/apu2_openwrt/master/bin/21.02.0/openwrt-21.02.3-byteandnibble-x86-64-generic-squashfs-combined.img.gz
+    ~ # wget https://raw.githubusercontent.com/byteandnibble/apu2_openwrt/master/bin/openwrt-21.02.3-byteandnibble-x86-64-generic-squashfs-combined.img.gz
     ~ # gunzip openwrt-21.02.3-byteandnibble-x86-64-generic-squashfs-combined.img.gz
     ```
     
