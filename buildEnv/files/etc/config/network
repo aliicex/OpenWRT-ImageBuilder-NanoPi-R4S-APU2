@@ -1,31 +1,56 @@
+
 config interface 'loopback'
-	option ifname 'lo'
+	option device 'lo'
 	option proto 'static'
 	option ipaddr '127.0.0.1'
 	option netmask '255.0.0.0'
 
 config globals 'globals'
-	option ula_prefix 'fdf3:e716:6c30::/48'
+	option ula_prefix 'fd0b:f043:06d3::/48'
+
+config device
+	option name 'br-lan'
+	option type 'bridge'
+	list ports 'eth1'
+	option bridge_empty '1'
 
 config interface 'lan'
-	option type 'bridge'
 	option proto 'static'
-	option ipaddr '192.168.1.1'
-	option ip6assign '60'
 	option netmask '255.255.255.0'
-	option device 'eth1'
+	option device 'br-lan.99'
+	option ipaddr '10.0.99.1'
+	option ip6assign '64'
+	option ip6hint 'AA'
+	list ip6class 'local'
 
 config interface 'wan'
-	option proto 'pppoe'
+	option proto 'dhcp'
 	option device 'eth0'
-	option ipv6 'auto'
 	option peerdns '0'
 	option dns '76.76.2.2'
 
 config interface 'wan6'
-	option device '@wan'
 	option proto 'dhcpv6'
+	option device '@wan'
 	option reqaddress 'try'
 	option reqprefix 'auto'
 	option peerdns '0'
 	option dns '2606:1a40::2'
+
+config bridge-vlan
+	option device 'br-lan'
+	option vlan '99'
+	list ports 'eth1:t*'
+
+config bridge-vlan
+	option device 'br-lan'
+	option vlan '3'
+	list ports 'eth1:t'
+
+config interface 'guest'
+	option proto 'static'
+	option netmask '255.255.255.0'
+	option ip6assign '64'
+	option ip6hint 'BB'
+	option device 'br-lan.3'
+	option ipaddr '10.0.3.1'
