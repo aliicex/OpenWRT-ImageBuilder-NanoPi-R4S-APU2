@@ -1,5 +1,5 @@
-# OpenWRT ImageBuilder for NanoPi-R4S and the apu2 platform
-This is my customised OpenWrt image for the NanoPi-R4S and the apu2 platform. It adds the following packages:
+# OpenWRT ImageBuilder for FriendlyARM NanoPi R4S and the PC Engines apu2 platform
+This is my customised OpenWrt image for the FriendlyARM NanoPi R4S and the PC Engines apu2 platform. It adds the following packages:
 
 * (apu2 only) Kernel modules for specific APU2 features
 * (apu2 only)  Additional APU2-specific packages: amd64-microcode, flashrom, irqbalance, fstrim
