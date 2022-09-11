@@ -1,8 +1,8 @@
 #!/bin/bash
 #
-# apu2BuildRoot.sh
+# build.sh
 #
-# Creates the build environment required to re-build my image for APU2 boards with at least 2 NICs
+# Creates the build environment required to re-build my image for the FriendlyARM NanoPi R4S and the PC Engines apu2 platform
 #
 
 ### Prerequisites for buildroot
