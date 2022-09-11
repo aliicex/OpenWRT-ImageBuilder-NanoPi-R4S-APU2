@@ -93,11 +93,11 @@ The built images will be located in the `bin` directory. These can be tested in 
 
 1. Copy the image to the host machine and unzip it 
 ```
-gzip -d openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.img.gz
+gzip -d openwrt-22.03.0-byteandnibble-x86-64-generic-squashfs-combined.img.gz
 ```
 2. Run 
 ```
-VBoxManage convertfromraw --format VDI openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.img openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.vdi
+VBoxManage convertfromraw --format VDI openwrt-22.03.0-byteandnibble-x86-64-generic-squashfs-combined.img openwrt-22.03.0-byteandnibble-x86-64-generic-squashfs-combined.vdi
 ```
 
 If you see an error like:
@@ -109,19 +109,19 @@ VBoxManage: error: VD: The given disk size 23499980 is not aligned on a sector b
 then run:
 
 ```
-dd if=openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.img of=openwrt.img bs=128000 conv=sync
+dd if=openwrt-22.03.0-byteandnibble-x86-64-generic-squashfs-combined.img of=openwrt.img bs=128000 conv=sync
 ```
 
 followed by:
 
 ```
-VBoxManage convertfromraw --format VDI openwrt.img openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.vdi
+VBoxManage convertfromraw --format VDI openwrt.img openwrt-22.03.0-byteandnibble-x86-64-generic-squashfs-combined.vdi
 ```
 
 Finally, enlarge the image:
 
 ```
-VBoxManage modifymedium openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.vdi --resize 128
+VBoxManage modifymedium openwrt-22.03.0-byteandnibble-x86-64-generic-squashfs-combined.vdi --resize 128
 ```
 
 3. Launch VirtualBox and create a new VM
@@ -132,7 +132,7 @@ VBoxManage modifymedium openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-s
 ### Flashing the apu2 platform (the easy way)!
 1. Flash a copy of the PC Engines [TinyCore Linux distribution](https://pcengines.ch/howto.htm#TinyCoreLinux) to a USB drive using [balenaEtcher](https://www.balena.io/etcher/) or some other software.
 
-2. Once written, the SYSLINUX partition on the USB Drive that you've just written should be mountable; put the Gzipped image (e.g. openwrt-19.07.6-apu2-2nic-byteandnibble-x86-64-combined-squashfs.img.gz) onto it. Unmount the USB drive, disconnect it from your computer and connect it to the APU2.
+2. Once written, the SYSLINUX partition on the USB Drive that you've just written should be mountable; put the Gzipped image (e.g. openwrt-22.03.0-byteandnibble-x86-64-generic-squashfs-combined.img.gz) onto it. Unmount the USB drive, disconnect it from your computer and connect it to the APU2.
 
 3. Connect to the APU2 board using a serial to USB connector. On MacOS:
 
@@ -144,13 +144,13 @@ VBoxManage modifymedium openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-s
 
 5. * Copy and unzip the image
     ```
-    ~ # cp /media/SYSLINUX/openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.img.gz .
-    ~ # gunzip openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.img.gz
+    ~ # cp /media/SYSLINUX/openwrt-22.03.0-byteandnibble-x86-64-generic-squashfs-combined.img.gz .
+    ~ # gunzip openwrt-22.03.0-byteandnibble-x86-64-generic-squashfs-combined.img.gz
     ```
     
     * Apply the image. Run `lsblk` to choose the correct device to which to write:
     ```
-    ~ # dd if=openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.img of=/dev/sda bs=4M; sync
+    ~ # dd if=openwrt-22.03.0-byteandnibble-x86-64-generic-squashfs-combined.img of=/dev/sda bs=4M; sync
     5+1 records in
     5+1 records out
     ```
@@ -174,13 +174,13 @@ VBoxManage modifymedium openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-s
 
     * Download and unzip the image
     ```
-    ~ # wget https://raw.githubusercontent.com/byteandnibble/apu2_openwrt/master/bin/21.02.0/openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.img.gz
-    ~ # gunzip openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.img.gz
+    ~ # wget https://raw.githubusercontent.com/byteandnibble/apu2_openwrt/master/bin/22.03.0/openwrt-22.03.0-byteandnibble-x86-64-generic-squashfs-combined.img.gz
+    ~ # gunzip openwrt-22.03.0-byteandnibble-x86-64-generic-squashfs-combined.img.gz
     ```
     
     * Apply the image. Run `lsblk` to choose the correct device to which to write:
     ```
-    ~ # dd if=openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-squashfs-combined.img of=/dev/sda bs=4M; sync
+    ~ # dd if=openwrt-22.03.0-byteandnibble-x86-64-generic-squashfs-combined.img of=/dev/sda bs=4M; sync
     5+1 records in
     5+1 records out
     ```
@@ -201,6 +201,9 @@ VBoxManage modifymedium openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-s
     ~# resize2fs /dev/sda2 
     ```
 7. All done! Remove the USB boot disk, cross your fingers, and `reboot`.
+
+### Flashing the FriendlyARM NanoPi R4S
+1. Uncompress the OpenWrt `...sysupgrade.img.gz` image and write it to a micro SD card using using [balenaEtcher](https://www.balena.io/etcher/)
 
 ## Useful stuff
 1. To kill a screen session:
