@@ -9,26 +9,25 @@
 sudo apt update
 sudo apt install build-essential libncurses5-dev libncursesw5-dev zlib1g-dev gawk git gettext libssl-dev xsltproc rsync wget unzip python
 
+VERSION='22.03.0'
+PACKAGES_EXTRA='kmod-leds-gpio kmod-crypto-hw-ccp kmod-gpio-nct5104d kmod-gpio-button-hotplug kmod-sp5100-tco kmod-usb-core kmod-usb-ohci kmod-usb2 kmod-usb3 kmod-sound-core kmod-pcspkr amd64-microcode flashrom irqbalance fstrim'
 
-PS3='Please select your preferred OpenWRT release: '
-options=("Snapshot" "22.03.0" "Quit")
+PS3='Please select your preferred OpenWRT target: '
+options=("r4s" "apu2" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
-        "Snapshot")
-            echo "Using OpenWrt Snapshot"
-            VERSION='snapshot'
-            RELEASE='https://downloads.openwrt.org/snapshots/targets/x86/64/openwrt-imagebuilder-x86-64.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-x86-64.Linux-x86_64'
-            PACKAGES_EXTRA='kmod-leds-gpio kmod-crypto-hw-ccp kmod-gpio-nct5104d kmod-gpio-button-hotplug kmod-sp5100-tco kmod-usb-core kmod-usb-ohci kmod-usb2 kmod-usb3 kmod-sound-core kmod-pcspkr amd64-microcode flashrom irqbalance fstrim'
+        "r4s")
+            echo "Building image for NanoPi R4S"
+            RELEASE='https://downloads.openwrt.org/releases/22.03.0/targets/rockchip/armv8/openwrt-imagebuilder-22.03.0-rockchip-armv8.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-22.03.0-rockchip-armv8.Linux-x86_64'
+            unset PACKAGES_EXTRA
             break
             ;;
-        "22.03.0")
-            echo "Using OpenWrt 22.03.0"
-            VERSION='22.03.0'
+        "apu2")
+            echo "Building image for PC Engines apu2 platform"
             RELEASE='https://downloads.openwrt.org/releases/22.03.0/targets/x86/64/openwrt-imagebuilder-22.03.0-x86-64.Linux-x86_64.tar.xz'
             DIR='openwrt-imagebuilder-22.03.0-x86-64.Linux-x86_64'
-            PACKAGES_EXTRA='kmod-leds-gpio kmod-crypto-hw-ccp kmod-gpio-nct5104d kmod-gpio-button-hotplug kmod-sp5100-tco kmod-usb-core kmod-usb-ohci kmod-usb2 kmod-usb3 kmod-sound-core kmod-pcspkr amd64-microcode flashrom irqbalance fstrim'
             break
           ;;
         "Quit")

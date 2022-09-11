@@ -1,8 +1,8 @@
-# apu2_openwrt
-This is my customised OpenWrt image for apu2 boards. It extends the generic x86_64 OpenWrt builds by:
+# OpenWRT ImageBuilder for NanoPi-R4S and the apu2 platform
+This is my customised OpenWrt image for the NanoPi-R4S and the apu2 platform. It adds the following packages:
 
-* Kernel modules for specific APU2 features
-* Additional APU2-specific packages: amd64-microcode, flashrom, irqbalance, fstrim
+* (apu2 only) Kernel modules for specific APU2 features
+* (apu2 only)  Additional APU2-specific packages: amd64-microcode, flashrom, irqbalance, fstrim
 * Two ports are active by default: eth0 set to DHCP and using [ControlD's](https://controld.com) DNS resolvers; eth1 as a trunk port carrying two VLANs. 
 * Adding LuCI with HTTPS SSL support; along with the LuCI Material theme in addition to the default bootstrap
 * Replacing dnsmasq with dnsmasq-full
@@ -72,18 +72,18 @@ Note that shared folders can be found in /media/*
 
 ### Building an customising an image
 
-Clone this repo, and `cd` into `buildEnv`. Make `apu2BuildRoot.sh` executable by:
+Clone this repo, and `cd` into `buildEnv`. Make `build.sh` executable by:
 
 ```
-chmod 755 apu2BuildRoot.sh
+chmod 755 build.sh
 ```
 
-modify the script if you wish: if you want wireless support, you'll need to install hostapd along with kmod-ath9k & ath9k-htc-firmware for the wle200nx; or ath10k-firmware-qca988x and kmod-ath10k for the wle600vx or wle900vx.
+modify the script if you wish: if you want wireless support on an apu2, you'll need to install hostapd along with kmod-ath9k & ath9k-htc-firmware for the wle200nx; or ath10k-firmware-qca988x and kmod-ath10k for the wle600vx or wle900vx.
 
 Now, go ahead and run it!
 
 ```
-./apu2BuildRoot.sh
+./build.sh
 ```
 
 You'll be given the choice to build from Snapshot, or a stable, supported release.
@@ -129,7 +129,7 @@ VBoxManage modifymedium openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-s
 5. Accept the defaults, and then choose "Use an existing virtual hard disk file" selecting the VDI you created in the previous steps
 6. Launch!
 
-### Flash it (the easy way)!
+### Flashing the apu2 platform (the easy way)!
 1. Flash a copy of the PC Engines [TinyCore Linux distribution](https://pcengines.ch/howto.htm#TinyCoreLinux) to a USB drive using [balenaEtcher](https://www.balena.io/etcher/) or some other software.
 
 2. Once written, the SYSLINUX partition on the USB Drive that you've just written should be mountable; put the Gzipped image (e.g. openwrt-19.07.6-apu2-2nic-byteandnibble-x86-64-combined-squashfs.img.gz) onto it. Unmount the USB drive, disconnect it from your computer and connect it to the APU2.
@@ -157,7 +157,7 @@ VBoxManage modifymedium openwrt-21.02.0-apu2-2nic-byteandnibble-x86-64-generic-s
    
 6. All done! Remove the USB boot disk, cross your fingers, and `reboot`.
 
-### Flash it (the longer way)!
+### Flashing the apu2 platform (the longer way)!
 1. Flash the Debian netinst amd64 iso to a USB drive using [balenaEtcher](https://www.balena.io/etcher/)
 
 2. Connect to the APU2 board using a serial to USB connector. On MacOS:
