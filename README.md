@@ -11,7 +11,7 @@ This is my customised OpenWrt image for the FriendlyARM NanoPi R4S and the PC En
 * Stubby, Unbound
 * DNS Over HTTPS Proxy
 * Watchcat
-* banIP
+* ~~banIP~~
 * [Stangri's](https://docs.openwrt.melmac.net/pbr/) Policy-Based Routing package
 * Wireguard support
 * Zerotier software-defined network
