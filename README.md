@@ -16,7 +16,7 @@ This is my customised OpenWrt image for apu2 boards. It extends the generic x86_
 * Wireguard support
 * Zerotier software-defined network
 * USB v2 and v3.0 support
-* wget, curl
+* wget, curl, ntpclient
 * usbtools
 * Limited support for 3G/4G USB modems via the ncm and 3g protocols (including the huawei_cdc_ncm driver)
 * Wake-on-LAN LuCI module

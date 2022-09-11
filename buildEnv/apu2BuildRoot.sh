@@ -20,6 +20,7 @@ do
             VERSION='snapshot'
             RELEASE='https://downloads.openwrt.org/snapshots/targets/x86/64/openwrt-imagebuilder-x86-64.Linux-x86_64.tar.xz'
             DIR='openwrt-imagebuilder-x86-64.Linux-x86_64'
+            PACKAGES_EXTRA='kmod-leds-gpio kmod-crypto-hw-ccp kmod-gpio-nct5104d kmod-gpio-button-hotplug kmod-sp5100-tco kmod-usb-core kmod-usb-ohci kmod-usb2 kmod-usb3 kmod-sound-core kmod-pcspkr amd64-microcode flashrom irqbalance fstrim'
             break
             ;;
         "21.02.3")
@@ -27,6 +28,7 @@ do
             VERSION='21.02.3'
             RELEASE='https://downloads.openwrt.org/releases/21.02.3/targets/x86/64/openwrt-imagebuilder-21.02.3-x86-64.Linux-x86_64.tar.xz'
             DIR='openwrt-imagebuilder-21.02.3-x86-64.Linux-x86_64'
+            PACKAGES_EXTRA='kmod-leds-gpio kmod-crypto-hw-ccp kmod-gpio-nct5104d kmod-gpio-button-hotplug kmod-sp5100-tco kmod-usb-core kmod-usb-ohci kmod-usb2 kmod-usb3 kmod-sound-core kmod-pcspkr amd64-microcode flashrom irqbalance fstrim'
             break
           ;;
         "Quit")
@@ -62,4 +64,4 @@ fi
 
 ### make!
 make clean
-make image PACKAGES="luci luci-ssl luci-theme-openwrt-2020 -dnsmasq dnsmasq-full ipset libnettle8 libnetfilter-conntrack3 kmod-gpio-button-hotplug kmod-crypto-hw-ccp kmod-leds-gpio kmod-usb-ohci kmod-usb2 kmod-usb3 kmod-gpio-nct5104d kmod-pcspkr kmod-usb-core kmod-sound-core kmod-ipt-nat6 fstrim irqbalance amd64-microcode flashrom luci-app-sqm luci-app-wireguard luci-proto-wireguard qrencode stubby unbound-daemon luci-app-unbound https-dns-proxy luci-app-https-dns-proxy watchcat luci-app-watchcat pbr luci-app-pbr curl wget tcpdump luci-app-wol 6in4 6to4 6rd usbutils usb-modeswitch kmod-usb-net-huawei-cdc-ncm kmod-usb-net-cdc-ncm kmod-usb-net-cdc-ether comgt-ncm kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan luci-proto-ncm luci-proto-3g $BANIP avahi-dbus-daemon avahi-utils smcroute zerotier" EXTRA_IMAGE_NAME="apu2_2nic_byteandnibble" FILES=files/
+make image PACKAGES="luci luci-ssl luci-theme-openwrt-2020 -dnsmasq dnsmasq-full ipset libnettle8 libnetfilter-conntrack3 kmod-ipt-nat6 luci-app-sqm sqm-scripts sqm-scripts-extra kmod-wireguard luci-app-wireguard luci-proto-wireguard wireguard-tools qrencode stubby unbound-daemon luci-app-unbound https-dns-proxy luci-app-https-dns-proxy watchcat luci-app-watchcat pbr luci-app-pbr curl wget tcpdump etherwake luci-app-wol 6in4 6to4 6rd usbutils usb-modeswitch kmod-usb-net-huawei-cdc-ncm kmod-usb-net-cdc-ncm kmod-usb-net-cdc-ether comgt-ncm kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan luci-proto-ncm luci-proto-3g $BANIP avahi-dbus-daemon avahi-utils smcroute zerotier ntpclient $PACKAGES_EXTRA" EXTRA_IMAGE_NAME="byteandnibble" FILES=files/ DISABLED_SERVICES="stubby unbound pbr"
