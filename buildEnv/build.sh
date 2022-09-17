@@ -54,7 +54,7 @@ mkdir -p files/etc/config
 cp ../files/* files/etc/config/
 
 ### add repo to repositories.conf
-sed -i '/check_signature/d' repositories.conf
+# sed -i '/check_signature/d' repositories.conf
 sed -i '/stangri_repo/d' repositories.conf
 ! grep -q 'stangri_repo' repositories.conf && sed -i '2 i\src/gz stangri_repo repo.openwrt.melmac.net' repositories.conf
 
@@ -62,6 +62,13 @@ sed -i '/stangri_repo/d' repositories.conf
 BANIP='banip luci-app-banip'
 unset BANIP
 
+DNSMASQFULL='-dnsmasq dnsmasq-full ipset libnettle8 libnetfilter-conntrack3'
+
+# nftables-capable version of pbr.
+# There's no nft sets support in OpenWrt's dnsmasq yet, you can't use dnsmasq set (dnsmasq.ipset) support
+# https://forum.openwrt.org/t/vpn-policy-based-routing-web-ui-discussion/10389/1727
+PBR='pbr-nftables luci-app-pbr resolveip ip-full'
+
 ### make!
 make clean
-make image PROFILE="$PROFILE" PACKAGES="luci luci-ssl luci-theme-openwrt-2020 -dnsmasq dnsmasq-full ipset libnettle8 libnetfilter-conntrack3 kmod-ipt-nat6 luci-app-sqm sqm-scripts sqm-scripts-extra kmod-wireguard luci-app-wireguard luci-proto-wireguard wireguard-tools qrencode stubby unbound-daemon luci-app-unbound https-dns-proxy luci-app-https-dns-proxy watchcat luci-app-watchcat pbr luci-app-pbr curl wget tcpdump etherwake luci-app-wol 6in4 6to4 6rd usb-modeswitch comgt-ncm kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan luci-proto-ncm luci-proto-3g avahi-dbus-daemon $BANIP avahi-utils smcroute zerotier ntpclient $PACKAGES_EXTRA $PACKAGES_TETHERING" EXTRA_IMAGE_NAME="byteandnibble" FILES=files/ DISABLED_SERVICES="stubby unbound pbr avahi-daemon etherwake https-dns-proxy zerotier"
+make image PROFILE="$PROFILE" PACKAGES="luci luci-ssl luci-theme-openwrt-2020 $DNSMASQFULL kmod-ipt-nat6 luci-app-sqm sqm-scripts sqm-scripts-extra kmod-wireguard luci-app-wireguard luci-proto-wireguard wireguard-tools qrencode stubby unbound-daemon luci-app-unbound https-dns-proxy luci-app-https-dns-proxy watchcat luci-app-watchcat curl wget tcpdump etherwake luci-app-wol 6in4 6to4 6rd usb-modeswitch comgt-ncm kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan luci-proto-ncm luci-proto-3g avahi-dbus-daemon $BANIP avahi-utils smcroute zerotier ntpclient $PACKAGES_EXTRA $PACKAGES_TETHERING" EXTRA_IMAGE_NAME="byteandnibble" FILES=files/ DISABLED_SERVICES="stubby unbound pbr avahi-daemon etherwake https-dns-proxy zerotier"
