@@ -16,7 +16,7 @@ PACKAGES_EXTRA='kmod-leds-gpio kmod-crypto-hw-ccp kmod-gpio-nct5104d kmod-gpio-b
 PACKAGES_TETHERING='kmod-usb-net-rndis kmod-usb-net-cdc-ncm kmod-usb-net-huawei-cdc-ncm kmod-usb-net-cdc-eem kmod-usb-net-cdc-ether kmod-usb-net-cdc-subset kmod-nls-base kmod-usb-core kmod-usb-net kmod-usb2 kmod-usb-net-ipheth usbmuxd libimobiledevice usbutils'
 
 PS3='Please select your preferred OpenWRT target: '
-options=("r4s" "apu2" "Quit")
+options=("r4s" "apu2" "hAP ac2" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
