@@ -16,17 +16,10 @@ PACKAGES_EXTRA='kmod-leds-gpio kmod-crypto-hw-ccp kmod-gpio-nct5104d kmod-gpio-b
 PACKAGES_TETHERING='kmod-usb-net-rndis kmod-usb-net-cdc-ncm kmod-usb-net-huawei-cdc-ncm kmod-usb-net-cdc-eem kmod-usb-net-cdc-ether kmod-usb-net-cdc-subset kmod-nls-base kmod-usb-core kmod-usb-net kmod-usb2 kmod-usb-net-ipheth usbmuxd libimobiledevice usbutils'
 
 PS3='Please select your preferred OpenWRT release: '
-options=("Snapshot" "21.02.3" "Quit")
+options=("21.02.3" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
-        "Snapshot")
-            echo "Using OpenWrt Snapshot"
-            VERSION='snapshot'
-            RELEASE='https://downloads.openwrt.org/snapshots/targets/x86/64/openwrt-imagebuilder-x86-64.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-x86-64.Linux-x86_64'
-            break
-            ;;
         "21.02.3")
             echo "Using OpenWrt 21.02.3"
             VERSION='21.02.3'
@@ -54,16 +47,11 @@ cp ../files/* files/etc/config/
 
 ### add repo to repositories.conf
 # sed -i '/check_signature/d' repositories.conf
+# https://docs.openwrt.melmac.net/pbr/
 sed -i '/stangri_repo/d' repositories.conf
 ! grep -q 'stangri_repo' repositories.conf && sed -i '2 i\src/gz stangri_repo repo.openwrt.melmac.net' repositories.conf
     
-### banIP is marked as broken after 21.02.x (https://forum.openwrt.org/t/banip-support-thread/16985/751)
 BANIP='banip luci-app-banip'
-
-if [ "$VERSION" = "snapshot" ]
-then
-    unset BANIP
-fi
 
 DNSMASQFULL='-dnsmasq dnsmasq-full ipset libnettle8 libnetfilter-conntrack3'
 
