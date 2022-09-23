@@ -36,7 +36,7 @@ do
             break
           ;;
         "hAP ac2")
-            echo "Building image for Mikrotik hAP AC2"
+            echo "Building image for Mikrotik hAP ac2"
             RELEASE='https://downloads.openwrt.org/releases/22.03.0/targets/ipq40xx/mikrotik/openwrt-imagebuilder-22.03.0-ipq40xx-mikrotik.Linux-x86_64.tar.xz'
             DIR='openwrt-imagebuilder-22.03.0-ipq40xx-mikrotik.Linux-x86_64'
             PROFILE='mikrotik_hap-ac2'
