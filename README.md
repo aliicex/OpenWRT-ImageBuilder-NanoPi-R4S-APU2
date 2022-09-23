@@ -21,6 +21,7 @@ This is my customised OpenWrt image for the FriendlyARM NanoPi R4S and the PC En
 * Limited support for 3G/4G USB modems via the ncm and 3g protocols (including the huawei_cdc_ncm driver)
 * Wake-on-LAN LuCI module
 * Avahi zero-configuration networking implementation
+* UPnP
 * smcroute
 * Support for [Smartphone USB tethering](https://openwrt.org/docs/guide-user/network/wan/smartphone.usb.tethering)
 
