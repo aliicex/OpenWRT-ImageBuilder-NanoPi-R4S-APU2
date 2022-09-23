@@ -35,6 +35,14 @@ do
             PROFILE='generic'
             break
           ;;
+        "hAP ac2")
+            echo "Building image for Mikrotik hAP AC2"
+            RELEASE='https://downloads.openwrt.org/releases/22.03.0/targets/ipq40xx/mikrotik/openwrt-imagebuilder-22.03.0-ipq40xx-mikrotik.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-22.03.0-ipq40xx-mikrotik.Linux-x86_64'
+            PROFILE='mikrotik_hap-ac2'
+            unset PACKAGES_EXTRA
+            break
+          ;;
         "Quit")
             exit 1
             ;;
@@ -67,7 +75,8 @@ DNSMASQFULL='-dnsmasq dnsmasq-full ipset libnettle8 libnetfilter-conntrack3'
 # nftables-capable version of pbr.
 # There's no nft sets support in OpenWrt's dnsmasq yet, you can't use dnsmasq set (dnsmasq.ipset) support
 # https://forum.openwrt.org/t/vpn-policy-based-routing-web-ui-discussion/10389/1727
-PBR='pbr-nftables luci-app-pbr resolveip ip-full'
+# https://docs.openwrt.melmac.net/pbr/
+PBR='pbr luci-app-pbr resolveip ip-full'
 
 ### make!
 make clean

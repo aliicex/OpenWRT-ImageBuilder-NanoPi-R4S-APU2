@@ -1,4 +1,4 @@
-# OpenWRT ImageBuilder for the FriendlyARM NanoPi R4S and the PC Engines apu2 platform
+# OpenWRT ImageBuilder for the FriendlyARM NanoPi R4S, the PC Engines apu2 platform and MikroTik RouterBOARD hAP ac<sup>2</sup> (RBD52G-5HacD2HnD-TC)
 This is my customised OpenWrt image for the FriendlyARM NanoPi R4S and the PC Engines apu2 platform. It adds the following packages:
 
 * (apu2 only) Kernel modules for specific APU2 features
