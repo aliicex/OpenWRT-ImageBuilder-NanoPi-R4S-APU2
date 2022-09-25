@@ -17,7 +17,6 @@
     Save the .key file from the file browser in the web interface and store it somewhere safe.
 
 2. 
-
     Prepare:
 
     ```
@@ -37,7 +36,6 @@
     Replace `enX` with the interface identifier of your ethernet adapter (use `ifconfig` to find it out)
 
 3. 
-
     FLASHING OPENWRT!
 
     Connect to mikrotik with winbox or by navigating to http://192.168.88.1
@@ -55,7 +53,6 @@
     Kill `loader.sh`
 
 4.
-
     Verifying things...
 
     Connect the ethernet cable from the computer to port 2, 3, 4 or 5 on the router. You should receive an IP address from 192.168.1.1/24 and be able to ping 192.168.1.1 from your computer.
@@ -70,3 +67,7 @@
     * Go to System→Backup/Flash Firmware
     * Click on 'Choose File' under 'Flash new firmware image'. Select your preferred sysupgrade .bin file (e.g. openwrt-22.03.0-ipq40xx-mikrotik-mikrotik_hap-ac2-squashfs-sysupgrade.bin from https://openwrt.org/toh/views/toh_fwdownload?dataflt%5BBrand*%7E%5D=mikrotik&datasrt=model&dataflt%5BModel*%7E%5D=RBD52G-5HacD2HnD-TC+)
     * Click on 'Flash image'. This will flash the sysupgrade .bin file into your RouterBoard and reboot it
+
+    ## References
+    https://github.com/ParsIOT/Openwrt_installation
+    https://openwrt.org/toh/mikrotik/common
