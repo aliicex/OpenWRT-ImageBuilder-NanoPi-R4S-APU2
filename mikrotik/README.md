@@ -24,7 +24,7 @@
     mkdir ~/Desktop/openwrt-mikrotik
     ```
 
-    Download the intramfs image (e.g. openwrt-22.03.0-ipq40xx-mikrotik-mikrotik_hap-ac2-initramfs-kernel.bin) from https://openwrt.org/toh/views/toh_fwdownload?dataflt%5BBrand*%7E%5D=mikrotik&datasrt=model&dataflt%5BModel*%7E%5D=RBD52G-5HacD2HnD-TC+ to `~/Desktop/openwrt-mikrotik`; e.g.:
+    Download the intramfs image (e.g. openwrt-22.03.0-ipq40xx-mikrotik-mikrotik_hap-ac2-initramfs-kernel.bin) from https://openwrt.org/toh/views/toh_fwdownload?dataflt%5BBrand*%7E%5D=mikrotik&datasrt=model&dataflt%5BModel*%7E%5D=RBD52G-5HacD2HnD-TC+ to `~/Desktop/openwrt-mikrotik`.
 
     Save `loader.sh` to ~/Desktop/openwrt-mikrotik, then:
 
@@ -70,4 +70,5 @@
 
     ## References
     https://github.com/ParsIOT/Openwrt_installation
+    
     https://openwrt.org/toh/mikrotik/common
