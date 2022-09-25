@@ -70,5 +70,7 @@
 
     ## References
     https://github.com/ParsIOT/Openwrt_installation
-    
+
     https://openwrt.org/toh/mikrotik/common
+
+    https://openwrt.org/toh/mikrotik/hap_ac2
