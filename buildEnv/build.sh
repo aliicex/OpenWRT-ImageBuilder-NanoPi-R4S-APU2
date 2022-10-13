@@ -22,23 +22,23 @@ do
     case $opt in
         "r4s")
             echo "Building image for NanoPi R4S"
-            RELEASE='https://downloads.openwrt.org/releases/22.03.0/targets/rockchip/armv8/openwrt-imagebuilder-22.03.0-rockchip-armv8.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-22.03.0-rockchip-armv8.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/22.03.1/targets/rockchip/armv8/openwrt-imagebuilder-22.03.1-rockchip-armv8.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-22.03.1-rockchip-armv8.Linux-x86_64'
             PROFILE='friendlyarm_nanopi-r4s'
             unset PACKAGES_EXTRA
             break
             ;;
         "apu2")
             echo "Building image for PC Engines apu2 platform"
-            RELEASE='https://downloads.openwrt.org/releases/22.03.0/targets/x86/64/openwrt-imagebuilder-22.03.0-x86-64.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-22.03.0-x86-64.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/22.03.1/targets/x86/64/openwrt-imagebuilder-22.03.1-x86-64.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-22.03.1-x86-64.Linux-x86_64'
             PROFILE='generic'
             break
           ;;
         "hAP ac2")
             echo "Building image for Mikrotik hAP ac2"
-            RELEASE='https://downloads.openwrt.org/releases/22.03.0/targets/ipq40xx/mikrotik/openwrt-imagebuilder-22.03.0-ipq40xx-mikrotik.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-22.03.0-ipq40xx-mikrotik.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/22.03.1/targets/ipq40xx/mikrotik/openwrt-imagebuilder-22.03.1-ipq40xx-mikrotik.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-22.03.1-ipq40xx-mikrotik.Linux-x86_64'
             PROFILE='mikrotik_hap-ac2'
             unset PACKAGES_EXTRA
             break
