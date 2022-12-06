@@ -61,11 +61,6 @@ cd "$DIR" || exit
 mkdir -p files/etc/config
 cp ../files/* files/etc/config/
 
-### add repo to repositories.conf
-sed -i '/check_signature/d' repositories.conf
-sed -i '/stangri_repo/d' repositories.conf
-! grep -q 'stangri_repo' repositories.conf && sed -i '2 i\src/gz stangri_repo repo.openwrt.melmac.net' repositories.conf
-
 ### banIP is marked as broken after 21.02.x (https://forum.openwrt.org/t/banip-support-thread/16985/751)
 BANIP='banip luci-app-banip'
 unset BANIP
