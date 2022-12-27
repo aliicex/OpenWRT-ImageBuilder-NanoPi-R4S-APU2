@@ -10,7 +10,9 @@ sudo apt update
 sudo apt install build-essential libncurses5-dev libncursesw5-dev zlib1g-dev gawk git gettext libssl-dev xsltproc rsync wget unzip python
 
 # https://openwrt.org/toh/pcengines/apu2
-PACKAGES_EXTRA='kmod-leds-gpio kmod-crypto-hw-ccp kmod-gpio-nct5104d kmod-gpio-button-hotplug kmod-sp5100-tco kmod-usb-core kmod-usb-ohci kmod-usb2 kmod-usb3 kmod-sound-core kmod-pcspkr amd64-microcode flashrom irqbalance fstrim'
+# https://teklager.se/en/knowledge-base/openwrt-installation-instructions/
+#  for wle200nx, wle600vx or wle900vx WiFI adapters: 'hostapd-openssl kmod-ath9k ath9k-htc-firmware ath10k-firmware-qca988x kmod-ath10k'
+PACKAGES_EXTRA='kmod-pcengines-apuv2 beep kmod-leds-gpio kmod-crypto-hw-ccp kmod-usb-core kmod-usb-ohci kmod-usb2 kmod-usb3 kmod-sound-core kmod-pcspkr amd64-microcode flashrom irqbalance fstrim usbutils curl luci-app-advanced-reboot kmod-gpio-nct5104d kmod-gpio-button-hotplug kmod-sp5100-tco'
 
 # https://openwrt.org/docs/guide-user/network/wan/smartphone.usb.tethering
 PACKAGES_TETHERING='kmod-usb-net-rndis kmod-usb-net-cdc-ncm kmod-usb-net-huawei-cdc-ncm kmod-usb-net-cdc-eem kmod-usb-net-cdc-ether kmod-usb-net-cdc-subset kmod-nls-base kmod-usb-core kmod-usb-net kmod-usb2 kmod-usb-net-ipheth usbmuxd libimobiledevice usbutils'
