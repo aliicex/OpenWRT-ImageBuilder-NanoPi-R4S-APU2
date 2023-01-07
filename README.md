@@ -25,8 +25,6 @@ This is my customised OpenWrt image for the FriendlyARM NanoPi R4S and the PC En
 * UPnP
 * smcroute
 * Support for [Smartphone USB tethering](https://openwrt.org/docs/guide-user/network/wan/smartphone.usb.tethering)
-
-The images can be found in the bin/ directory of this repo. Note that _no warranty whatsoever is provided with these_.
  
 # Recreating my build environment
 
