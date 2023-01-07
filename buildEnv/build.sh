@@ -68,6 +68,8 @@ BANIP='banip luci-app-banip'
 unset BANIP
 
 DNSMASQFULL='-dnsmasq dnsmasq-full ipset libnettle8 libnetfilter-conntrack3'
+# for Wireless APs install  wpad-mesh-openssl and remove wpad-mini 'wpad-mesh-openssl -wpad-mini'
+BATMAN = 'kmod-batman-adv luci-proto-batman-adv batctl'
 
 # nftables-capable version of pbr.
 # There's no nft sets support in OpenWrt's dnsmasq yet, you can't use dnsmasq set (dnsmasq.ipset) support
