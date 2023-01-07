@@ -56,6 +56,8 @@ sed -i '/stangri_repo/d' repositories.conf
 BANIP='banip luci-app-banip'
 
 DNSMASQFULL='-dnsmasq dnsmasq-full ipset libnettle8 libnetfilter-conntrack3'
+# for Wireless APs install  wpad-mesh-openssl and remove wpad-mini 'wpad-mesh-openssl -wpad-mini'
+BATMAN = 'kmod-batman-adv luci-proto-batman-adv batctl'
 
 PBR='pbr-iptables luci-app-pbr resolveip ip-full kmod-ipt-ipset iptables'
 
