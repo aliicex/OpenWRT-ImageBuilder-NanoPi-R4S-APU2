@@ -18,7 +18,7 @@ PACKAGES_EXTRA='kmod-pcengines-apuv2 beep kmod-leds-gpio kmod-crypto-hw-ccp kmod
 PACKAGES_TETHERING='kmod-usb-net-rndis kmod-usb-net-cdc-ncm kmod-usb-net-huawei-cdc-ncm kmod-usb-net-cdc-eem kmod-usb-net-cdc-ether kmod-usb-net-cdc-subset kmod-nls-base kmod-usb-core kmod-usb-net kmod-usb2 kmod-usb-net-ipheth usbmuxd libimobiledevice usbutils'
 
 PS3='Please select your preferred OpenWRT target: '
-options=("r4s" "apu2" "hAP ac2" "Quit")
+options=("r4s" "apu2" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -35,14 +35,6 @@ do
             RELEASE='https://downloads.openwrt.org/releases/22.03.2/targets/x86/64/openwrt-imagebuilder-22.03.2-x86-64.Linux-x86_64.tar.xz'
             DIR='openwrt-imagebuilder-22.03.2-x86-64.Linux-x86_64'
             PROFILE='generic'
-            break
-          ;;
-        "hAP ac2")
-            echo "Building image for Mikrotik hAP ac2"
-            RELEASE='https://downloads.openwrt.org/releases/22.03.2/targets/ipq40xx/mikrotik/openwrt-imagebuilder-22.03.2-ipq40xx-mikrotik.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-22.03.2-ipq40xx-mikrotik.Linux-x86_64'
-            PROFILE='mikrotik_hap-ac2'
-            unset PACKAGES_EXTRA
             break
           ;;
         "Quit")
