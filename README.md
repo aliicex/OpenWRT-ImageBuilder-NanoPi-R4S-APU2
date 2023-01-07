@@ -1,4 +1,4 @@
-# OpenWRT ImageBuilder for the FriendlyARM NanoPi R4S, the PC Engines apu2 platform and MikroTik RouterBOARD hAP ac<sup>2</sup> (RBD52G-5HacD2HnD-TC)
+# OpenWRT ImageBuilder for the FriendlyARM NanoPi R4S and the PC Engines apu2 platform
 This is my customised OpenWrt image for the FriendlyARM NanoPi R4S and the PC Engines apu2 platform. It adds the following packages:
 
 * (apu2 only) Kernel modules for specific APU2 features
@@ -22,7 +22,6 @@ This is my customised OpenWrt image for the FriendlyARM NanoPi R4S and the PC En
 * Limited support for 3G/4G USB modems via the ncm and 3g protocols (including the huawei_cdc_ncm driver)
 * Wake-on-LAN LuCI module
 * Avahi zero-configuration networking implementation
-* UPnP
 * smcroute
 * Support for [Smartphone USB tethering](https://openwrt.org/docs/guide-user/network/wan/smartphone.usb.tethering)
  
