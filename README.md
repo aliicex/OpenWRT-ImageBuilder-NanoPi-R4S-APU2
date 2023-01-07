@@ -10,6 +10,7 @@ This is my customised OpenWrt image for apu2 boards. It extends the generic x86_
 * SQM scripts
 * Stubby, Unbound
 * DNS Over HTTPS Proxy
+* BATMAN protocol for WiFi mesh
 * Watchcat
 * banIP
 * [Stangri's](https://docs.openwrt.melmac.net/pbr/) Policy-Based Routing package
