@@ -24,6 +24,7 @@ This is my customised OpenWrt image for the FriendlyARM NanoPi R4S and the PC En
 * Avahi zero-configuration networking implementation
 * smcroute
 * Support for [Smartphone USB tethering](https://openwrt.org/docs/guide-user/network/wan/smartphone.usb.tethering)
+* Attended Sysupgrade
  
 # Recreating my build environment
 
