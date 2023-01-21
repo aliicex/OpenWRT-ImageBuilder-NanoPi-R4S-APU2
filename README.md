@@ -1,5 +1,5 @@
-# OpenWRT ImageBuilder for the FriendlyARM NanoPi R4S and the PC Engines apu2 platform
-This is my customised OpenWrt image for the FriendlyARM NanoPi R4S and the PC Engines apu2 platform. It adds the following packages:
+# OpenWRT ImageBuilder for the FriendlyARM NanoPi R4S, the PC Engines apu2 platform, and the Netgear WAC124
+Creates the environment required to build the images for my network devices: FriendlyARM NanoPi R4S, the PC Engines apu2 platform, and the Netgear WAC124 (as a dumb AP) The following packages are included for the routers:
 
 * (apu2 only) Kernel modules for specific APU2 features
 * (apu2 only)  Additional APU2-specific packages: amd64-microcode, flashrom, irqbalance, fstrim

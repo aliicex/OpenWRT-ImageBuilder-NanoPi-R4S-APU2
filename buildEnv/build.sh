@@ -2,7 +2,7 @@
 #
 # build.sh
 #
-# Creates the build environment required to re-build my image for the FriendlyARM NanoPi R4S and the PC Engines apu2 platform
+# Creates the build environment required to re-build the images for my network devices: FriendlyARM NanoPi R4S, the PC Engines apu2 platform, and the Netgear WAC124 (as a dumb AP)
 #
 
 ### Prerequisites for buildroot
@@ -18,7 +18,7 @@ PACKAGES_EXTRA='kmod-pcengines-apuv2 beep kmod-leds-gpio kmod-crypto-hw-ccp kmod
 PACKAGES_TETHERING='kmod-usb-net-rndis kmod-usb-net-cdc-ncm kmod-usb-net-huawei-cdc-ncm kmod-usb-net-cdc-eem kmod-usb-net-cdc-ether kmod-usb-net-cdc-subset kmod-nls-base kmod-usb-core kmod-usb-net kmod-usb2 kmod-usb-net-ipheth usbmuxd libimobiledevice usbutils'
 
 PS3='Please select your preferred OpenWRT target: '
-options=("r4s" "apu2" "Quit")
+options=("r4s" "apu2" "wac124" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -37,6 +37,13 @@ do
             PROFILE='generic'
             break
           ;;
+         "wac124")
+            echo "Building image for Netgear WAC124"
+            RELEASE='https://downloads.openwrt.org/releases/22.03.3/targets/ramips/mt7621/openwrt-imagebuilder-22.03.3-ramips-mt7621.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-22.03.3-ramips-mt7621.Linux-x86_64'
+            PROFILE='netgear_wac124'
+            break
+          ;;
         "Quit")
             exit 1
             ;;
@@ -51,17 +58,13 @@ curl -L  "$RELEASE" | unxz | tar -xf -
 
 cd "$DIR" || exit
 
-### files dir (outside main directory to protect from make distclean)
-mkdir -p files/etc/config
-cp ../files/* files/etc/config/
-
 ### banIP is marked as broken after 21.02.x (https://forum.openwrt.org/t/banip-support-thread/16985/751)
 BANIP='banip luci-app-banip'
 unset BANIP
 
 DNSMASQFULL='-dnsmasq dnsmasq-full ipset libnettle8 libnetfilter-conntrack3'
 # for Wireless APs install  wpad-mesh-openssl and remove wpad-mini 'wpad-mesh-openssl -wpad-mini'
-BATMAN = 'kmod-batman-adv luci-proto-batman-adv batctl'
+BATMAN='kmod-batman-adv luci-proto-batman-adv batctl'
 
 # nftables-capable version of pbr.
 # There's no nft sets support in OpenWrt's dnsmasq yet, you can't use dnsmasq set (dnsmasq.ipset) support
@@ -71,4 +74,8 @@ PBR='pbr luci-app-pbr resolveip ip-full'
 
 ### make!
 make clean
-make image PROFILE="$PROFILE" PACKAGES="luci luci-ssl luci-theme-openwrt-2020 $DNSMASQFULL kmod-ipt-nat6 luci-app-sqm sqm-scripts sqm-scripts-extra kmod-wireguard luci-app-wireguard luci-proto-wireguard wireguard-tools qrencode stubby unbound-daemon luci-app-unbound https-dns-proxy luci-app-https-dns-proxy watchcat luci-app-watchcat $PBR curl wget tcpdump etherwake luci-app-wol 6in4 6to4 6rd usb-modeswitch comgt-ncm kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan luci-proto-ncm luci-proto-3g avahi-dbus-daemon $BANIP avahi-utils smcroute zerotier ntpclient auc luci-app-attendedsysupgrade $PACKAGES_EXTRA $PACKAGES_TETHERING" EXTRA_IMAGE_NAME="byteandnibble" FILES=files/ DISABLED_SERVICES="stubby unbound pbr avahi-daemon etherwake https-dns-proxy zerotier"
+if [ "$PROFILE" = 'netgear_wac124' ]; then
+	make image PROFILE="$PROFILE" PACKAGES="luci luci-ssl ip-full auc luci-app-attendedsysupgrade $BATMAN" EXTRA_IMAGE_NAME="Llama-Alarm"
+else
+	make image PROFILE="$PROFILE" PACKAGES="luci luci-ssl $DNSMASQFULL kmod-ipt-nat6 luci-app-sqm sqm-scripts sqm-scripts-extra kmod-wireguard luci-app-wireguard luci-proto-wireguard wireguard-tools qrencode stubby unbound-daemon luci-app-unbound https-dns-proxy luci-app-https-dns-proxy watchcat luci-app-watchcat $PBR curl wget tcpdump etherwake luci-app-wol 6in4 6to4 6rd usb-modeswitch comgt-ncm kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan luci-proto-ncm luci-proto-3g avahi-dbus-daemon $BANIP avahi-utils smcroute zerotier ntpclient auc luci-app-attendedsysupgrade $PACKAGES_EXTRA $PACKAGES_TETHERING" EXTRA_IMAGE_NAME="Llama-Alarm" DISABLED_SERVICES="stubby unbound pbr avahi-daemon etherwake https-dns-proxy zerotier"
+fi
