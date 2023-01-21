@@ -4,7 +4,7 @@ Creates the environment required to build the images for my network devices: Fri
 * (apu2 only) Kernel modules for specific APU2 features
 * (apu2 only)  Additional APU2-specific packages: amd64-microcode, flashrom, irqbalance, fstrim
 * Two ports are active by default: eth0 set to DHCP and using [ControlD's](https://controld.com) DNS resolvers; eth1 as a trunk port carrying two VLANs. 
-* Adding LuCI with HTTPS SSL support; along with the LuCI Material theme in addition to the default bootstrap
+* Adding LuCI with HTTPS SSL support
 * Replacing dnsmasq with dnsmasq-full
 * IPv6: tunnel support for 6in4, 6to4, 6rd; NAT6 and IPv6 masquerading support (necessary evil for VPN providers which offer a single IPv6 address with a /128 prefix)
 * SQM scripts
