@@ -64,7 +64,11 @@ unset BANIP
 
 DNSMASQFULL='-dnsmasq dnsmasq-full ipset libnettle8 libnetfilter-conntrack3'
 # for Wireless APs install  wpad-mesh-openssl and remove wpad-mini 'wpad-mesh-openssl -wpad-mini'
-BATMAN='kmod-batman-adv luci-proto-batman-adv batctl'
+BATMAN='kmod-batman-adv batctl'
+
+# luci-proto-batman-adv currently only available in SNAPSHOT
+rm packages/*
+cp ../packages/* packages/
 
 # nftables-capable version of pbr.
 # There's no nft sets support in OpenWrt's dnsmasq yet, you can't use dnsmasq set (dnsmasq.ipset) support
@@ -75,7 +79,7 @@ PBR='pbr luci-app-pbr resolveip ip-full'
 ### make!
 make clean
 if [ "$PROFILE" = 'netgear_wac124' ]; then
-	make image PROFILE="$PROFILE" PACKAGES="luci luci-ssl auc luci-app-attendedsysupgrade" EXTRA_IMAGE_NAME="Llama-Alarm"
+	make image PROFILE="$PROFILE" PACKAGES="luci luci-ssl auc luci-app-attendedsysupgrade $BATMAN" EXTRA_IMAGE_NAME="Llama-Alarm"
 else
-	make image PROFILE="$PROFILE" PACKAGES="luci luci-ssl $DNSMASQFULL kmod-ipt-nat6 luci-app-sqm sqm-scripts sqm-scripts-extra kmod-wireguard luci-app-wireguard luci-proto-wireguard wireguard-tools qrencode stubby unbound-daemon luci-app-unbound https-dns-proxy luci-app-https-dns-proxy watchcat luci-app-watchcat $PBR curl wget tcpdump etherwake luci-app-wol 6in4 6to4 6rd usb-modeswitch comgt-ncm kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan luci-proto-ncm luci-proto-3g avahi-dbus-daemon $BANIP avahi-utils smcroute zerotier ntpclient auc luci-app-attendedsysupgrade $PACKAGES_EXTRA $PACKAGES_TETHERING" EXTRA_IMAGE_NAME="Llama-Alarm" DISABLED_SERVICES="stubby unbound pbr avahi-daemon etherwake https-dns-proxy zerotier"
+	make image PROFILE="$PROFILE" PACKAGES="luci luci-ssl $DNSMASQFULL kmod-ipt-nat6 luci-app-sqm sqm-scripts sqm-scripts-extra kmod-wireguard luci-app-wireguard luci-proto-wireguard wireguard-tools qrencode stubby unbound-daemon luci-app-unbound https-dns-proxy luci-app-https-dns-proxy watchcat luci-app-watchcat $PBR curl wget tcpdump etherwake luci-app-wol 6in4 6to4 6rd usb-modeswitch comgt-ncm kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan luci-proto-ncm luci-proto-3g avahi-dbus-daemon $BANIP avahi-utils smcroute zerotier ntpclient auc luci-app-attendedsysupgrade $PACKAGES_EXTRA $PACKAGES_TETHERING $BATMAN" EXTRA_IMAGE_NAME="Llama-Alarm" DISABLED_SERVICES="stubby unbound pbr avahi-daemon etherwake https-dns-proxy zerotier"
 fi
