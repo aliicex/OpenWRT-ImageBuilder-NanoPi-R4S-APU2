@@ -15,9 +15,8 @@ Creates the environment required to build the images for my network devices: Fri
 * ~~banIP~~ marked as broken after 21.02.x (https://forum.openwrt.org/t/banip-support-thread/16985/751)
 * [Stangri's](https://docs.openwrt.melmac.net/pbr/) Policy-Based Routing package
 * Wireguard support
-* Zerotier software-defined network
 * USB v2 and v3.0 support
-* wget, curl, ntpclient
+* wget, curl, ntpclient, nano
 * usbtools
 * Limited support for 3G/4G USB modems via the ncm and 3g protocols (including the huawei_cdc_ncm driver)
 * Wake-on-LAN LuCI module
