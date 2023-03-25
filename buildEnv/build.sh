@@ -58,15 +58,11 @@ curl -L  "$RELEASE" | unxz | tar -xf -
 
 cd "$DIR" || exit
 
-### banIP is marked as broken after 21.02.x (https://forum.openwrt.org/t/banip-support-thread/16985/751)
-BANIP='banip luci-app-banip'
-unset BANIP
-
 DNSMASQFULL='-dnsmasq dnsmasq-full ipset libnettle8 libnetfilter-conntrack3'
 # for Wireless APs install  wpad-mesh-openssl and remove wpad-mini 'wpad-mesh-openssl -wpad-mini'
 BATMAN='kmod-batman-adv batctl'
 
-# luci-proto-batman-adv currently only available in SNAPSHOT
+# luci-proto-batman-adv banip luci-app-banip currently only available in SNAPSHOT
 rm packages/*
 cp ../packages/* packages/
 
@@ -81,5 +77,5 @@ make clean
 if [ "$PROFILE" = 'netgear_wac124' ]; then
 	make image PROFILE="$PROFILE" PACKAGES="-ppp -ppp-mod-pppoe -ip6tables -odhcp6c -kmod-ipv6 -kmod-ip6tables -odhcpd-ipv6only luci nano luci-ssl auc luci-app-attendedsysupgrade $BATMAN" EXTRA_IMAGE_NAME="Llama-Alarm" DISABLED_SERVICES="dnsmasq firewall"
 else
-	make image PROFILE="$PROFILE" PACKAGES="luci luci-ssl nano $DNSMASQFULL kmod-ipt-nat6 luci-app-sqm sqm-scripts sqm-scripts-extra kmod-wireguard luci-app-wireguard luci-proto-wireguard wireguard-tools qrencode stubby unbound-daemon luci-app-unbound https-dns-proxy luci-app-https-dns-proxy watchcat luci-app-watchcat $PBR curl wget tcpdump etherwake luci-app-wol 6in4 6to4 6rd usb-modeswitch comgt-ncm kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan luci-proto-ncm luci-proto-3g avahi-dbus-daemon $BANIP avahi-utils smcroute ntpclient auc luci-app-attendedsysupgrade $PACKAGES_EXTRA $PACKAGES_TETHERING $BATMAN" EXTRA_IMAGE_NAME="Llama-Alarm" DISABLED_SERVICES="stubby unbound pbr avahi-daemon etherwake https-dns-proxy"
+	make image PROFILE="$PROFILE" PACKAGES="luci luci-ssl nano $DNSMASQFULL kmod-ipt-nat6 luci-app-sqm sqm-scripts sqm-scripts-extra kmod-wireguard luci-app-wireguard luci-proto-wireguard wireguard-tools qrencode stubby unbound-daemon luci-app-unbound https-dns-proxy luci-app-https-dns-proxy watchcat luci-app-watchcat $PBR curl wget tcpdump etherwake luci-app-wol 6in4 6to4 6rd usb-modeswitch comgt-ncm kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan luci-proto-ncm luci-proto-3g avahi-dbus-daemon avahi-utils smcroute ntpclient auc luci-app-attendedsysupgrade $PACKAGES_EXTRA $PACKAGES_TETHERING $BATMAN" EXTRA_IMAGE_NAME="Llama-Alarm" DISABLED_SERVICES="stubby unbound pbr avahi-daemon etherwake https-dns-proxy"
 fi
