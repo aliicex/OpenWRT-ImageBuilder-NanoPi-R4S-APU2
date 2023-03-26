@@ -12,7 +12,7 @@ Creates the environment required to build the images for my network devices: Fri
 * DNS Over HTTPS Proxy
 * BATMAN protocol for WiFi mesh
 * Watchcat
-* ~~banIP~~ marked as broken after 21.02.x (https://forum.openwrt.org/t/banip-support-thread/16985/751)
+* banIP
 * [Stangri's](https://docs.openwrt.melmac.net/pbr/) Policy-Based Routing package
 * Wireguard support
 * USB v2 and v3.0 support
