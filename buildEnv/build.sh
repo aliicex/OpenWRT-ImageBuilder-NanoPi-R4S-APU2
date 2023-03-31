@@ -18,7 +18,7 @@ PACKAGES_EXTRA='kmod-pcengines-apuv2 beep kmod-leds-gpio kmod-crypto-hw-ccp kmod
 PACKAGES_TETHERING='kmod-usb-net-rndis kmod-usb-net-cdc-ncm kmod-usb-net-huawei-cdc-ncm kmod-usb-net-cdc-eem kmod-usb-net-cdc-ether kmod-usb-net-cdc-subset kmod-nls-base kmod-usb-core kmod-usb-net kmod-usb2 kmod-usb-net-ipheth usbmuxd libimobiledevice usbutils'
 
 PS3='Please select your preferred OpenWRT target: '
-options=("r4s" "apu2" "wac124" "wax206" "Quit")
+options=("r4s" "apu2" "wac124" "wax202" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -45,10 +45,10 @@ do
             break
           ;;
           "wac206")
-            echo "Building image for Netgear WAX206"
-            RELEASE='https://downloads.openwrt.org/snapshots/targets/mediatek/mt7622/openwrt-imagebuilder-mediatek-mt7622.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-mediatek-mt7622.Linux-x86_64'
-            PROFILE='netgear_wax206'
+            echo "Building image for Netgear WAX202"
+            RELEASE='https://downloads.openwrt.org/releases/22.03.3/targets/ramips/mt7621/openwrt-imagebuilder-22.03.3-ramips-mt7621.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-22.03.3-ramips-mt7621.Linux-x86_64'
+            PROFILE='netgear_wax202'
             break
           ;;
         "Quit")
@@ -82,7 +82,7 @@ PBR='pbr luci-app-pbr resolveip ip-full'
 
 ### make!
 make clean
-if [ "$PROFILE" = 'netgear_wac124' ] || [ "$PROFILE" = 'netgear_wax206' ]; then
+if [ "$PROFILE" = 'netgear_wac124' ] || [ "$PROFILE" = 'netgear_wax202' ]; then
 	make image PROFILE="$PROFILE" PACKAGES="-ppp -ppp-mod-pppoe -ip6tables -odhcp6c -kmod-ipv6 -kmod-ip6tables -odhcpd-ipv6only luci nano luci-ssl auc luci-app-attendedsysupgrade $BATMAN" EXTRA_IMAGE_NAME="Llama-Alarm" DISABLED_SERVICES="dnsmasq firewall"
 else
 	make image PROFILE="$PROFILE" PACKAGES="luci luci-ssl nano $DNSMASQFULL kmod-ipt-nat6 luci-app-sqm sqm-scripts sqm-scripts-extra kmod-wireguard luci-app-wireguard luci-proto-wireguard wireguard-tools qrencode stubby unbound-daemon luci-app-unbound https-dns-proxy luci-app-https-dns-proxy watchcat luci-app-watchcat $PBR $BANIP curl wget tcpdump etherwake luci-app-wol 6in4 6to4 6rd usb-modeswitch comgt-ncm kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan luci-proto-ncm luci-proto-3g avahi-dbus-daemon avahi-utils smcroute ntpclient auc luci-app-attendedsysupgrade $PACKAGES_EXTRA $PACKAGES_TETHERING $BATMAN" EXTRA_IMAGE_NAME="Llama-Alarm" DISABLED_SERVICES="stubby unbound pbr avahi-daemon etherwake https-dns-proxy"
