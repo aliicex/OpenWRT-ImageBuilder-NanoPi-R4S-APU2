@@ -44,7 +44,7 @@ do
             PROFILE='netgear_wac124'
             break
           ;;
-          "wac202")
+          "wax202")
             echo "Building image for Netgear WAX202"
             RELEASE='https://downloads.openwrt.org/releases/22.03.4/targets/ramips/mt7621/openwrt-imagebuilder-22.03.4-ramips-mt7621.Linux-x86_64.tar.xz'
             DIR='openwrt-imagebuilder-22.03.4-ramips-mt7621.Linux-x86_64'
