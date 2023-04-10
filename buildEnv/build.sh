@@ -24,30 +24,30 @@ do
     case $opt in
         "r4s")
             echo "Building image for NanoPi R4S"
-            RELEASE='https://downloads.openwrt.org/releases/22.03.3/targets/rockchip/armv8/openwrt-imagebuilder-22.03.3-rockchip-armv8.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-22.03.3-rockchip-armv8.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/22.03.4/targets/rockchip/armv8/openwrt-imagebuilder-22.03.4-rockchip-armv8.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-22.03.4-rockchip-armv8.Linux-x86_64'
             PROFILE='friendlyarm_nanopi-r4s'
             unset PACKAGES_EXTRA
             break
             ;;
         "apu2")
             echo "Building image for PC Engines apu2 platform"
-            RELEASE='https://downloads.openwrt.org/releases/22.03.3/targets/x86/64/openwrt-imagebuilder-22.03.3-x86-64.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-22.03.3-x86-64.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/22.03.4/targets/x86/64/openwrt-imagebuilder-22.03.4-x86-64.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-22.03.4-x86-64.Linux-x86_64'
             PROFILE='generic'
             break
           ;;
          "wac124")
             echo "Building image for Netgear WAC124"
-            RELEASE='https://downloads.openwrt.org/releases/22.03.3/targets/ramips/mt7621/openwrt-imagebuilder-22.03.3-ramips-mt7621.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-22.03.3-ramips-mt7621.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/22.03.4/targets/ramips/mt7621/openwrt-imagebuilder-22.03.4-ramips-mt7621.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-22.03.4-ramips-mt7621.Linux-x86_64'
             PROFILE='netgear_wac124'
             break
           ;;
-          "wac206")
+          "wac202")
             echo "Building image for Netgear WAX202"
-            RELEASE='https://downloads.openwrt.org/releases/22.03.3/targets/ramips/mt7621/openwrt-imagebuilder-22.03.3-ramips-mt7621.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-22.03.3-ramips-mt7621.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/22.03.4/targets/ramips/mt7621/openwrt-imagebuilder-22.03.4-ramips-mt7621.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-22.03.4-ramips-mt7621.Linux-x86_64'
             PROFILE='netgear_wax202'
             break
           ;;
@@ -70,7 +70,7 @@ DNSMASQFULL='-dnsmasq dnsmasq-full ipset libnettle8 libnetfilter-conntrack3'
 # for Wireless APs install  wpad-mesh-openssl and remove wpad-mini 'wpad-mesh-openssl -wpad-mini'
 BATMAN='kmod-batman-adv batctl'
 
-# luci-proto-batman-adv banip luci-app-banip currently only available in SNAPSHOT
+# luci-proto-batman-adv currently only available in SNAPSHOT
 rm packages/*
 cp ../packages/* packages/
 
