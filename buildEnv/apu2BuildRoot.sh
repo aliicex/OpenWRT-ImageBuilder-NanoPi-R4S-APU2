@@ -18,15 +18,15 @@ PACKAGES_EXTRA='kmod-pcengines-apuv2 beep kmod-leds-gpio kmod-crypto-hw-ccp kmod
 PACKAGES_TETHERING='kmod-usb-net-rndis kmod-usb-net-cdc-ncm kmod-usb-net-huawei-cdc-ncm kmod-usb-net-cdc-eem kmod-usb-net-cdc-ether kmod-usb-net-cdc-subset kmod-nls-base kmod-usb-core kmod-usb-net kmod-usb2 kmod-usb-net-ipheth usbmuxd libimobiledevice usbutils'
 
 PS3='Please select your preferred OpenWRT release: '
-options=("22.03.5" "Quit")
+options=("21.02.6" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
-        "22.03.5")
-            echo "Using OpenWrt 22.03.5"
-            VERSION='22.03.5'
-            RELEASE='https://downloads.openwrt.org/releases/22.03.5/targets/x86/64/openwrt-imagebuilder-22.03.5-x86-64.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-22.03.5-x86-64.Linux-x86_64'
+        "21.02.6")
+            echo "Using OpenWrt 21.02.6"
+            VERSION='21.02.6'
+            RELEASE='https://downloads.openwrt.org/releases/21.02.6/targets/x86/64/openwrt-imagebuilder-21.02.6-x86-64.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-21.02.6-x86-64.Linux-x86_64'
             break
           ;;
         "Quit")
