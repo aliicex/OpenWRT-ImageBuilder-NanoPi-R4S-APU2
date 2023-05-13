@@ -67,7 +67,7 @@ cd "$DIR" || exit
 
 BANIP='banip luci-app-banip'
 DNSMASQFULL='-dnsmasq dnsmasq-full ipset libnettle8 libnetfilter-conntrack3'
-BATMAN='kmod-batman-adv batctl wpad-mesh-openssl -wpad-mini'
+BATMAN='kmod-batman-adv batctl wpad-mesh-wolfssl -wpad-mini'
 
 # luci-proto-batman-adv currently only available in SNAPSHOT
 rm packages/*
