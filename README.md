@@ -11,6 +11,7 @@ Creates the environment required to build the images for my network devices: Fri
 * Stubby, Unbound
 * DNS Over HTTPS Proxy
 * BATMAN protocol for WiFi mesh
+* Support for NAS
 * Watchcat
 * banIP
 * [Stangri's](https://docs.openwrt.melmac.net/pbr/) Policy-Based Routing package
