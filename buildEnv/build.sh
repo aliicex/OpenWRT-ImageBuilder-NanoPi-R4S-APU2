@@ -24,30 +24,30 @@ do
     case $opt in
         "r4s")
             echo "Building image for NanoPi R4S"
-            RELEASE='https://downloads.openwrt.org/releases/22.03.5/targets/rockchip/armv8/openwrt-imagebuilder-22.03.5-rockchip-armv8.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-22.03.5-rockchip-armv8.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/23.05.2/targets/rockchip/armv8/openwrt-imagebuilder-23.05.2-rockchip-armv8.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-23.05.2-rockchip-armv8.Linux-x86_64'
             PROFILE='friendlyarm_nanopi-r4s'
             unset PACKAGES_EXTRA
             break
             ;;
         "apu2")
             echo "Building image for PC Engines apu2 platform"
-            RELEASE='https://downloads.openwrt.org/releases/22.03.5/targets/x86/64/openwrt-imagebuilder-22.03.5-x86-64.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-22.03.5-x86-64.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/23.05.2/targets/x86/64/openwrt-imagebuilder-23.05.2-x86-64.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-23.05.2-x86-64.Linux-x86_64'
             PROFILE='generic'
             break
           ;;
          "wac124")
             echo "Building image for Netgear WAC124"
-            RELEASE='https://downloads.openwrt.org/releases/22.03.5/targets/ramips/mt7621/openwrt-imagebuilder-22.03.5-ramips-mt7621.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-22.03.5-ramips-mt7621.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/23.05.2/targets/ramips/mt7621/openwrt-imagebuilder-23.05.2-ramips-mt7621.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-23.05.2-ramips-mt7621.Linux-x86_64'
             PROFILE='netgear_wac124'
             break
           ;;
           "wax202")
             echo "Building image for Netgear WAX202"
-            RELEASE='https://downloads.openwrt.org/releases/22.03.5/targets/ramips/mt7621/openwrt-imagebuilder-22.03.5-ramips-mt7621.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-22.03.5-ramips-mt7621.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/23.05.2/targets/ramips/mt7621/openwrt-imagebuilder-23.05.2-ramips-mt7621.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-23.05.2-ramips-mt7621.Linux-x86_64'
             PROFILE='netgear_wax202'
             break
           ;;
@@ -74,10 +74,6 @@ NAS='kmod-usb-storage kmod-fs-ext4 kmod-fs-f2fs ntfs-3g kmod-fs-exfat kmod-fs-hf
 rm packages/*
 cp ../packages/* packages/
 
-# nftables-capable version of pbr.
-# There's no nft sets support in OpenWrt's dnsmasq yet, you can't use dnsmasq set (dnsmasq.ipset) support
-# https://forum.openwrt.org/t/vpn-policy-based-routing-web-ui-discussion/10389/1727
-# https://docs.openwrt.melmac.net/pbr/
 PBR='pbr luci-app-pbr resolveip ip-full'
 
 ### make!
@@ -85,5 +81,5 @@ make clean
 if [ "$PROFILE" = 'netgear_wac124' ] || [ "$PROFILE" = 'netgear_wax202' ]; then
 	make image PROFILE="$PROFILE" PACKAGES="-ppp -ppp-mod-pppoe -ip6tables -odhcp6c -kmod-ipv6 -kmod-ip6tables -odhcpd-ipv6only luci nano luci-ssl auc luci-app-attendedsysupgrade $BATMAN" EXTRA_IMAGE_NAME="Llama-Alarm" DISABLED_SERVICES="dnsmasq firewall"
 else
-	make image PROFILE="$PROFILE" PACKAGES="luci luci-ssl nano $DNSMASQFULL kmod-ipt-nat6 luci-app-sqm sqm-scripts sqm-scripts-extra kmod-wireguard luci-app-wireguard luci-proto-wireguard wireguard-tools qrencode stubby unbound-daemon luci-app-unbound https-dns-proxy luci-app-https-dns-proxy watchcat luci-app-watchcat $PBR $BANIP $NAS curl wget tcpdump etherwake luci-app-wol 6in4 6to4 6rd usb-modeswitch comgt-ncm kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan luci-proto-ncm luci-proto-3g avahi-dbus-daemon avahi-utils smcroute ntpclient auc luci-app-attendedsysupgrade $PACKAGES_EXTRA $PACKAGES_TETHERING $BATMAN" EXTRA_IMAGE_NAME="Llama-Alarm" DISABLED_SERVICES="stubby unbound pbr avahi-daemon etherwake https-dns-proxy"
+	make image PROFILE="$PROFILE" PACKAGES="luci luci-ssl nano $DNSMASQFULL kmod-ipt-nat6 luci-app-sqm sqm-scripts sqm-scripts-extra kmod-wireguard luci-app-wireguard luci-proto-wireguard wireguard-tools tailscale qrencode stubby unbound-daemon luci-app-unbound https-dns-proxy luci-app-https-dns-proxy watchcat luci-app-watchcat $PBR $BANIP $NAS curl wget tcpdump etherwake luci-app-wol 6in4 6to4 6rd usb-modeswitch comgt-ncm kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan luci-proto-ncm luci-proto-3g avahi-dbus-daemon avahi-utils smcroute ntpclient auc luci-app-attendedsysupgrade $PACKAGES_EXTRA $PACKAGES_TETHERING $BATMAN" EXTRA_IMAGE_NAME="Llama-Alarm" DISABLED_SERVICES="stubby unbound pbr avahi-daemon etherwake https-dns-proxy"
 fi
