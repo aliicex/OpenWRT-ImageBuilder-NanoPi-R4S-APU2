@@ -7,7 +7,7 @@
 
 ### Prerequisites for buildroot
 sudo apt update
-sudo apt install build-essential libncurses5-dev libncursesw5-dev zlib1g-dev gawk git gettext libssl-dev xsltproc rsync wget unzip python
+sudo apt install build-essential libncurses-dev libncursesw-dev zlib1g-dev gawk git gettext libssl-dev xsltproc rsync wget unzip python3
 
 # https://openwrt.org/toh/pcengines/apu2
 # https://teklager.se/en/knowledge-base/openwrt-installation-instructions/
