@@ -1,3 +1,0 @@
-/etc/modules.d/43-ipt-nat6
-/lib/modules/5.15.137/ip6t_NPT.ko
-/lib/modules/5.15.137/ip6table_nat.ko

@@ -1,2 +1,0 @@
-#!/bin/sh
-[ -n "$IPKG_INSTROOT" ] || /etc/init.d/rpcd reload
