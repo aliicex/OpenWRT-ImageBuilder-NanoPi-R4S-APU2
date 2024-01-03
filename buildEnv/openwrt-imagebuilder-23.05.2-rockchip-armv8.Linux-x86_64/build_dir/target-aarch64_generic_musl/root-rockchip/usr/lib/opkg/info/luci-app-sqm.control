@@ -1,0 +1,11 @@
+Package: luci-app-sqm
+Version: git-22.360.73151-127c900
+Depends: libc, sqm-scripts
+Source: feeds/luci/applications/luci-app-sqm
+SourceName: luci-app-sqm
+Section: luci
+SourceDateEpoch: 1701721963
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 3493
+Description:  Luci interface for the SQM scripts queue management package

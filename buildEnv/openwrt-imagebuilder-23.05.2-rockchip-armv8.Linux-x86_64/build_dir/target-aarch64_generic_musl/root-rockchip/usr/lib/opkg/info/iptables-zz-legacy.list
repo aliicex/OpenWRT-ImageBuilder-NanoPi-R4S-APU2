@@ -1,0 +1,3 @@
+/usr/sbin/iptables-legacy-save
+/usr/sbin/iptables-legacy
+/usr/sbin/iptables-legacy-restore

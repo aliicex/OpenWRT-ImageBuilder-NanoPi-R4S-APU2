@@ -1,0 +1,15 @@
+Package: libfdisk1
+Version: 2.39-2
+Depends: libc, libuuid1, libblkid1
+Provides: libfdisk
+Source: feeds/base/package/utils/util-linux
+SourceName: libfdisk
+License: GPL-2.0-only
+LicenseFiles: COPYING libblkid/COPYING libmount/COPYING Documentation/licenses/COPYING.GPLv2 Documentation/licenses/COPYING.LGPLv2.1 libuuid/COPYING Documentation/licenses/COPYING.BSD-3
+Section: libs
+SourceDateEpoch: 1691751213
+ABIVersion: 1
+CPE-ID: cpe:/a:kernel:util-linux
+Architecture: aarch64_generic
+Installed-Size: 149314
+Description:  The libfdisk library is used for manipulating with partition tables.

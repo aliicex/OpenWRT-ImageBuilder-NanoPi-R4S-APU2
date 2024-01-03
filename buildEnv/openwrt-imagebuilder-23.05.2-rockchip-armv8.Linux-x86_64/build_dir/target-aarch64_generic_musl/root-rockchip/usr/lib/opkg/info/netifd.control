@@ -1,0 +1,12 @@
+Package: netifd
+Version: 2023-11-10-35facc83-1.1
+Depends: libc, libuci20130104, libnl-tiny1, libubus20230605, ubus, ubusd, jshn, libubox20230523
+Source: feeds/base/package/network/config/netifd
+SourceName: netifd
+License: GPL-2.0
+Section: base
+SourceDateEpoch: 1699969091
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Architecture: aarch64_generic
+Installed-Size: 107257
+Description:  OpenWrt Network Interface Configuration Daemon

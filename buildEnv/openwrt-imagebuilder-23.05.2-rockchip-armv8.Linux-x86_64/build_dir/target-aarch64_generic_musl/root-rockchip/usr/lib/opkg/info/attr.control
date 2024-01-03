@@ -1,0 +1,17 @@
+Package: attr
+Version: 2.5.1-1
+Depends: libc, libattr
+Source: feeds/packages/utils/attr
+SourceName: attr
+License: GPL-2.0-or-later
+LicenseFiles: doc/COPYING
+Section: utils
+SourceDateEpoch: 1682110018
+Maintainer: Maxim Storchak <m.storchak@gmail.com>
+Architecture: aarch64_generic
+Installed-Size: 15132
+Description:  Extended attributes support
+ This package provides xattr manipulation utilities
+ - attr
+ - getfattr
+ - setfattr

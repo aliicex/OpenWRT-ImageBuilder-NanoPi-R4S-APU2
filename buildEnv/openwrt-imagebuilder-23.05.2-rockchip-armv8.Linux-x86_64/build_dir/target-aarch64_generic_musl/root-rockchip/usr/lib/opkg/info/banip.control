@@ -1,0 +1,15 @@
+Package: banip
+Version: 0.9.3-3
+Depends: libc, jshn, jsonfilter, firewall4, ca-bundle, rpcd, rpcd-mod-rpcsys
+Source: feeds/packages/net/banip
+SourceName: banip
+License: GPL-3.0-or-later
+Section: net
+SourceDateEpoch: 1703794429
+Maintainer: Dirk Brenken <dev@brenken.org>
+Architecture: all
+Installed-Size: 20877
+Description:  banIP blocks IPs via named nftables Sets.
+ banIP supports many IP blocklist feeds and provides a log service to block suspicious IPs in realtime.
+ Please see https://github.com/openwrt/packages/blob/master/net/banip/files/README.md for further information.
+ 

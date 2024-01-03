@@ -1,0 +1,4 @@
+/etc/uci-defaults/50-https-dns-proxy-migrate-options.sh
+/etc/config/https-dns-proxy
+/etc/init.d/https-dns-proxy
+/usr/sbin/https-dns-proxy

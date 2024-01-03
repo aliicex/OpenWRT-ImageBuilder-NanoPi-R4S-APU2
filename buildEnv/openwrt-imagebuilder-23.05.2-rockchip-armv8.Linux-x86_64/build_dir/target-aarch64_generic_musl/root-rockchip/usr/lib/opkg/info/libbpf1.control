@@ -1,0 +1,15 @@
+Package: libbpf1
+Version: 1.2.2-1
+Depends: libc, libelf1
+Provides: libbpf
+Source: feeds/base/package/libs/libbpf
+SourceName: libbpf
+License: LGPL-2.1 OR BSD-2-Clause
+Section: libs
+SourceDateEpoch: 1695847021
+ABIVersion: 1
+CPE-ID: cpe:/a:libbpf_project:libbpf
+Maintainer: Tony Ambardar <itugrok@yahoo.com>
+Architecture: aarch64_generic
+Installed-Size: 144675
+Description:  libbpf is a library for loading eBPF programs and reading and manipulating eBPF objects from user-space.

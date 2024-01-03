@@ -1,0 +1,10 @@
+/www/luci-static/resources/view/banip/blocklist.js
+/www/luci-static/resources/view/banip/processing_log.js
+/www/luci-static/resources/view/banip/setreport.js
+/usr/share/rpcd/acl.d/luci-app-banip.json
+/www/luci-static/resources/view/banip/firewall_log.js
+/usr/share/luci/menu.d/luci-app-banip.json
+/www/luci-static/resources/view/banip/overview.js
+/www/luci-static/resources/view/banip/feeds.js
+/www/luci-static/resources/view/banip/allowlist.js
+/www/luci-static/resources/view/banip/custom.css

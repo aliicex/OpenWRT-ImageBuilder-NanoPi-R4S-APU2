@@ -1,0 +1,16 @@
+Package: https-dns-proxy
+Version: 2023-10-25-5
+Depends: libc, libcares, libcurl4, libev, ca-bundle, jsonfilter
+Conflicts: https_dns_proxy
+Source: feeds/packages/net/https-dns-proxy
+SourceName: https-dns-proxy
+License: MIT
+LicenseFiles: LICENSE
+Section: net
+SourceDateEpoch: 1702300778
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Architecture: aarch64_generic
+Installed-Size: 20932
+Description:  Light-weight DNS-over-HTTPS, non-caching translation proxy for the RFC 8484 DoH standard.
+ It receives regular (UDP) DNS requests and resolves them via DoH resolver.
+ Please see https://docs.openwrt.melmac.net/https-dns-proxy/ for more information.

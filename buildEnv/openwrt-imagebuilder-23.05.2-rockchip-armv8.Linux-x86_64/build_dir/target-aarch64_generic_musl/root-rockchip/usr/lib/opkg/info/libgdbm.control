@@ -1,0 +1,15 @@
+Package: libgdbm
+Version: 1.21-2
+Depends: libc
+Source: feeds/packages/libs/gdbm
+SourceName: libgdbm
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+Section: libs
+SourceDateEpoch: 1682110018
+Maintainer: Marcel Denia <naoir@gmx.net>
+Architecture: aarch64_generic
+Installed-Size: 30441
+Description:  GNU database manager library
+ GNU dbm is a set of database routines that use extendible hashing and
+ works similar to the standard UNIX dbm routines.

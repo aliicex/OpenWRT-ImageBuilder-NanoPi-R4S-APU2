@@ -1,0 +1,11 @@
+Package: luci-app-unbound
+Version: git-23.338.81927-b0d6a9b
+Depends: libc, luci-compat, unbound-daemon, luci-lua-runtime
+Source: feeds/luci/applications/luci-app-unbound
+SourceName: luci-app-unbound
+Section: luci
+SourceDateEpoch: 1702917951
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 8644
+Description:  Unbound Recursive DNS Resolver Configuration

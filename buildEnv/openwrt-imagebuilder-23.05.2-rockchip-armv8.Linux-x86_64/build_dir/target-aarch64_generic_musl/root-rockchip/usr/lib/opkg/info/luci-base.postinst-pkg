@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ -z "${PKG_INSTROOT}" ] && [ -f /etc/config/uhttpd ]; then
+	if ! uci -q get uhttpd.main.ucode_prefix | grep -sq /cgi-bin/luci; then
+		uci add_list uhttpd.main.ucode_prefix='/cgi-bin/luci=/usr/share/ucode/luci/uhttpd.uc'
+		uci commit uhttpd
+		service uhttpd reload
+	fi
+fi
+
+exit 0

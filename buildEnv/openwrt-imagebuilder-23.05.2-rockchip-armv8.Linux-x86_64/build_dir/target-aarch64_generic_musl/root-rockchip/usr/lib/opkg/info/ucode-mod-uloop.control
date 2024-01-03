@@ -1,0 +1,12 @@
+Package: ucode-mod-uloop
+Version: 2023-11-07-a6e75e02-1
+Depends: libc, ucode, libubox20230523
+Source: feeds/base/package/utils/ucode
+SourceName: ucode-mod-uloop
+License: ISC
+Section: lang
+SourceDateEpoch: 1701990653
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Architecture: aarch64_generic
+Installed-Size: 8531
+Description:  The uloop module allows ucode scripts to interact with OpenWrt uloop event loop implementation.

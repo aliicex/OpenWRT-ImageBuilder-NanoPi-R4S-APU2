@@ -1,0 +1,3 @@
+/usr/sbin/usbmuxd
+/lib/upgrade/keep.d/usbmuxd
+/etc/init.d/usbmuxd

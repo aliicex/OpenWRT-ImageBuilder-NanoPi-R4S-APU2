@@ -1,0 +1,17 @@
+Package: libunbound
+Version: 1.18.0-2
+Depends: libc, ca-bundle, libopenssl3, libmnl0, libevent2-7, libpthread
+Source: feeds/packages/net/unbound
+SourceName: libunbound
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+Section: libs
+Require-User: unbound:unbound
+SourceDateEpoch: 1702448396
+CPE-ID: cpe:/a:nlnetlabs:unbound
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
+Architecture: aarch64_generic
+Installed-Size: 467308
+Description:  This package contains the Unbound library including 'libevent', 'libmnl', and
+ 'libpthread' to better handle large networks with heavy query loads. Options
+ are available to custom trim Unbound for smaller targets.

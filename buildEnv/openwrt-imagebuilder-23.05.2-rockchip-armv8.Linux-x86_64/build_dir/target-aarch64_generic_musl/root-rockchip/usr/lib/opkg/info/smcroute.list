@@ -1,0 +1,4 @@
+/usr/bin/smcroutectl
+/usr/sbin/smcrouted
+/etc/smcroute.conf
+/etc/init.d/smcroute

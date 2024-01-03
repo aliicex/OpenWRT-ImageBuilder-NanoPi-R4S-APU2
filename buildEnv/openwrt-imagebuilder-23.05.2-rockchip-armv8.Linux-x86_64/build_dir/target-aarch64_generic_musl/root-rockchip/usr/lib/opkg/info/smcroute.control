@@ -1,0 +1,13 @@
+Package: smcroute
+Version: 2.5.6-1
+Depends: libc
+Source: feeds/packages/net/smcroute
+SourceName: smcroute
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+Section: net
+SourceDateEpoch: 1671406724
+Maintainer: Moritz Warning <moritzwarning@web.de>
+Architecture: aarch64_generic
+Installed-Size: 34363
+Description:  SMCRoute is a command line tool to manipulate the multicast routes of the Linux kernel.

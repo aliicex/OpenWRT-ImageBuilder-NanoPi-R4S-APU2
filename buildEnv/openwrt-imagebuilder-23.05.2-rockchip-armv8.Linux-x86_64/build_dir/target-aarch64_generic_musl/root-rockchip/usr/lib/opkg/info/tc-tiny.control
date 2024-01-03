@@ -1,0 +1,15 @@
+Package: tc-tiny
+Version: 6.3.0-1
+Depends: libc, kmod-sched-core, libmnl0
+Provides: tc
+Alternatives: 200:/sbin/tc:/usr/libexec/tc-tiny
+Source: feeds/base/package/network/utils/iproute2
+SourceName: tc-tiny
+License: GPL-2.0
+Section: net
+SourceDateEpoch: 1683462718
+CPE-ID: cpe:/a:iproute2_project:iproute2
+Maintainer: Russell Senior <russell@personaltelco.net>
+Architecture: aarch64_generic
+Installed-Size: 171987
+Description:  Traffic control utility (minimal)

@@ -1,0 +1,13 @@
+Package: getdns
+Version: 1.7.3-2
+Depends: libc, libopenssl3
+Source: feeds/packages/libs/getdns
+SourceName: getdns
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+Section: libs
+SourceDateEpoch: 1682937360
+Architecture: aarch64_generic
+Installed-Size: 194078
+Description:  This package contains the getdns library (libgetdns).
+ This package also contains the "getdns_query" command line wrapper for getdns exposing the features of this implementation (both in the official API and the additional API functions).

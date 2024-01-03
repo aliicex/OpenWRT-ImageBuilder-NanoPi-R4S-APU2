@@ -1,0 +1,12 @@
+/usr/lib/lua/luci/model/cbi/unbound/server.lua
+/usr/lib/lua/luci/controller/unbound.lua
+/usr/lib/lua/luci/model/cbi/unbound/zones.lua
+/usr/lib/lua/luci/view/unbound/show-textbox.htm
+/usr/lib/lua/luci/model/cbi/unbound/extended.lua
+/usr/lib/lua/luci/view/unbound/css-editing.htm
+/usr/lib/lua/luci/model/cbi/unbound/configure.lua
+/usr/share/rpcd/acl.d/luci-app-unbound.json
+/usr/lib/lua/luci/view/unbound/show-empty.htm
+/usr/lib/lua/luci/model/cbi/unbound/uciedit.lua
+/usr/lib/lua/luci/model/cbi/unbound/zone-details.lua
+/usr/lib/lua/luci/model/cbi/unbound/manual.lua

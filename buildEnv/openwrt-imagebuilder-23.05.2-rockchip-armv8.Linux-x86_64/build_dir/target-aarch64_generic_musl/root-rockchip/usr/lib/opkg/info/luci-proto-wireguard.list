@@ -1,0 +1,5 @@
+/usr/share/rpcd/ucode/luci.wireguard
+/usr/share/rpcd/acl.d/luci-wireguard.json
+/www/luci-static/resources/view/wireguard/status.js
+/usr/share/luci/menu.d/luci-proto-wireguard.json
+/www/luci-static/resources/protocol/wireguard.js

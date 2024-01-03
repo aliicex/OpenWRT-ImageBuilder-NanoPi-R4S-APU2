@@ -1,0 +1,11 @@
+Package: kmod-slhc
+Version: 5.15.137-1
+Depends: kernel (=5.15.137-1-a61b316e83bc33130e55f5c8b8b65f74), kmod-lib-crc-ccitt
+Source: package/kernel/linux
+SourceName: kmod-slhc
+License: GPL-2.0
+Section: kernel
+SourceDateEpoch: 1698709443
+Architecture: aarch64_generic
+Installed-Size: 3758
+Description:  Serial Line Header Compression

@@ -1,0 +1,13 @@
+Package: libev
+Version: 4.33-2
+Depends: libc
+Source: feeds/packages/libs/libev
+SourceName: libev
+License: BSD-2-Clause
+Section: libs
+SourceDateEpoch: 1682110018
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Architecture: aarch64_generic
+Installed-Size: 23690
+Description:  A full-featured and high-performance event loop that is loosely modelled after
+ libevent, but without its limitations and bugs.

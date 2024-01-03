@@ -1,0 +1,4 @@
+/etc/modules.d/42-ip6tables
+/lib/modules/5.15.137/ip6table_mangle.ko
+/lib/modules/5.15.137/ip6table_filter.ko
+/lib/modules/5.15.137/ip6t_REJECT.ko

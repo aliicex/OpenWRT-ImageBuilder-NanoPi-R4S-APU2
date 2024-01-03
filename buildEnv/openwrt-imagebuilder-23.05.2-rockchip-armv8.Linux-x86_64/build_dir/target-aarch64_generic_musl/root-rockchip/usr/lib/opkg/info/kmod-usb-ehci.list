@@ -1,0 +1,2 @@
+/etc/modules-boot.d/35-usb-ehci
+/etc/modules.d/35-usb-ehci

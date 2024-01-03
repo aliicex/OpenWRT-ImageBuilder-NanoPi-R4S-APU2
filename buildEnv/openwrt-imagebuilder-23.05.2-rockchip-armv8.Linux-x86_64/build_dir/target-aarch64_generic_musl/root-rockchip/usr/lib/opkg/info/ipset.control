@@ -1,0 +1,13 @@
+Package: ipset
+Version: 7.17-1
+Depends: libc, kmod-ipt-ipset, libmnl0, libipset13
+Source: feeds/base/package/network/utils/ipset
+SourceName: ipset
+License: GPL-2.0
+Section: net
+SourceDateEpoch: 1695847021
+CPE-ID: cpe:/a:netfilter:ipset
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Architecture: aarch64_generic
+Installed-Size: 1688
+Description:  IPset administration utility

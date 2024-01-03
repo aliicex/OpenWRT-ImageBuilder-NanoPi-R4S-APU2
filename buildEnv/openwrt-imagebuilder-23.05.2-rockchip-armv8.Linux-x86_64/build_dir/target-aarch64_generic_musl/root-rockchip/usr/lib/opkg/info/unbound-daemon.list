@@ -1,0 +1,15 @@
+/etc/init.d/unbound
+/usr/sbin/unbound
+/etc/unbound/unbound_ext.conf
+/usr/lib/unbound/defaults.sh
+/usr/lib/unbound/unbound.sh
+/usr/lib/unbound/odhcpd.awk
+/usr/lib/unbound/stopping.sh
+/etc/unbound/unbound_srv.conf
+/usr/lib/unbound/dnsmasq.sh
+/usr/lib/unbound/iptools.sh
+/usr/lib/unbound/odhcpd.sh
+/etc/config/unbound
+/etc/unbound/unbound.conf
+/etc/unbound/root.key
+/etc/hotplug.d/ntp/25-unbound

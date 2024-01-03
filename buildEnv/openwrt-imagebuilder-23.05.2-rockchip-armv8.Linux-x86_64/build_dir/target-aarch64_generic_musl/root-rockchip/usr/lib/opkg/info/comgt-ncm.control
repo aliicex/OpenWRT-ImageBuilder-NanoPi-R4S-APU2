@@ -1,0 +1,12 @@
+Package: comgt-ncm
+Version: 0.32-35
+Depends: libc, comgt, wwan, kmod-usb-serial-option, kmod-usb-net-huawei-cdc-ncm
+Source: package/network/utils/comgt
+SourceName: comgt-ncm
+License: GPL-2.0+
+Section: net
+SourceDateEpoch: 1684413847
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Architecture: aarch64_generic
+Installed-Size: 2888
+Description:  NCM 3G/4G Support

@@ -1,0 +1,4 @@
+/etc/config/tailscale
+/usr/sbin/tailscaled
+/lib/upgrade/keep.d/tailscaled
+/etc/init.d/tailscale

@@ -1,0 +1,9 @@
+libdir=${exec_prefix}/lib
+includedir=/usr/include/security
+
+Name: pam_misc
+Description: Miscellaneous functions that make the job of writing PAM-aware applications easier.
+URL: http://www.linux-pam.org/
+Version: 1.5.2
+Cflags: -I${includedir}
+Libs: -L${libdir} -lpam_misc

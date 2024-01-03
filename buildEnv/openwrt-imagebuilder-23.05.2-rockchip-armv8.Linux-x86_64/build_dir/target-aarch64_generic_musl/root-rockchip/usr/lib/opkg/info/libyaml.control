@@ -1,0 +1,13 @@
+Package: libyaml
+Version: 0.2.5-1
+Depends: libc
+Source: feeds/packages/libs/yaml
+SourceName: libyaml
+License: MIT
+LicenseFiles: COPYING
+Section: libs
+SourceDateEpoch: 1682444897
+CPE-ID: cpe:/a:pyyaml_project:pyyaml
+Architecture: aarch64_generic
+Installed-Size: 41223
+Description:  Fast YAML 1.1 parser and emitter library

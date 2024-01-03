@@ -1,0 +1,18 @@
+Package: samba4-server
+Version: 4.18.8-1
+Depends: libc, samba4-libs
+Conflicts: samba36-server
+Source: feeds/packages/net/samba4
+SourceName: samba4-server
+License: GPL-3.0-only
+LicenseFiles: COPYING
+Section: net
+SourceDateEpoch: 1697441792
+CPE-ID: cpe:/a:samba:samba
+Architecture: aarch64_generic
+Installed-Size: 250941
+Description:  installs: smbd (nmbd) smbpasswd pdbedit testparm (nmblookup) (smbcacls sharesec)
+ (samba samba-tool ntlm_auth samba-gpupdate samba_dnsupdate samba_kcc samba_spnupdate samba_upgradedns samba_downgrade_db)
+ 
+ This provides the basic fileserver service and is the minimum needed to serve file shares.
+ HINT: https://fitzcarraldoblog.wordpress.com/2016/10/17/a-correct-method-of-configuring-samba-for-browsing-smb-shares-in-a-home-network/

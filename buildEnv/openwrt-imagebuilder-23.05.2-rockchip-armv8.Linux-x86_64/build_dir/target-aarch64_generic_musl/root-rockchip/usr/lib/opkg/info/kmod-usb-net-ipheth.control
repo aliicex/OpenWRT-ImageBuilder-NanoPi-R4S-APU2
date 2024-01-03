@@ -1,0 +1,11 @@
+Package: kmod-usb-net-ipheth
+Version: 5.15.137-1
+Depends: kernel (=5.15.137-1-a61b316e83bc33130e55f5c8b8b65f74), kmod-usb-net
+Source: package/kernel/linux
+SourceName: kmod-usb-net-ipheth
+License: GPL-2.0
+Section: kernel
+SourceDateEpoch: 1698709443
+Architecture: aarch64_generic
+Installed-Size: 4321
+Description:  Kernel support for Apple iPhone USB Ethernet driver

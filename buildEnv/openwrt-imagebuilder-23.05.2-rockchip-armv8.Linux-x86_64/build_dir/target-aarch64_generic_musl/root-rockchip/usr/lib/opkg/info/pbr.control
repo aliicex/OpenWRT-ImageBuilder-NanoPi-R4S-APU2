@@ -1,0 +1,15 @@
+Package: pbr
+Version: 1.1.1-7
+Depends: libc, ip-full, jshn, jsonfilter, resolveip, kmod-nft-core, kmod-nft-nat, nftables-json
+Conflicts: vpnbypass, vpn-policy-routing
+Provides: vpnbypass, vpn-policy-routing
+Source: feeds/packages/net/pbr
+SourceName: pbr
+License: GPL-3.0-or-later
+Section: net
+SourceDateEpoch: 1683846424
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Architecture: all
+Installed-Size: 21154
+Description:  This service enables policy-based routing for WAN interfaces and various VPN tunnels.
+ This version supports OpenWrt with both firewall3/ipset/iptables and firewall4/nft.

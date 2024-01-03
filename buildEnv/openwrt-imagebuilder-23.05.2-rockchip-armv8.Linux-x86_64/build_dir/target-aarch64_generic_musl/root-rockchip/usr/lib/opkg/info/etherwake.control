@@ -1,0 +1,15 @@
+Package: etherwake
+Version: 1.09-5
+Depends: libc
+Source: feeds/packages/net/etherwake
+SourceName: etherwake
+Section: net
+SourceDateEpoch: 1613865735
+Maintainer: Peter Wagner <tripolar@gmx.at>
+Architecture: aarch64_generic
+Installed-Size: 5618
+Description:  You can wake up WOL compliant Computers which have been powered down to
+ sleep mode or start WOL compliant Computers with a BIOS feature.
+ WOL is an abbreviation for Wake-on-LAN. It is a standard that allows you
+ to turn on a computer from another location over a network connection.
+ ether-wake also supports WOL passwords.

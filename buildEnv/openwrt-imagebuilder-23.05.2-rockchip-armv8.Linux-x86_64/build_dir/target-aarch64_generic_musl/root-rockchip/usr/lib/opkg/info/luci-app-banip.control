@@ -1,0 +1,12 @@
+Package: luci-app-banip
+Version: git-23.362.61940-b31a54e
+Depends: libc, banip
+Source: feeds/luci/applications/luci-app-banip
+SourceName: luci-app-banip
+License: Apache-2.0
+Section: luci
+SourceDateEpoch: 1703783540
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 10344
+Description:  LuCI support for banIP

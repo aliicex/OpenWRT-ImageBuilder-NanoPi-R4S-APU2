@@ -1,0 +1,13 @@
+Package: tcpdump
+Version: 4.99.4-1
+Depends: libc, libpcap1
+Source: feeds/base/package/network/utils/tcpdump
+SourceName: tcpdump
+License: BSD-3-Clause
+Section: net
+SourceDateEpoch: 1681716768
+CPE-ID: cpe:/a:tcpdump:tcpdump
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Architecture: aarch64_generic
+Installed-Size: 373687
+Description:  Network monitoring and data acquisition tool

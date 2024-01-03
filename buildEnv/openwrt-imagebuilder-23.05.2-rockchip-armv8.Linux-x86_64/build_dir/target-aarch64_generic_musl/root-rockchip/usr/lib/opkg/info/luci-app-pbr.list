@@ -1,0 +1,6 @@
+/www/luci-static/resources/view/pbr/overview.js
+/usr/libexec/rpcd/luci.pbr
+/etc/uci-defaults/40_luci-pbr
+/usr/share/luci/menu.d/luci-app-pbr.json
+/www/luci-static/resources/pbr/status.js
+/usr/share/rpcd/acl.d/luci-app-pbr.json

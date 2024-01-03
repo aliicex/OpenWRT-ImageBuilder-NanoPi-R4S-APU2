@@ -1,0 +1,13 @@
+Package: sqm-scripts-extra
+Version: 2016-06-08-1
+Depends: libc, sqm-scripts
+Source: feeds/packages/net/sqm-scripts-extra
+SourceName: sqm-scripts-extra
+License: GPLv2
+Section: net
+SourceDateEpoch: 1465385931
+Maintainer: Kevin Darbyshire-Bryant <kevin@darbyshire-bryant.me.uk>, Sebastian Moeller <moeller0@gmx.de>
+Architecture: all
+Installed-Size: 2253
+Description:  A set of experimental scripts for sqm-scripts QoS package. The contents of this package may
+ change as new qdiscs like 'cake' are developed and tested.

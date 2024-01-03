@@ -1,0 +1,4 @@
+/etc/config/watchcat
+/etc/uci-defaults/migrate-watchcat
+/usr/bin/watchcat.sh
+/etc/init.d/watchcat

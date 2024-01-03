@@ -1,0 +1,11 @@
+Package: kmod-fs-f2fs
+Version: 5.15.137-1
+Depends: kernel (=5.15.137-1-a61b316e83bc33130e55f5c8b8b65f74), kmod-crypto-hash, kmod-crypto-crc32, kmod-nls-base
+Source: package/kernel/linux
+SourceName: kmod-fs-f2fs
+License: GPL-2.0
+Section: kernel
+SourceDateEpoch: 1698709443
+Architecture: aarch64_generic
+Installed-Size: 222
+Description:  Kernel module for F2FS filesystem support

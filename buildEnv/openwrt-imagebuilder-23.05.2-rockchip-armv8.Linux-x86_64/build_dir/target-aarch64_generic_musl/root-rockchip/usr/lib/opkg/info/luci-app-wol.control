@@ -1,0 +1,11 @@
+Package: luci-app-wol
+Version: git-21.154.28269-c7b7b42
+Depends: libc, etherwake
+Source: feeds/luci/applications/luci-app-wol
+SourceName: luci-app-wol
+Section: luci
+SourceDateEpoch: 1701721963
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 1914
+Description:  LuCI Support for Wake-on-LAN

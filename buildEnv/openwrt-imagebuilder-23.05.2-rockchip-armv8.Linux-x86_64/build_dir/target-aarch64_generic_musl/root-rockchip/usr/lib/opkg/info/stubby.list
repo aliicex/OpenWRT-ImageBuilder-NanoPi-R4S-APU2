@@ -1,0 +1,5 @@
+/etc/stubby/stubby.yml.default
+/etc/stubby/stubby.yml
+/usr/sbin/stubby
+/etc/init.d/stubby
+/etc/config/stubby
