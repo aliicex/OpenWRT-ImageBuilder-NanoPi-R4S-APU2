@@ -1,0 +1,4 @@
+#!/bin/sh
+if [ -z "${IPKG_INSTROOT}" ]; then
+	/etc/init.d/uhttpd reload
+fi

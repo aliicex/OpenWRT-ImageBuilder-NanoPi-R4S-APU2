@@ -1,0 +1,11 @@
+Package: kmod-crypto-null
+Version: 5.15.137-1
+Depends: kernel (=5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-crypto-hash
+Source: package/kernel/linux
+SourceName: kmod-crypto-null
+License: GPL-2.0
+Section: kernel
+SourceDateEpoch: 1698709443
+Architecture: mipsel_24kc
+Installed-Size: 189
+Description:  Null CryptoAPI module

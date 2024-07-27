@@ -1,0 +1,11 @@
+Package: kmod-usb3
+Version: 5.15.137-1
+Depends: kernel (=5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-usb-xhci-hcd, kmod-usb-xhci-mtk, kmod-usb-core
+Source: package/kernel/linux
+SourceName: kmod-usb3
+License: GPL-2.0
+Section: kernel
+SourceDateEpoch: 1698709443
+Architecture: mipsel_24kc
+Installed-Size: 6037
+Description:  Kernel support for USB3 (XHCI) controllers

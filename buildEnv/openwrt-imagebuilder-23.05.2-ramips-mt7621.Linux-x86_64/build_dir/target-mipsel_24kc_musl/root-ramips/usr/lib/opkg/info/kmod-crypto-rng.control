@@ -1,0 +1,11 @@
+Package: kmod-crypto-rng
+Version: 5.15.137-1
+Depends: kernel (=5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-crypto-hash, kmod-crypto-hmac, kmod-crypto-sha512
+Source: package/kernel/linux
+SourceName: kmod-crypto-rng
+License: GPL-2.0
+Section: kernel
+SourceDateEpoch: 1698709443
+Architecture: mipsel_24kc
+Installed-Size: 8732
+Description:  CryptoAPI random number generation

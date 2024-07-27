@@ -1,0 +1,12 @@
+Package: luci-proto-ppp
+Version: git-21.158.38888-88b9d84
+Depends: libc
+Source: feeds/luci/protocols/luci-proto-ppp
+SourceName: luci-proto-ppp
+License: Apache-2.0
+Section: luci
+SourceDateEpoch: 1623062888
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 2197
+Description:  Support for PPP/PPPoE/PPPoA/PPtP

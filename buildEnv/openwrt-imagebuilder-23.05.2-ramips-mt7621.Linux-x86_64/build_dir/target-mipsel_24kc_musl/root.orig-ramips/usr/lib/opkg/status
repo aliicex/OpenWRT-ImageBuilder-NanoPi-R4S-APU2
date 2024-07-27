@@ -1,0 +1,1238 @@
+Package: terminfo
+Version: 6.4-2
+Depends: libc
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189172
+Auto-Installed: yes
+
+Package: iwinfo
+Version: 2023-07-01-ca79f641-1
+Depends: libc, libiwinfo20230701
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189174
+Auto-Installed: yes
+
+Package: liblucihttp0
+ABIVersion: 0
+Version: 2023-03-15-9b5b683f-1
+Depends: libc
+Provides: liblucihttp
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189168
+Auto-Installed: yes
+
+Package: cgi-io
+Version: 2022-08-10-901b0f04-21
+Depends: libc, libubox20230523, libubus20230605
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189168
+Auto-Installed: yes
+
+Package: libc
+Version: 1.2.4-4
+Depends: libgcc
+Status: install hold,user installed
+Essential: yes
+Architecture: mipsel_24kc
+Installed-Time: 1710189160
+
+Package: kmod-crypto-gf128
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460)
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189181
+Auto-Installed: yes
+
+Package: opkg
+Version: 2022-02-24-d038e5b6-2
+Depends: libc, uclient-fetch, libpthread, libubox20230523
+Status: install user installed
+Essential: yes
+Architecture: mipsel_24kc
+Conffiles:
+ /etc/opkg.conf f38c19f696ea87c0b30eb5bfeb8657237f4625e1a749c58b99f01595edfb6446
+ /etc/opkg/customfeeds.conf 61d1f3aa62fe977614ed0c2f0ad3b2ee2f7b451bfb34812071d86d31a4d43d4a
+Installed-Time: 1710189171
+Auto-Installed: yes
+
+Package: kmod-usb-core
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-nls-base
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189185
+Auto-Installed: yes
+
+Package: luci-app-opkg
+Version: git-24.043.63812-c89a68b
+Depends: libc, opkg
+Status: install ok installed
+Architecture: all
+Installed-Time: 1710189172
+Auto-Installed: yes
+
+Package: libpthread
+Version: 1.2.4-4
+Depends: libgcc1
+Status: install hold installed
+Essential: yes
+Architecture: mipsel_24kc
+Installed-Time: 1710189171
+Auto-Installed: yes
+
+Package: ubus
+Version: 2023-06-05-f787c97b-1
+Depends: libc, libubus20230605, libblobmsg-json20230523, ubusd
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189176
+Auto-Installed: yes
+
+Package: iw
+Version: 5.19-1
+Depends: libc, libnl-tiny1
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189174
+Auto-Installed: yes
+
+Package: kmod-crypto-manager
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-crypto-aead, kmod-crypto-hash
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189180
+Auto-Installed: yes
+
+Package: libuci20130104
+ABIVersion: 20130104
+Version: 2023-08-10-5781664d-1
+Depends: libc, libubox20230523
+Provides: libuci
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189166
+Auto-Installed: yes
+
+Package: rpcd
+Version: 2023-07-01-c07ab2f9-1
+Depends: libc, libubus20230605, libubox20230523, libuci20130104, libblobmsg-json20230523, libjson-c5
+Status: install ok installed
+Architecture: mipsel_24kc
+Conffiles:
+ /etc/config/rpcd 1a40da0ebe45b1afd131dfc4650592913e38445e7fe42f96d3b95ad5151ac0e6
+Installed-Time: 1710189167
+Auto-Installed: yes
+
+Package: busybox
+Version: 1.36.1-1
+Depends: libc
+Conflicts: busybox-selinux
+Status: install user installed
+Essential: yes
+Architecture: mipsel_24kc
+Conffiles:
+ /etc/syslog.conf e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+Installed-Time: 1710189178
+
+Package: kmod-crypto-ctr
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-crypto-manager, kmod-crypto-seqiv
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189181
+Auto-Installed: yes
+
+Package: libiwinfo20230701
+ABIVersion: 20230701
+Version: 2023-07-01-ca79f641-1
+Depends: libc, libnl-tiny1, libuci20130104, libubus20230605, libiwinfo-data
+Provides: libiwinfo
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189169
+Auto-Installed: yes
+
+Package: wpad-mesh-mbedtls
+Version: 2023-09-08-e5ccbfc6-6
+Depends: hostapd-common (= 2023-09-08-e5ccbfc6-6), libc, libnl-tiny1, hostapd-common, ucode, libubus20230605, libucode20230711, ucode-mod-fs, ucode-mod-nl80211, ucode-mod-rtnl, ucode-mod-ubus, ucode-mod-uloop, libblobmsg-json20230523, libmbedtls12
+Provides: hostapd, wpa-supplicant, wpa-supplicant-mesh, wpad-mesh
+Conflicts: hostapd, hostapd-basic, hostapd-basic-openssl, hostapd-basic-wolfssl, hostapd-basic-mbedtls, hostapd-mini, hostapd-openssl, hostapd-wolfssl, hostapd-mbedtls, wpad, wpad-mesh-openssl, wpad-mesh-wolfssl, wpad, wpad-mesh-openssl, wpad-mesh-wolfssl
+Status: install user installed
+Architecture: mipsel_24kc
+Conffiles:
+ /etc/config/radius bef62a785544c390592e7626153135a5b7af0ce863e63c57c098cef75991d201
+ /etc/radius/clients fbb33c7cae037be801aa89912ec835397c6f7f8c2ac1c6526857d17da865e2ab
+ /etc/radius/users 0a9b818ca14c9a87f23a1455530a6941eb63878724386d820b6ecacd0eeeb935
+Installed-Time: 1710189176
+
+Package: kmod-nft-fib
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-nft-core
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189164
+Auto-Installed: yes
+
+Package: kmod-nfnetlink
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460)
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189161
+Auto-Installed: yes
+
+Package: kmod-crypto-hash
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460)
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189163
+Auto-Installed: yes
+
+Package: nano
+Version: 7.2-2
+Depends: libc, libncurses6
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189172
+
+Package: kmod-nf-reject6
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460)
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189162
+Auto-Installed: yes
+
+Package: kmod-crypto-aead
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-crypto-null
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189180
+Auto-Installed: yes
+
+Package: kmod-batman-adv
+Version: 5.15.137+2023.1-4
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-lib-crc16, kmod-lib-crc32c, kmod-cfg80211, batctl
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189175
+
+Package: luci-mod-system
+Version: git-24.067.01860-7a82b2f
+Depends: libc, luci-base
+Status: install ok installed
+Architecture: all
+Installed-Time: 1710189169
+Auto-Installed: yes
+
+Package: kmod-nf-flow
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-nf-conntrack
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189164
+Auto-Installed: yes
+
+Package: libnl-tiny1
+ABIVersion: 1
+Version: 2023-07-27-bc92a280-1
+Depends: libc
+Provides: libnl-tiny
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189167
+Auto-Installed: yes
+
+Package: kmod-usb-xhci-mtk
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-usb-xhci-hcd, kmod-usb-core
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189185
+Auto-Installed: yes
+
+Package: ucode-mod-uloop
+Version: 2023-11-07-a6e75e02-1
+Depends: libc, ucode, libubox20230523
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189176
+Auto-Installed: yes
+
+Package: px5g-mbedtls
+Version: 10
+Depends: libc, libmbedtls12
+Provides: px5g
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189173
+Auto-Installed: yes
+
+Package: getrandom
+Version: 2022-08-13-4c7b720b-2
+Depends: libc
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189186
+Auto-Installed: yes
+
+Package: ucode-mod-ubus
+Version: 2023-11-07-a6e75e02-1
+Depends: libc, ucode, libubus20230605, libblobmsg-json20230523
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189166
+Auto-Installed: yes
+
+Package: luci-theme-bootstrap
+Version: git-24.067.02009-8516918
+Depends: libc, luci-base
+Status: install ok installed
+Architecture: all
+Installed-Time: 1710189170
+Auto-Installed: yes
+
+Package: kmod-nf-reject
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460)
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189162
+Auto-Installed: yes
+
+Package: procd-ujail
+Version: 2023-06-25-2db83655-2
+Depends: libc, libubox20230523, libubus20230605, libuci20130104, libblobmsg-json20230523
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189186
+
+Package: base-files
+Version: 1550-r23630-842932a63d
+Depends: libc, netifd, jsonfilter, usign, openwrt-keyring, ubi-utils, fstools, fwtool
+Status: install user installed
+Architecture: mipsel_24kc
+Conffiles:
+ /etc/ethers 56bda09b0aa3d1e88107bfa8a1c6e4449d5c1f47245dc1c4037ff9b5db163b7c
+ /etc/group 45e8cab268d4a2254d48ccb1f889630047e81758de54a614cad5449fdbebe19c
+ /etc/hosts c1a978d90673437b35fa9494e0a54294062c152bb653d490b718052ab88447fd
+ /etc/inittab 8b395f7d827753e1e92d4a1c369d9fe16caa23bf742b3f78e4599c4dd9b1b6e3
+ /etc/iproute2/rt_protos a0712b1771c8d5f3e0dcf9a6314880e71aa3498ea1ae873535bdfcf70d814061
+ /etc/iproute2/rt_tables f771e2b81741f70e3faf658dc504f0dc048672fc8caaadea15e46c35da3de8f8
+ /etc/passwd 6a451aa33393f47ade89b8bce4d9711818c2630394c3967265ffed276bb25a55
+ /etc/profile 73a6177caf76a76d178111e57eb6ee95c3ba06ce2fc6864c7fb89cacf433c66d
+ /etc/protocols 7d551355d5540b07b9d86e623cbbc4abecbb94d2a662b3afcc917940eb0e3d52
+ /etc/rc.local 515018aa94eb4937dade12dc0d69890b352af35a5ab5fb8203f9ed10990ac06f
+ /etc/services 754ccc71ca347bc79ac4c45139d416b7cf1e65a919dad1db15613a216cd6b9cc
+ /etc/shadow 9000a74fcbf027301e784909e74e2cfff1b879707432090fadedc8527858873e
+ /etc/shells 8b35ce73c18161a7d7ed16fa244410993bd031515260e3e0c11749047df48d0a
+ /etc/shinit f633939cdda16a3116225a578f457295b2a0da824c47d5f0e90a58806c059321
+ /etc/sysctl.conf c02fe88dc055a1eaee9e7cb631760a3a5a9cea55610b42aa45196838c6f1a55e
+ /etc/sysupgrade.conf 9e87b05fe2f12c84d1c465b396322748479f64bc40e5bab061887f0bd95020a6
+Installed-Time: 1710189178
+
+Package: kmod-lib-crc16
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460)
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189174
+Auto-Installed: yes
+
+Package: kmod-nf-nat
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-nf-conntrack
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189163
+Auto-Installed: yes
+
+Package: kmod-crypto-crc32c
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-crypto-hash
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189163
+Auto-Installed: yes
+
+Package: ucode-mod-uci
+Version: 2023-11-07-a6e75e02-1
+Depends: libc, ucode, libuci20130104
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189166
+Auto-Installed: yes
+
+Package: kmod-mt7615e
+Version: 5.15.137+2023-08-14-b14c2351-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-mac80211, kmod-mt7615-common
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189184
+Auto-Installed: yes
+
+Package: libustream-mbedtls20201210
+ABIVersion: 20201210
+Version: 2023-02-25-498f6e26-1
+Depends: libc, libubox20230523, libmbedtls12
+Provides: libustream-mbedtls
+Conflicts: libustream-openssl, libustream-wolfssl
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189173
+Auto-Installed: yes
+
+Package: netifd
+Version: 2024-01-04-c18cc79d-1
+Depends: libc, libuci20130104, libnl-tiny1, libubus20230605, ubus, ubusd, jshn, libubox20230523
+Status: install user installed
+Architecture: mipsel_24kc
+Conffiles:
+ /etc/udhcpc.user 4dabffbc2110a29e01babc63d9b8db94da49efd3ed784d35b49a559ac8ce7035
+Installed-Time: 1710189177
+Auto-Installed: yes
+
+Package: firewall4
+Version: 2023-09-01-598d9fbb-1
+Depends: ucode (>= 2022-03-22), libc, kmod-nft-core, kmod-nft-fib, kmod-nft-offload, kmod-nft-nat, nftables-json, ucode, ucode-mod-fs, ucode-mod-ubus, ucode-mod-uci
+Provides: uci-firewall
+Status: install user installed
+Architecture: mipsel_24kc
+Conffiles:
+ /etc/config/firewall 68e73e236b55846f84f668a53f1a1b1802d16adca3f325953051d977a05d383c
+ /etc/nftables.d/10-custom-filter-chains.nft af5cbfeb3e3b61d32ce134ae33d15330ee27da838e6f4fb9c717f034923b8b16
+ /etc/nftables.d/README 0656d83221c1d000f6b9655757c412f328e332b5bdf25efbfa88611d8104490d
+Installed-Time: 1710189166
+Auto-Installed: yes
+
+Package: dnsmasq
+Version: 2.89-4
+Depends: libc, libubus20230605
+Status: install user installed
+Architecture: mipsel_24kc
+Conffiles:
+ /etc/config/dhcp a3ab720d8cd674dced9d6c22963a900e700480d9e666285c52c0cf0a418ba5bb
+ /etc/dnsmasq.conf 1e6ab19c1ae5e70d609ac7b6246541d52042e4dee1892f825266507ef52d7dfd
+Installed-Time: 1710189178
+
+Package: kmod-usb-xhci-hcd
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-usb-core
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189185
+Auto-Installed: yes
+
+Package: procd
+Version: 2023-06-25-2db83655-2
+Depends: libc, ubusd, ubus, libjson-script20230523, ubox, libubox20230523, libubus20230605, libblobmsg-json20230523, libjson-c5, jshn
+Conflicts: procd-selinux
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189185
+
+Package: kmod-crypto-hmac
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-crypto-hash, kmod-crypto-manager
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189180
+Auto-Installed: yes
+
+Package: kmod-mt7615-common
+Version: 5.15.137+2023-08-14-b14c2351-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-mac80211, kmod-mt76-core, kmod-mt76-connac, kmod-hwmon-core
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189184
+Auto-Installed: yes
+
+Package: ubusd
+Version: 2023-06-05-f787c97b-1
+Depends: libc, libubox20230523, libblobmsg-json20230523
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189176
+Auto-Installed: yes
+
+Package: rpcd-mod-ucode
+Version: 2023-07-01-c07ab2f9-1
+Depends: libc, libubus20230605, libubox20230523, rpcd, libucode20230711
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189167
+Auto-Installed: yes
+
+Package: ucode-mod-math
+Version: 2023-11-07-a6e75e02-1
+Depends: libc, ucode
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189168
+Auto-Installed: yes
+
+Package: kmod-lib-crc32c
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-crypto-crc32c
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189163
+Auto-Installed: yes
+
+Package: luci-mod-status
+Version: git-24.064.82650-3cbf270
+Depends: libc, luci-base, libiwinfo20230701, rpcd-mod-iwinfo
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189169
+Auto-Installed: yes
+
+Package: kmod-crypto-sha512
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-crypto-hash
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189180
+Auto-Installed: yes
+
+Package: kmod-mt76-connac
+Version: 5.15.137+2023-08-14-b14c2351-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-mac80211, kmod-mt76-core
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189184
+Auto-Installed: yes
+
+Package: libmbedtls12
+ABIVersion: 12
+Version: 2.28.7-2
+Depends: libc
+Provides: libmbedtls
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189173
+Auto-Installed: yes
+
+Package: batctl-default
+Version: 2023.1-2
+Depends: libc, libnl-tiny1, librt
+Provides: batctl
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189175
+Auto-Installed: yes
+Alternatives: 200:/usr/sbin/batctl:/usr/libexec/batctl-default
+
+Package: kmod-crypto-seqiv
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-crypto-aead, kmod-crypto-rng
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189180
+Auto-Installed: yes
+
+Package: kmod-nft-nat
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-nft-core, kmod-nf-nat
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189164
+Auto-Installed: yes
+
+Package: kmod-usb3
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-usb-xhci-hcd, kmod-usb-xhci-mtk, kmod-usb-core
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189185
+
+Package: luci-app-firewall
+Version: git-24.067.01746-69867db
+Depends: libc, uci-firewall
+Status: install ok installed
+Architecture: all
+Installed-Time: 1710189167
+Auto-Installed: yes
+
+Package: libubus20230605
+ABIVersion: 20230605
+Version: 2023-06-05-f787c97b-1
+Depends: libc, libubox20230523
+Provides: libubus
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189166
+Auto-Installed: yes
+
+Package: libmnl0
+ABIVersion: 0
+Version: 1.0.5-1
+Depends: libc
+Provides: libmnl
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189164
+Auto-Installed: yes
+
+Package: jansson4
+ABIVersion: 4
+Version: 2.14-3
+Depends: libc
+Provides: jansson
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189165
+Auto-Installed: yes
+
+Package: ubi-utils
+Version: 2.1.5-1
+Depends: libc
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189177
+Auto-Installed: yes
+
+Package: fstools
+Version: 2023-02-28-bfe882d5-1
+Depends: libc, ubox, ubi-utils
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189178
+Auto-Installed: yes
+
+Package: uclient-fetch
+Version: 2023-04-13-007d9454-1
+Depends: libc, libuclient20201210
+Provides: wget
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189171
+Auto-Installed: yes
+Alternatives: 200:/usr/bin/wget:/bin/uclient-fetch
+
+Package: kmod-crypto-ghash
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-crypto-gf128, kmod-crypto-hash
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189182
+Auto-Installed: yes
+
+Package: uci
+Version: 2023-08-10-5781664d-1
+Depends: libc, libuci20130104
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189186
+
+Package: ucode-mod-fs
+Version: 2023-11-07-a6e75e02-1
+Depends: libc, ucode
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189165
+Auto-Installed: yes
+
+Package: luci-ssl
+Version: git-23.035.26083-7550ad6
+Depends: libc, luci-light, libustream-mbedtls20201210, px5g-mbedtls
+Status: install user installed
+Architecture: all
+Installed-Time: 1710189173
+
+Package: dropbear
+Version: 2022.82-5
+Depends: libc
+Status: install user installed
+Architecture: mipsel_24kc
+Conffiles:
+ /etc/config/dropbear 0198dbc97b5a9aac76a5c6233684571ccdcc91fcb735e91c36d2b06a98158589
+ /etc/dropbear/dropbear_ed25519_host_key e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+ /etc/dropbear/dropbear_rsa_host_key e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+Installed-Time: 1710189179
+Alternatives: 100:/usr/bin/scp:/usr/sbin/dropbear, 100:/usr/bin/ssh:/usr/sbin/dropbear
+
+Package: kmod-hwmon-core
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460)
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189184
+Auto-Installed: yes
+
+Package: libnftnl11
+ABIVersion: 11
+Version: 1.2.6-1
+Depends: libc, libmnl0
+Provides: libnftnl
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189165
+Auto-Installed: yes
+
+Package: rpcd-mod-file
+Version: 2023-07-01-c07ab2f9-1
+Depends: libc, libubus20230605, libubox20230523, rpcd
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189167
+Auto-Installed: yes
+
+Package: mtd
+Version: 26
+Depends: libc, libubox20230523
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189185
+
+Package: procd-seccomp
+Version: 2023-06-25-2db83655-2
+Depends: libc, libubox20230523, libblobmsg-json20230523
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189186
+
+Package: ucode-mod-nl80211
+Version: 2023-11-07-a6e75e02-1
+Depends: libc, ucode, libnl-tiny1, libubox20230523
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189176
+Auto-Installed: yes
+
+Package: libjson-script20230523
+ABIVersion: 20230523
+Version: 2023-05-23-75a3b870-1
+Depends: libc, libubox20230523
+Provides: libjson-script
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189170
+Auto-Installed: yes
+
+Package: libiwinfo-data
+Version: 2023-07-01-ca79f641-1
+Depends: libc
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189169
+Auto-Installed: yes
+
+Package: ucode
+Version: 2023-11-07-a6e75e02-1
+Depends: libc, libucode20230711
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189161
+Auto-Installed: yes
+
+Package: rpcd-mod-luci
+Version: 20230123-1
+Depends: libc, rpcd, libubox20230523, libubus20230605, libnl-tiny1
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189167
+Auto-Installed: yes
+
+Package: kmod-crypto-ccm
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-crypto-ctr, kmod-crypto-aead
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189181
+Auto-Installed: yes
+
+Package: kmod-nf-log
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460)
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189163
+Auto-Installed: yes
+
+Package: urandom-seed
+Version: 3
+Depends: libc, getrandom
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189186
+
+Package: luci-proto-ppp
+Version: git-21.158.38888-88b9d84
+Depends: libc
+Status: install ok installed
+Architecture: all
+Installed-Time: 1710189170
+Auto-Installed: yes
+
+Package: luci-mod-admin-full
+Version: git-19.253.48496-3f93650
+Depends: libc, luci-base, luci-mod-status, luci-mod-system, luci-mod-network
+Status: install ok installed
+Architecture: all
+Installed-Time: 1710189170
+Auto-Installed: yes
+
+Package: luci-base
+Version: git-24.067.02086-146a8f1
+Depends: libc, rpcd, rpcd-mod-file, rpcd-mod-luci, rpcd-mod-ucode, cgi-io, ucode, ucode-mod-fs, ucode-mod-uci, ucode-mod-ubus, ucode-mod-math, ucode-mod-html, liblucihttp-ucode
+Status: install ok installed
+Architecture: mipsel_24kc
+Conffiles:
+ /etc/config/luci 60078f7c02ed91d23092c9b75cb9ea5c8ee39f7727def813c8201f8e48a296f4
+ /etc/config/ucitrack f51366117a6456038cfa0d753ff7fe8a9fb5636f561b7bef8718939c6f9a3566
+ /etc/luci-uploads/.placeholder e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+Installed-Time: 1710189168
+Auto-Installed: yes
+
+Package: kmod-leds-gpio
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460)
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189179
+
+Package: kmod-gpio-button-hotplug
+Version: 5.15.137-3
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460)
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189179
+
+Package: logd
+Version: 2022-08-13-4c7b720b-2
+Depends: libc, libubox20230523, libubus20230605, libblobmsg-json20230523
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189185
+
+Package: kmod-mt7603
+Version: 5.15.137+2023-08-14-b14c2351-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-mac80211, kmod-mt76-core
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189183
+
+Package: kmod-nf-log6
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-nf-log
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189163
+Auto-Installed: yes
+
+Package: librt
+Version: 1.2.4-4
+Depends: libpthread
+Status: install hold installed
+Essential: yes
+Architecture: mipsel_24kc
+Installed-Time: 1710189175
+Auto-Installed: yes
+
+Package: kmod-mac80211
+Version: 5.15.137+6.1.24-3
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-cfg80211, kmod-crypto-cmac, kmod-crypto-ccm, kmod-crypto-gcm, hostapd-common
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189183
+Auto-Installed: yes
+
+Package: luci-proto-ipv6
+Version: git-23.355.78874-80140aa
+Depends: libc
+Status: install ok installed
+Architecture: all
+Installed-Time: 1710189161
+Auto-Installed: yes
+
+Package: openwrt-keyring
+Version: 2022-03-25-62471e69-2
+Depends: libc
+Provides: lede-keyring
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189177
+Auto-Installed: yes
+
+Package: luci-app-attendedsysupgrade
+Version: git-23.339.51123-138595a
+Depends: libc, luci-base, attendedsysupgrade-common, cgi-io
+Status: install user installed
+Architecture: all
+Installed-Time: 1710189173
+
+Package: jshn
+Version: 2023-05-23-75a3b870-1
+Depends: libc, libjson-c5, libubox20230523, libblobmsg-json20230523
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189177
+Auto-Installed: yes
+
+Package: nftables-json
+Version: 1.0.8-1
+Depends: libc, kmod-nft-core, libnftnl11, jansson4
+Provides: nftables
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189165
+Auto-Installed: yes
+
+Package: attendedsysupgrade-common
+Version: 8
+Depends: libc, rpcd, rpcd-mod-rpcsys
+Status: install ok installed
+Architecture: all
+Installed-Time: 1710189173
+Auto-Installed: yes
+
+Package: kmod-nft-offload
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-nf-flow, kmod-nft-nat
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189164
+Auto-Installed: yes
+
+Package: libncurses6
+ABIVersion: 6
+Version: 6.4-2
+Depends: libc, terminfo
+Provides: libncursesw, libncurses, libncursesw6
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189172
+Auto-Installed: yes
+
+Package: kmod-crypto-null
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-crypto-hash
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189179
+Auto-Installed: yes
+
+Package: kmod-mt7615-firmware
+Version: 5.15.137+2023-08-14-b14c2351-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-mac80211, kmod-mt7615e
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189184
+
+Package: libjson-c5
+ABIVersion: 5
+Version: 0.16-3
+Depends: libc
+Provides: libjson-c
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189161
+Auto-Installed: yes
+
+Package: auc
+Version: 0.3.2-1
+Depends: libc, attendedsysupgrade-common, libblobmsg-json20230523, libubox20230523, libubus20230605, libuci20130104, libuclient20201210, rpcd-mod-rpcsys
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189173
+
+Package: uhttpd
+Version: 2023-06-25-34a8a74d-2
+Depends: libc, libubox20230523, libblobmsg-json20230523, libjson-script20230523, libjson-c5
+Status: install ok installed
+Architecture: mipsel_24kc
+Conffiles:
+ /etc/config/uhttpd bcf5f1c5e714cdc46e7855da53ba4c427c37735267ea17eebf958f24efd7d247
+Installed-Time: 1710189171
+Auto-Installed: yes
+
+Package: kmod-nf-conntrack
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460)
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189162
+Auto-Installed: yes
+
+Package: usign
+Version: 2020-05-23-f1f65026-1
+Depends: libc, libubox20230523
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189177
+Auto-Installed: yes
+
+Package: libblobmsg-json20230523
+ABIVersion: 20230523
+Version: 2023-05-23-75a3b870-1
+Depends: libc, libjson-c5, libubox20230523
+Provides: libblobmsg-json
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189166
+Auto-Installed: yes
+
+Package: kmod-crypto-gcm
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-crypto-ctr, kmod-crypto-ghash, kmod-crypto-null
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189182
+Auto-Installed: yes
+
+Package: rpcd-mod-rpcsys
+Version: 2023-07-01-c07ab2f9-1
+Depends: libc, libubus20230605, libubox20230523, rpcd
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189173
+Auto-Installed: yes
+
+Package: ucode-mod-rtnl
+Version: 2023-11-07-a6e75e02-1
+Depends: libc, ucode, libnl-tiny1, libubox20230523
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189176
+Auto-Installed: yes
+
+Package: ca-bundle
+Version: 20230311-1
+Depends: libc
+Provides: ca-certs
+Status: install user installed
+Architecture: all
+Installed-Time: 1710189178
+
+Package: libuclient20201210
+ABIVersion: 20201210
+Version: 2023-04-13-007d9454-1
+Depends: libc, libubox20230523
+Provides: libuclient
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189171
+Auto-Installed: yes
+
+Package: kmod-crypto-cmac
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-crypto-hash
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189179
+Auto-Installed: yes
+
+Package: ucode-mod-html
+Version: 1
+Depends: libc, libucode20230711
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189168
+Auto-Installed: yes
+
+Package: luci
+Version: git-23.051.66410-a505bb1
+Depends: libc, luci-light, luci-app-opkg
+Status: install user installed
+Architecture: all
+Installed-Time: 1710189172
+
+Package: kmod-crypto-rng
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-crypto-hash, kmod-crypto-hmac, kmod-crypto-sha512
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189180
+Auto-Installed: yes
+
+Package: kmod-nf-conntrack6
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-nf-conntrack
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189162
+Auto-Installed: yes
+
+Package: luci-light
+Version: git-23.024.33244-34dee82
+Depends: libc, luci-proto-ipv6, luci-app-firewall, luci-mod-admin-full, luci-proto-ppp, luci-theme-bootstrap, rpcd-mod-rrdns, uhttpd, uhttpd-mod-ubus
+Status: install ok installed
+Architecture: all
+Installed-Time: 1710189171
+Auto-Installed: yes
+
+Package: libgcc1
+ABIVersion: 1
+Version: 12.3.0-4
+Provides: libgcc
+Status: install hold,user installed
+Essential: yes
+Architecture: mipsel_24kc
+Installed-Time: 1710189160
+Auto-Installed: yes
+
+Package: kmod-usb-ledtrig-usbport
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-usb-core
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189185
+
+Package: kmod-mt76-core
+Version: 5.15.137+2023-08-14-b14c2351-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-mac80211
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189183
+Auto-Installed: yes
+
+Package: ubox
+Version: 2022-08-13-4c7b720b-2
+Depends: libc, libubox20230523, ubusd, ubus, libubus20230605, libuci20130104
+Status: install ok installed
+Architecture: mipsel_24kc
+Conffiles:
+ /etc/modules.conf 83dab538976e37112de89ad9569f77410553bd0a8393d19ed656353218ccf6ae
+Installed-Time: 1710189178
+Auto-Installed: yes
+Alternatives: 100:/sbin/rmmod:/sbin/kmodloader, 100:/sbin/insmod:/sbin/kmodloader, 100:/sbin/lsmod:/sbin/kmodloader, 100:/sbin/modinfo:/sbin/kmodloader, 100:/sbin/modprobe:/sbin/kmodloader
+
+Package: kernel
+Version: 5.15.137-1-9c242f353867f49a96054ff8c9f2c460
+Depends: libc
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189160
+
+Package: rpcd-mod-iwinfo
+Version: 2023-07-01-c07ab2f9-1
+Depends: libiwinfo (>= 2023-01-21), libc, libubus20230605, libubox20230523, rpcd, libiwinfo20230701
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189169
+Auto-Installed: yes
+
+Package: luci-mod-network
+Version: git-24.067.01746-0e01542
+Depends: libc, luci-base, rpcd-mod-iwinfo
+Status: install ok installed
+Architecture: all
+Installed-Time: 1710189170
+Auto-Installed: yes
+
+Package: kmod-nft-core
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), kmod-nfnetlink, kmod-nf-reject, kmod-nf-reject6, kmod-nf-conntrack6, kmod-nf-nat, kmod-nf-log, kmod-nf-log6, kmod-lib-crc32c
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189164
+Auto-Installed: yes
+
+Package: libucode20230711
+ABIVersion: 20230711
+Version: 2023-11-07-a6e75e02-1
+Depends: libc, libjson-c5
+Provides: libucode
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189161
+Auto-Installed: yes
+
+Package: kmod-nls-base
+Version: 5.15.137-1
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460)
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189184
+Auto-Installed: yes
+
+Package: uhttpd-mod-ubus
+Version: 2023-06-25-34a8a74d-2
+Depends: libc, uhttpd, libubus20230605, libblobmsg-json20230523
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189171
+Auto-Installed: yes
+
+Package: fwtool
+Version: 2019-11-12-8f7fe925-1
+Depends: libc
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189178
+Auto-Installed: yes
+
+Package: jsonfilter
+Version: 2024-01-23-594cfa86-1
+Depends: libc, libubox20230523, libjson-c5
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189177
+Auto-Installed: yes
+
+Package: liblucihttp-ucode
+Version: 2023-03-15-9b5b683f-1
+Depends: libc, liblucihttp0, libucode20230711
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189168
+Auto-Installed: yes
+
+Package: libubox20230523
+ABIVersion: 20230523
+Version: 2023-05-23-75a3b870-1
+Depends: libc
+Provides: libubox
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189166
+Auto-Installed: yes
+
+Package: hostapd-common
+Version: 2023-09-08-e5ccbfc6-6
+Depends: libc
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189175
+Auto-Installed: yes
+
+Package: wireless-regdb
+Version: 2024.01.23-1
+Depends: libc
+Status: install ok installed
+Architecture: all
+Installed-Time: 1710189174
+Auto-Installed: yes
+
+Package: urngd
+Version: 2023-11-01-44365eb1-1
+Depends: libc, libubox20230523
+Status: install user installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189186
+
+Package: kmod-cfg80211
+Version: 5.15.137+6.1.24-3
+Depends: kernel (= 5.15.137-1-9c242f353867f49a96054ff8c9f2c460), iw, iwinfo, wireless-regdb
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189174
+Auto-Installed: yes
+
+Package: rpcd-mod-rrdns
+Version: 20170710
+Depends: libc, rpcd, libubox20230523, libubus20230605
+Status: install ok installed
+Architecture: mipsel_24kc
+Installed-Time: 1710189170
+Auto-Installed: yes
+

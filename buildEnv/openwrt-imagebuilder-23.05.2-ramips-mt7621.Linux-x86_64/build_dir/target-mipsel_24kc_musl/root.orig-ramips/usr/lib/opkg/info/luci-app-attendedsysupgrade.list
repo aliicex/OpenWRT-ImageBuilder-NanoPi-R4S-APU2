@@ -1,0 +1,4 @@
+/www/luci-static/resources/view/attendedsysupgrade/overview.js
+/www/luci-static/resources/view/attendedsysupgrade/configuration.js
+/usr/share/luci/menu.d/luci-app-attendedsysupgrade.json
+/usr/share/rpcd/acl.d/luci-app-attendedsysupgrade.json
