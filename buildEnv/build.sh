@@ -24,30 +24,30 @@ do
     case $opt in
         "r4s")
             echo "Building image for NanoPi R4S"
-            RELEASE='https://downloads.openwrt.org/releases/23.05.2/targets/rockchip/armv8/openwrt-imagebuilder-23.05.2-rockchip-armv8.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-23.05.2-rockchip-armv8.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/22.05.4/targets/rockchip/armv8/openwrt-imagebuilder-22.05.4-rockchip-armv8.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-22.05.4-rockchip-armv8.Linux-x86_64'
             PROFILE='friendlyarm_nanopi-r4s'
             unset PACKAGES_EXTRA
             break
             ;;
         "apu2")
             echo "Building image for PC Engines apu2 platform"
-            RELEASE='https://downloads.openwrt.org/releases/23.05.2/targets/x86/64/openwrt-imagebuilder-23.05.2-x86-64.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-23.05.2-x86-64.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/22.05.4/targets/x86/64/openwrt-imagebuilder-22.05.4-x86-64.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-22.05.4-x86-64.Linux-x86_64'
             PROFILE='generic'
             break
           ;;
          "wac124")
             echo "Building image for Netgear WAC124"
-            RELEASE='https://downloads.openwrt.org/releases/23.05.2/targets/ramips/mt7621/openwrt-imagebuilder-23.05.2-ramips-mt7621.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-23.05.2-ramips-mt7621.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/22.05.4/targets/ramips/mt7621/openwrt-imagebuilder-22.05.4-ramips-mt7621.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-22.05.4-ramips-mt7621.Linux-x86_64'
             PROFILE='netgear_wac124'
             break
           ;;
           "wax202")
             echo "Building image for Netgear WAX202"
-            RELEASE='https://downloads.openwrt.org/releases/23.05.2/targets/ramips/mt7621/openwrt-imagebuilder-23.05.2-ramips-mt7621.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-23.05.2-ramips-mt7621.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/22.05.4/targets/ramips/mt7621/openwrt-imagebuilder-22.05.4-ramips-mt7621.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-22.05.4-ramips-mt7621.Linux-x86_64'
             PROFILE='netgear_wax202'
             break
           ;;
