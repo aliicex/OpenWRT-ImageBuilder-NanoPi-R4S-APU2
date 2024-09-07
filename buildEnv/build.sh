@@ -68,7 +68,7 @@ cd "$DIR" || exit
 BANIP='banip luci-app-banip'
 DNSMASQFULL='-dnsmasq dnsmasq-full ipset libnettle8 libnetfilter-conntrack3'
 BATMAN='kmod-batman-adv batctl-default wpad-mesh-mbedtls -wpad-mini -wpad-basic-mbedtls'
-NAS='kmod-usb-storage kmod-fs-ext4 kmod-fs-f2fs ntfs-3g kmod-fs-exfat kmod-fs-hfs kmod-fs-hfsplus luci-app-ksmbd usbutils block-mount fdisk'
+NAS='kmod-usb-storage kmod-fs-ext4 kmod-fs-f2fs ntfs-3g kmod-fs-exfat kmod-fs-hfs kmod-fs-hfsplus luci-app-samba4 usbutils block-mount fdisk'
 
 # luci-proto-batman-adv currently only available in SNAPSHOT
 rm packages/*
