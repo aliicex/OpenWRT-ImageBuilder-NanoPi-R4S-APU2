@@ -17,7 +17,6 @@ Creates the environment required to build the images for my network devices: Fri
 - banIP
 - [Stangri's](https://docs.openwrt.melmac.net/pbr/) Policy-Based Routing package
 - Wireguard support
-- Tailscale
 - USB v2 and v3.0 support
 - wget, curl, ntpclient, nano
 - usbtools
