@@ -10,14 +10,14 @@
 sudo apt update
 sudo apt install build-essential clang flex bison g++ gawk gcc-multilib g++-multilib gettext git libncurses5-dev libssl-dev python3-setuptools rsync swig unzip zlib1g-dev file wget
 
-RELEASE='https://downloads.openwrt.org/releases/24.10.3/targets/rockchip/armv8/openwrt-imagebuilder-24.10.3-rockchip-armv8.Linux-x86_64.tar.xz'
+RELEASE='https://downloads.openwrt.org/releases/24.10.3/targets/rockchip/armv8/openwrt-imagebuilder-24.10.3-rockchip-armv8.Linux-x86_64.tar.zst'
 DIR='openwrt-imagebuilder-24.10.3-rockchip-armv8.Linux-x86_64'
 PROFILE='friendlyarm_nanopi-r4s'
 
 
 ### Get imagebuilder and cd there
 echo "$RELEASE"
-curl -L  "$RELEASE" | unxz | tar -xf -
+curl -L  "$RELEASE" | tar --zstd -xf -
 
 cd "$DIR" || exit
 
