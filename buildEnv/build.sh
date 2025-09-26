@@ -21,7 +21,7 @@ curl -L  "$RELEASE" | tar --zstd -xf -
 
 cd "$DIR" || exit
 
-NAS='kmod-usb-storage kmod-fs-ext4 kmod-fs-f2fs ntfs-3g kmod-fs-exfat kmod-fs-hfs kmod-fs-hfsplus luci-app-samba4 usbutils block-mount fdisk'
+NAS='kmod-usb-storage kmod-usb-storage-uas e2fsprogs kmod-fs-ext4 kmod-fs-f2fs ntfs-3g kmod-fs-exfat kmod-fs-hfs kmod-fs-hfsplus luci-app-samba4 usbutils block-mount fdisk'
 
 ### make!
 make clean
