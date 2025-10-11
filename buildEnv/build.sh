@@ -25,7 +25,7 @@ do
     case $opt in
         "r4s")
             echo "Building image for NanoPi R4S"
-            RELEASE='https://downloads.openwrt.org/releases/24.10.3/targets/rockchip/armv8/openwrt-imagebuilder-24.10.3-rockchip-armv8.Linux-x86_64.tar.xz'
+            RELEASE='https://downloads.openwrt.org/releases/24.10.3/targets/rockchip/armv8/openwrt-imagebuilder-24.10.3-rockchip-armv8.Linux-x86_64.tar.zst'
             DIR='openwrt-imagebuilder-24.10.3-rockchip-armv8.Linux-x86_64'
             PROFILE='friendlyarm_nanopi-r4s'
             unset PACKAGES_EXTRA
@@ -33,14 +33,14 @@ do
             ;;
         "apu2")
             echo "Building image for PC Engines apu2 platform"
-            RELEASE='https://downloads.openwrt.org/releases/24.10.3/targets/x86/64/openwrt-imagebuilder-24.10.3-x86-64.Linux-x86_64.tar.xz'
+            RELEASE='https://mirror-03.infra.openwrt.org/releases/24.10.3/targets/x86/64/openwrt-imagebuilder-24.10.3-x86-64.Linux-x86_64.tar.zst'
             DIR='openwrt-imagebuilder-24.10.3-x86-64.Linux-x86_64'
             PROFILE='generic'
             break
           ;;
          "wac124")
             echo "Building image for Netgear WAC124"
-            RELEASE='https://downloads.openwrt.org/releases/24.10.3/targets/ramips/mt7621/openwrt-imagebuilder-24.10.3-ramips-mt7621.Linux-x86_64.tar.xz'
+            RELEASE='https://downloads.openwrt.org/releases/24.10.3/targets/ramips/mt7621/openwrt-imagebuilder-24.10.3-ramips-mt7621.Linux-x86_64.tar.zst'
             DIR='openwrt-imagebuilder-24.10.3-ramips-mt7621.Linux-x86_64'
             PROFILE='netgear_wac124'
             break
@@ -62,7 +62,7 @@ done
 
 ### Get imagebuilder and cd there
 echo "$RELEASE"
-curl -L  "$RELEASE" | unxz | tar -xf -
+curl -L  "$RELEASE" | tar --zstd -xf -
 
 cd "$DIR" || exit
 
