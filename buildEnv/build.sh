@@ -9,7 +9,6 @@
 # Modernized set for Ubuntu 24.04 that has Python 3.12 without python3-distutils from https://openwrt.org/docs/guide-developer/toolchain/install-buildsystem#debianubuntumint
 sudo apt update
 sudo apt install build-essential clang flex bison g++ gawk gcc-multilib g++-multilib gettext git libncurses5-dev libssl-dev python3-setuptools rsync swig unzip zlib1g-dev file wget
-sudo apt install unp xz zstd
 
 # https://openwrt.org/toh/pcengines/apu2
 # https://teklager.se/en/knowledge-base/openwrt-installation-instructions/
