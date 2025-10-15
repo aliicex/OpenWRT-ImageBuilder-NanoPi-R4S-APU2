@@ -18,7 +18,7 @@ PACKAGES_EXTRA='kmod-pcengines-apuv2 beep kmod-leds-gpio kmod-crypto-hw-ccp kmod
 PACKAGES_TETHERING='kmod-usb-net-rndis kmod-usb-net-cdc-ncm kmod-usb-net-huawei-cdc-ncm kmod-usb-net-cdc-eem kmod-usb-net-cdc-ether kmod-usb-net-cdc-subset kmod-nls-base kmod-usb-core kmod-usb-net kmod-usb2 kmod-usb-net-ipheth usbmuxd libimobiledevice usbutils'
 
 PS3='Please select your preferred OpenWRT target: '
-options=("r4s" "apu2" "wac124" "wax202" "Quit")
+options=("r4s" "apu2" "wac124" "wax202" "wa1201v2" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -51,6 +51,13 @@ do
             PROFILE='netgear_wax202'
             break
           ;;
+          "wa1201v2")
+            echo "Building image for TP-Link TL-WA1201 v2"
+            RELEASE='https://downloads.openwrt.org/releases/23.05.6/targets/ath79/generic/openwrt-imagebuilder-23.05.6-ath79-generic.Linux-x86_64.tar.xz'
+            DIR='openwrt-imagebuilder-23.05.6-ath79-generic.Linux-x86_64'
+            PROFILE='tplink_tl-wa1201-v2'
+            break
+          ;;
         "Quit")
             exit 1
             ;;
@@ -78,8 +85,8 @@ PBR='pbr luci-app-pbr resolveip ip-full'
 
 ### make!
 make clean
-if [ "$PROFILE" = 'netgear_wac124' ] || [ "$PROFILE" = 'netgear_wax202' ]; then
-	make image PROFILE="$PROFILE" PACKAGES="-ppp -ppp-mod-pppoe -ip6tables -odhcp6c -kmod-ipv6 -kmod-ip6tables -odhcpd-ipv6only luci nano luci-ssl owut $BATMAN" EXTRA_IMAGE_NAME="aliicex" DISABLED_SERVICES="dnsmasq firewall"
+if [ "$PROFILE" = 'netgear_wac124' ] || [ "$PROFILE" = 'netgear_wax202' ] || [ "$PROFILE" = 'tplink_tl-wa1201-v2' ]; then
+	make image PROFILE="$PROFILE" PACKAGES="-ppp -ppp-mod-pppoe -ip6tables -odhcp6c -kmod-ipv6 -kmod-ip6tables -odhcpd-ipv6only luci nano luci-ssl auc luci-app-attendedsysupgrade $BATMAN" EXTRA_IMAGE_NAME="aliicex" DISABLED_SERVICES="dnsmasq firewall"
 else
-	make image ROOTFS_PARTSIZE=512 PROFILE="$PROFILE" PACKAGES="luci luci-ssl nano $DNSMASQFULL kmod-ipt-nat6 luci-app-sqm sqm-scripts sqm-scripts-extra kmod-wireguard luci-app-wireguard luci-proto-wireguard wireguard-tools tailscale iptables-nft qrencode stubby unbound-daemon luci-app-unbound https-dns-proxy luci-app-https-dns-proxy watchcat luci-app-watchcat $PBR $BANIP $NAS curl wget tcpdump etherwake luci-app-wol 6in4 6to4 6rd usb-modeswitch comgt-ncm kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan luci-proto-ncm luci-proto-3g avahi-dbus-daemon avahi-utils smcroute ntpclient owut $PACKAGES_EXTRA $PACKAGES_TETHERING $BATMAN" EXTRA_IMAGE_NAME="aliicex" DISABLED_SERVICES="stubby unbound pbr avahi-daemon etherwake https-dns-proxy"
+	make image ROOTFS_PARTSIZE=512 PROFILE="$PROFILE" PACKAGES="luci luci-ssl nano $DNSMASQFULL kmod-ipt-nat6 luci-app-sqm sqm-scripts sqm-scripts-extra kmod-wireguard luci-app-wireguard luci-proto-wireguard wireguard-tools tailscale iptables-nft qrencode stubby unbound-daemon luci-app-unbound https-dns-proxy luci-app-https-dns-proxy watchcat luci-app-watchcat $PBR $BANIP $NAS curl wget tcpdump etherwake luci-app-wol 6in4 6to4 6rd usb-modeswitch comgt-ncm kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan luci-proto-ncm luci-proto-3g avahi-dbus-daemon avahi-utils smcroute ntpclient auc luci-app-attendedsysupgrade $PACKAGES_EXTRA $PACKAGES_TETHERING $BATMAN" EXTRA_IMAGE_NAME="aliicex" DISABLED_SERVICES="stubby unbound pbr avahi-daemon etherwake https-dns-proxy"
 fi
