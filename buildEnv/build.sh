@@ -55,8 +55,8 @@ do
           ;;
           "wa1201v2")
             echo "Building image for TP-Link TL-WA1201 v2"
-            RELEASE='https://downloads.openwrt.org/releases/23.05.6/targets/ath79/generic/openwrt-imagebuilder-23.05.6-ath79-generic.Linux-x86_64.tar.xz'
-            DIR='openwrt-imagebuilder-23.05.6-ath79-generic.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/24.10.3/targets/ath79/generic/openwrt-imagebuilder-24.10.3-ath79-generic.Linux-x86_64.tar.zst'
+            DIR='openwrt-imagebuilder-24.10.3-ath79-generic.Linux-x86_64'
             PROFILE='tplink_tl-wa1201-v2'
             break
           ;;
@@ -70,7 +70,7 @@ done
 
 ### Get imagebuilder and cd there
 echo "$RELEASE"
-curl -L "$RELEASE" | tar -xf -
+curl -L  "$RELEASE" | tar --zstd -xf -
 
 cd "$DIR" || exit
 
