@@ -6,12 +6,11 @@
 #
 
 ### Prerequisites for buildroot
-# Modernized set for Ubuntu 24.04 that has Python 3.12 without python3-distutils from https://openwrt.org/docs/guide-developer/toolchain/install-buildsystem#debianubuntumint
 sudo apt update
-sudo apt install build-essential clang flex bison g++ gawk gcc-multilib g++-multilib gettext git libncurses5-dev libssl-dev python3-setuptools rsync swig unzip zlib1g-dev file wget
+sudo apt install build-essential file libncurses-dev zlib1g-dev gawk git gettext libssl-dev xsltproc rsync wget unzip python3 python3-setuptools
 
-RELEASE='https://downloads.openwrt.org/releases/24.10.5/targets/rockchip/armv8/openwrt-imagebuilder-24.10.5-rockchip-armv8.Linux-x86_64.tar.zst'
-DIR='openwrt-imagebuilder-24.10.5-rockchip-armv8.Linux-x86_64'
+RELEASE='https://downloads.openwrt.org/releases/25.12.0/targets/rockchip/armv8/openwrt-imagebuilder-25.12.0-rockchip-armv8.Linux-x86_64.tar.zst'
+DIR='openwrt-imagebuilder-25.12.0-rockchip-armv8.Linux-x86_64'
 PROFILE='friendlyarm_nanopi-r4s'
 
 
