@@ -9,8 +9,8 @@
 sudo apt update
 sudo apt install build-essential file libncurses-dev zlib1g-dev gawk git gettext libssl-dev xsltproc rsync wget unzip python3 python3-setuptools
 
-RELEASE='https://downloads.openwrt.org/releases/25.12.1/targets/rockchip/armv8/openwrt-imagebuilder-25.12.1-rockchip-armv8.Linux-x86_64.tar.zst'
-DIR='openwrt-imagebuilder-25.12.1-rockchip-armv8.Linux-x86_64'
+RELEASE='https://downloads.openwrt.org/releases/25.12.2/targets/rockchip/armv8/openwrt-imagebuilder-25.12.2-rockchip-armv8.Linux-x86_64.tar.zst'
+DIR='openwrt-imagebuilder-25.12.2-rockchip-armv8.Linux-x86_64'
 PROFILE='friendlyarm_nanopi-r4s'
 
 
