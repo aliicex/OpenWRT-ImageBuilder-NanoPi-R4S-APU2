@@ -24,37 +24,37 @@ do
     case $opt in
         "r4s")
             echo "Building image for NanoPi R4S"
-            RELEASE='https://downloads.openwrt.org/releases/24.10.7/targets/rockchip/armv8/openwrt-imagebuilder-24.10.7-rockchip-armv8.Linux-x86_64.tar.zst'
-            DIR='openwrt-imagebuilder-24.10.7-rockchip-armv8.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/24.10.8/targets/rockchip/armv8/openwrt-imagebuilder-24.10.8-rockchip-armv8.Linux-x86_64.tar.zst'
+            DIR='openwrt-imagebuilder-24.10.8-rockchip-armv8.Linux-x86_64'
             PROFILE='friendlyarm_nanopi-r4s'
             unset PACKAGES_EXTRA
             break
             ;;
         "apu2")
             echo "Building image for PC Engines apu2 platform"
-            RELEASE='https://downloads.openwrt.org/releases/24.10.7/targets/x86/64/openwrt-imagebuilder-24.10.7-x86-64.Linux-x86_64.tar.zst'
-            DIR='openwrt-imagebuilder-24.10.7-x86-64.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/24.10.8/targets/x86/64/openwrt-imagebuilder-24.10.8-x86-64.Linux-x86_64.tar.zst'
+            DIR='openwrt-imagebuilder-24.10.8-x86-64.Linux-x86_64'
             PROFILE='generic'
             break
           ;;
          "wac124")
             echo "Building image for Netgear WAC124"
-            RELEASE='https://downloads.openwrt.org/releases/24.10.7/targets/ramips/mt7621/openwrt-imagebuilder-24.10.7-ramips-mt7621.Linux-x86_64.tar.zst'
-            DIR='openwrt-imagebuilder-24.10.7-ramips-mt7621.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-imagebuilder-24.10.8-ramips-mt7621.Linux-x86_64.tar.zst'
+            DIR='openwrt-imagebuilder-24.10.8-ramips-mt7621.Linux-x86_64'
             PROFILE='netgear_wac124'
             break
           ;;
           "wax202")
             echo "Building image for Netgear WAX202"
-            RELEASE='https://downloads.openwrt.org/releases/24.10.7/targets/ramips/mt7621/openwrt-imagebuilder-24.10.7-ramips-mt7621.Linux-x86_64.tar.zst'
-            DIR='openwrt-imagebuilder-24.10.7-ramips-mt7621.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-imagebuilder-24.10.8-ramips-mt7621.Linux-x86_64.tar.zst'
+            DIR='openwrt-imagebuilder-24.10.8-ramips-mt7621.Linux-x86_64'
             PROFILE='netgear_wax202'
             break
           ;;
           "wa1201v2")
             echo "Building image for TP-Link TL-WA1201 v2"
-            RELEASE='https://downloads.openwrt.org/releases/24.10.7/targets/ath79/generic/openwrt-imagebuilder-24.10.7-ath79-generic.Linux-x86_64.tar.zst'
-            DIR='openwrt-imagebuilder-24.10.7-ath79-generic.Linux-x86_64'
+            RELEASE='https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-imagebuilder-24.10.8-ath79-generic.Linux-x86_64.tar.zst'
+            DIR='openwrt-imagebuilder-24.10.8-ath79-generic.Linux-x86_64'
             PROFILE='tplink_tl-wa1201-v2'
             break
           ;;
